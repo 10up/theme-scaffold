@@ -2,7 +2,7 @@
 /**
  * Core setup, site hooks and filters.
  */
-namespace TenUpThemeScaffold\Core;
+namespace TenUpScaffold\Core;
 
 /**
  * Set up theme defaults and register supported WordPress features.
@@ -28,8 +28,8 @@ function setup() {
  * Makes Theme available for translation.
  *
  * Translations can be added to the /languages directory.
- * If you're building a theme based on "tenup-theme-scaffold", change the 
- * filename of '/languages/TenUpThemeScaffold.pot' to the name of your project.
+ * If you're building a theme based on "tenup-scaffold", change the
+ * filename of '/languages/TenUpScaffold.pot' to the name of your project.
  *
  * @uses load_theme_textdomain() For translation/localization support.
  *
@@ -38,7 +38,7 @@ function setup() {
  * @return void
  */
 function i18n() {
-	load_theme_textdomain( 'tenup-theme-scaffold', TENUP_THEME_SCAFFOLD_PATH . '/languages' );
+	load_theme_textdomain( 'tenup-scaffold', TENUP_SCAFFOLD_PATH . '/languages' );
 }
 
 /**
@@ -76,7 +76,7 @@ function scripts() {
 
 	wp_enqueue_script(
 		'frontend',
-		TENUP_THEME_SCAFFOLD_TEMPLATE_URL . "/dist/js/frontend.min.js",
+		TENUP_SCAFFOLD_TEMPLATE_URL . "/dist/js/frontend.min.js",
 		[],
 		false,
 		true
@@ -97,7 +97,7 @@ function styles() {
 
 	wp_enqueue_style(
 		'styles',
-		TENUP_THEME_SCAFFOLD_TEMPLATE_URL . "/dist/css/style.min.css",
+		TENUP_SCAFFOLD_TEMPLATE_URL . "/dist/css/style.min.css",
 		false
 	);
 }

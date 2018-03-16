@@ -2,7 +2,7 @@
 /**
  * The template for displaying the footer.
  *
- * @package TenUpThemeScaffold
+ * @package TenUpScaffold
  * @since 0.1.0
  */
 ?>

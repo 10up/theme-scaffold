@@ -2,7 +2,7 @@
 /**
  * The main template file
  *
- * @package TenUpThemeScaffold
+ * @package TenUpScaffold
  * @since 0.1.0
  */
 
