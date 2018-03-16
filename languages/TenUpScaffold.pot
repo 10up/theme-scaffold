@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TenUpThemeScaffold\n"
+"Project-Id-Version: TenUpScaffold\n"
 "POT-Creation-Date: 2015-03-03T12:53:58.231Z\n"
 "PO-Revision-Date: 2015-03-03T12:53:58.231Z\n"
 "Last-Translator: 10up <info@10up.com>\n"
