@@ -40,5 +40,6 @@
 
 - [Taylor Lovett](http://github.com/tlovett1)
 - [Dominic Magnifico](http://github.com/magnificode)
+- [Eugene Manuilov](https://github.com/eugene-manuilov)
 - [Dave Ross](http://github.com/daveross)
 - [Tim Wright](http://github.com/timwright12)

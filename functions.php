@@ -23,11 +23,3 @@ TenUpScaffold\Core\setup();
 if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 	require_once 'vendor/autoload.php';
 }
-
-
-// How to use this theme
-// 1. Rename folder TenUpScaffold -> your project's name
-// 2. Do 3 case-sensitive search/replace:
-// 		A. TenUpScaffold
-// 		B. TENUP_SCAFFOLD
-// 		C. tenup
