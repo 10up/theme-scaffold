@@ -32,8 +32,6 @@
 
 `npm run build` (build all files)
 
-`NODE_ENV=production npm run build` (build all production files)
-
 `npm run deploy` (build all files for deploy)
 
 ## Contributors
