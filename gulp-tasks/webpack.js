@@ -13,9 +13,10 @@ function processWebpack( src, conf, dest, cb ) {
 	], cb );
 }
 
-gulp.task( 'webpack', () => {
+gulp.task( 'webpack', ( cb ) => {
 	const src = '../assets/js/**/*.js';
 	const conf = '../webpack.config.babel.js';
 	const dest = './dist/js';
 	processWebpack( src, conf, dest );
+	cb();
 } );
