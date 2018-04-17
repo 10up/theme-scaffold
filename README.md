@@ -9,11 +9,15 @@ At 10up, we strive to provide digital products that yield a top-notch user exper
 
 1. [.editorconfig](http://editorconfig.org/) Plugin - The .editorconfig file ensures that everyone contributing to the project will use the same indentation.
 2. [Node & NPM](https://www.npmjs.com/get-npm) - Build packages and 3rd party dependencies are managed through NPM, so you will need that installed globally
-3. [Gulp](https://gulpjs.com/) - Gulp is used as the main task runner, it runs PostCSS, image processed, handles SVG sprites (if needed), and executes Webpack
+3. [Gulp](https://gulpjs.com/) - Gulp is used as the main task runner, it runs PostCSS, processes images, handles SVG sprites (if needed), and executes Webpack
 4. [Webpack](https://webpack.js.org/) - Webpack is used to process the JavaScript
 
 ## Getting Started
 
+### Quick Start
+Install 10up's command line tool for scaffolding new projects. You can download it from the [Project Scaffold repository](https://github.com/10up/project-scaffold). Setting up a new theme is as easy as running `create-10up theme theme-name-here` in the terminal!
+
+### Direct Install
 - Clone the repository
 - Rename folder theme-scaffold -> your project's name
 - Do case-sensitive search/replace for the following:
@@ -25,9 +29,6 @@ At 10up, we strive to provide digital products that yield a top-notch user exper
 
 - `cd` into the theme folder
 - run `npm run start`
-
-## Quick Start
-Install 10up's command line tool for scaffolding new projects. You can download it from the [Project Scaffold repository](https://github.com/10up/project-scaffold). Setting up a new theme is as easy as running `create-10up theme theme-name-here` in the terminal!
 
 ## Commands
 
