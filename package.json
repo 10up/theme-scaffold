@@ -36,7 +36,7 @@
     "gulp-postcss": "^7.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^2.6.4",
-    "postcss-cssnext": "^2.11.0",
+    "postcss-cssnext": "^3.0.2",
     "postcss-import": "^10.0.0",
     "pump": "^1.0.3",
     "require-dir": "^0.3.2",
