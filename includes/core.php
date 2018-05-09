@@ -45,22 +45,22 @@ function i18n() {
  * Sets up theme defaults and registers support for various WordPress features.
  */
 function theme_setup() {
-	// add_theme_support( 'automatic-feed-links' );
-	// add_theme_support( 'title-tag' );
-	// add_theme_support( 'post-thumbnails' );
-	// add_theme_support(
-	// 	'html5', array(
-	// 		'search-form',
-	// 		'gallery'
-	// 	)
-	// );
+	add_theme_support( 'automatic-feed-links' );
+	add_theme_support( 'title-tag' );
+	add_theme_support( 'post-thumbnails' );
+	add_theme_support(
+		'html5', array(
+		'search-form',
+		'gallery'
+		)
+	);
 
-	// // This theme uses wp_nav_menu() in three locations.
-	// register_nav_menus(
-	// 	array(
-	// 		'primary'        => esc_html__( 'Primary Menu', 'tenup' ),
-	// 	)
-	// );
+	// This theme uses wp_nav_menu() in three locations.
+	register_nav_menus(
+		array(
+			'primary'        => esc_html__( 'Primary Menu', 'tenup' ),
+		)
+	);
 }
 
 /**
