@@ -7,10 +7,6 @@ namespace TenUpScaffold\Core;
 /**
  * Set up theme defaults and register supported WordPress features.
  *
- * @since 0.1.0
- *
- * @uses add_action()
- *
  * @return void
  */
 function setup() {
@@ -30,10 +26,6 @@ function setup() {
  * Translations can be added to the /languages directory.
  * If you're building a theme based on "tenup-scaffold", change the
  * filename of '/languages/TenUpScaffold.pot' to the name of your project.
- *
- * @uses load_theme_textdomain() For translation/localization support.
- *
- * @since 0.1.0
  *
  * @return void
  */
@@ -66,10 +58,6 @@ function theme_setup() {
 /**
  * Enqueue scripts for front-end.
  *
- * @uses wp_enqueue_script() to load front end scripts.
- *
- * @since 0.1.0
- *
  * @return void
  */
 function scripts() {
@@ -86,10 +74,6 @@ function scripts() {
 
 /**
  * Enqueue styles for front-end.
- *
- * @uses wp_enqueue_style() to load front end styles.
- *
- * @since 0.1.0
  *
  * @return void
  */

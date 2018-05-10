@@ -1,9 +1,6 @@
 <?php
 /**
  * WP Theme constants and setup functions
- *
- * @package TenUpScaffold
- * @since 0.1.0
  */
 
 // Useful global constants.
