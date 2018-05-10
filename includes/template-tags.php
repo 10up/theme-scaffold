@@ -9,7 +9,4 @@
  * pollution of the global namespace and potential conflicts with functions
  * from plugins.
  * Example: `tenup_function()`
- *
- * @package TenUpScaffold
- * @since 0.1.0
  */
