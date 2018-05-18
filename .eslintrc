@@ -15,5 +15,8 @@
     "no-console": [ 1 ],
     "no-alert": [ 1 ],
     "camelcase": [ 2 ]
+  },
+  "globals": {
+	  "jQuery": true
   }
 }
