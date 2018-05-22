@@ -1,5 +1,6 @@
 {
   "name": "10up/tenup-scaffold",
+  "type": "wordpress-theme",
   "authors": [
     {
       "name": "Author",
