@@ -17,7 +17,7 @@
     "start": "npm install && gulp",
     "watch": "gulp watch",
     "build": "gulp",
-    "deploy": "npm install && gulp"
+    "deploy": "npm install && composer install --no-dev -o && gulp"
   },
   "license": "MIT",
   "devDependencies": {
