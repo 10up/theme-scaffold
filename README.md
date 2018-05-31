@@ -48,3 +48,29 @@ We don't know everything! We welcome pull requests and spirited, but respectful,
 3. Commit your changes: `git commit -am 'Added some great feature!'`
 4. Push to the branch: `git push origin feature/my-new-feature`
 5. Submit a pull request
+
+## Learn more about the default packages used with this project
+
+- [Babel core](https://www.npmjs.com/package/babel-core)
+- [Babel eslint](https://www.npmjs.com/package/babel-eslint)
+- [Babel loader](https://www.npmjs.com/package/babel-loader)
+- [Babel preset env](https://www.npmjs.com/package/babel-preset-env)
+- [Can I Use DB](https://www.npmjs.com/package/caniuse-db)
+- [Del](https://www.npmjs.com/package/del)
+- [Eslint](https://www.npmjs.com/package/eslint)
+- [Eslint loader](https://www.npmjs.com/package/eslint-loader)
+- [Gulp](https://www.npmjs.com/package/gulp)
+- [Gulp CSSNano](https://www.npmjs.com/package/gulp-cssnano)
+- [Gulp filter](https://www.npmjs.com/package/gulp-filter)
+- [Gulp Live Reload](https://www.npmjs.com/package/gulp-livereload)
+- [Gulp PostCSS](https://www.npmjs.com/package/gulp-postcss)
+- [Gulp Rename](https://www.npmjs.com/package/gulp-rename)
+- [Gulp Sourcemaps](https://www.npmjs.com/package/gulp-sourcemaps)
+- [PostCSS CSSNext](https://www.npmjs.com/package/gulp-postcss)
+- [PostCSS Import](https://www.npmjs.com/package/postcss-import)
+- [Pump](https://www.npmjs.com/package/pump)
+- [Require DIR](https://www.npmjs.com/package/require-dir)
+- [Run Sequence](https://www.npmjs.com/package/run-sequence)
+- [Webpack](https://www.npmjs.com/package/webpack)
+- [Webpack CLI](https://www.npmjs.com/package/webpack-cli)
+- [Webpack Stream](https://www.npmjs.com/package/webpack-stream)
