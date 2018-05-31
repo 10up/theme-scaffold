@@ -13,7 +13,7 @@ gulp.task( 'js', () => {
 
 gulp.task( 'css', () => {
 	runSequence(
-		'cssnext',
+		'css',
 		'cssnano',
 		'cssclean'
 	);
