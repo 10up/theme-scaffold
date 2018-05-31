@@ -11,16 +11,9 @@ gulp.task( 'cssnext', ( cb ) => {
 		'./assets/css/shared/shared-style.css'
 	];
 	const fileDest = './dist';
-	const cssNextOpts = {
-		features: {
-			autoprefixer: {
-				browsers: ['last 2 versions']
-			}
-		}
-	};
 	const taskOpts = [
 		require( 'postcss-import' ),
-		require( 'postcss-cssnext' )( cssNextOpts )
+		require( 'postcss-cssnext' )()
 	];
 
 	pump( [
