@@ -39,6 +39,16 @@ Install 10up's command line tool for scaffolding new projects. You can download 
 
 `npm run deploy` (build all files for deploy)
 
+### Visual Regression Testing
+
+These npm commands are sugar syntax for base backstop commands to target specific configurations.
+
+`npm test:visual-reference` (set base for future tests)
+
+`npm test:visual-test` (run vrt against base)
+
+`npm test:visual-approve` (set latest test as new base)
+
 ## Contributing
 
 We don't know everything! We welcome pull requests and spirited, but respectful, debates. Please contribute via [pull requests on GitHub](https://github.com/10up/theme-scaffold/compare).
@@ -55,6 +65,7 @@ We don't know everything! We welcome pull requests and spirited, but respectful,
 - [Babel eslint](https://www.npmjs.com/package/babel-eslint)
 - [Babel loader](https://www.npmjs.com/package/babel-loader)
 - [Babel preset env](https://www.npmjs.com/package/babel-preset-env)
+- [BackstopJS](https://github.com/garris/BackstopJS)
 - [Can I Use DB](https://www.npmjs.com/package/caniuse-db)
 - [Del](https://www.npmjs.com/package/del)
 - [Eslint](https://www.npmjs.com/package/eslint)
