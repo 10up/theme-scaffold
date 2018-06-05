@@ -41,13 +41,13 @@ Install 10up's command line tool for scaffolding new projects. You can download 
 
 ### Visual Regression Testing
 
-These npm commands are sugar syntax for base backstop commands to target specific configurations.
+These npm commands are sugar syntax for base backstop commands to target specific configurations. See the [default config file](https://github.com/10up/theme-scaffold/tests/visual/local-visual-test.json)
 
 `npm test:visual-reference` (set base for future tests)
 
 `npm test:visual-test` (run vrt against base)
 
-`npm test:visual-approve` (set latest test as new base)
+`npm test:visual-approve` (set latest test as new base, this doesn't check that the latest test passed, and there's no undo, so ensure the tests are all valid before approving)
 
 ## Contributing
 
