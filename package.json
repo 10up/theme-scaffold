@@ -14,7 +14,10 @@
     "role": "developer"
   },
   "scripts": {
-    "start": "npm install && gulp",
+    "start:visual": "pushd tests/visual/ && backstop init && rm backstop.json && popd",
+    "start": "npm install && gulp && npm run start:visual",
+    "test:visual-reference": "pushd tests/visual/ && ../../node_modules/backstopjs/cli/index.js reference --config=local-visual-test.json && popd",
+    "test:visual-test": "pushd tests/visual/ && ../../node_modules/backstopjs/cli/index.js test --config=local-visual-test.json && popd",
     "watch": "gulp watch",
     "build": "gulp",
     "deploy": "npm install && composer install --no-dev -o && gulp"
@@ -29,6 +32,7 @@
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.1.3",
     "babel-preset-env": "^1.6.1",
+    "backstopjs": "^3.2",
     "browserslist": "^3.2.8",
     "caniuse-db": "^1.0.30000847",
     "del": "^3.0.0",
