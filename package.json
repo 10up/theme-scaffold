@@ -18,6 +18,7 @@
     "start": "npm install && gulp && npm run start:visual",
     "test:visual-reference": "pushd tests/visual/ && ../../node_modules/backstopjs/cli/index.js reference --config=local-visual-test.json && popd",
     "test:visual-test": "pushd tests/visual/ && ../../node_modules/backstopjs/cli/index.js test --config=local-visual-test.json && popd",
+    "test:visual-approve": "pushd tests/visual/ && ../../node_modules/backstopjs/cli/index.js approve --config=local-visual-test.json && popd",
     "watch": "gulp watch",
     "build": "gulp",
     "deploy": "npm install && composer install --no-dev -o && gulp"
