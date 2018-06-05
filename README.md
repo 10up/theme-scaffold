@@ -25,6 +25,7 @@ Install 10up's command line tool for scaffolding new projects. You can download 
 	- TENUP_SCAFFOLD
 	- tenup-scaffold
 	- tenup_scaffold
+	- 10up Scaffold
 
 - `cd` into the theme folder
 - run `npm run start`
