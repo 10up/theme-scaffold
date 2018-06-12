@@ -17,7 +17,21 @@
     "start": "npm install && gulp",
     "watch": "gulp watch",
     "build": "gulp",
-    "deploy": "npm install && composer install --no-dev -o && gulp"
+    "deploy": "npm install && composer install --no-dev -o && gulp",
+    "lint-js": "eslint assets/js",
+    "format-js": "eslint --fix assets/js",
+    "lint": "npm run lint-js",
+    "format": "npm run format-js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint"
+    ]
   },
   "browserslist": [
     "> 1%",
@@ -48,6 +62,8 @@
     "run-sequence": "^1.2.2",
     "webpack": "^4.10.2",
     "webpack-cli": "^2.0.10",
-    "webpack-stream": "^3.2.0"
+    "webpack-stream": "^3.2.0",
+    "husky": "^1.0.0-rc.7",
+    "lint-staged": "^7.1.2"
   }
 }
