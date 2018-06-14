@@ -86,4 +86,3 @@ function styles() {
 		TENUP_SCAFFOLD_VERSION
 	);
 }
-

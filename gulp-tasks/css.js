@@ -14,8 +14,8 @@ gulp.task( 'css', ( cb ) => {
 
 	const cssOpts = {
 		stage: 0
- 	};
-	
+	};
+
 	const taskOpts = [
 		require( 'postcss-import' ),
 		require( 'postcss-preset-env' )( cssOpts )
