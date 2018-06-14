@@ -3,7 +3,7 @@ import postcss from 'gulp-postcss';
 import sourcemaps from 'gulp-sourcemaps';
 import pump from 'pump';
 
-gulp.task( 'cssnext', ( cb ) => {
+gulp.task( 'css', ( cb ) => {
 	const fileSrc = [
 		'./assets/css/admin/admin-style.css',
 		'./assets/css/frontend/editor-style.css',
@@ -11,9 +11,14 @@ gulp.task( 'cssnext', ( cb ) => {
 		'./assets/css/shared/shared-style.css'
 	];
 	const fileDest = './dist';
+
+	const cssOpts = {
+		stage: 0
+ 	};
+	
 	const taskOpts = [
 		require( 'postcss-import' ),
-		require( 'postcss-cssnext' )()
+		require( 'postcss-preset-env' )( cssOpts )
 	];
 
 	pump( [
