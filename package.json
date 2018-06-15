@@ -21,6 +21,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@10up/eslint-config": "^1.0.4",
     "babel-core": "^6.26.0",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.1.3",
