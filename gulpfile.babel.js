@@ -6,12 +6,13 @@ requireDir( './gulp-tasks' );
 
 gulp.task( 'js', gulp.series( 'webpack' ) );
 
-gulp.task( 'css', gulp.series( 'cssnext', 'cssnano', 'cssclean' ) );
+gulp.task( 'cssprocess', gulp.series( 'css', 'cssnano', 'cssclean' ) );
 
 gulp.task( 'watch', () => {
+	process.env.NODE_ENV = 'development';
 	livereload.listen( { basePath: 'dist' } );
-	gulp.watch( ['./assets/css/**/*.css', '!./assets/css/src/**/*.css'], gulp.series( 'css' ) );
+	gulp.watch( ['./assets/css/**/*.css', '!./assets/css/src/**/*.css'], gulp.series( 'cssprocess' ) );
 	gulp.watch( './assets/js/**/*.js', gulp.series( 'js' ) );
 } );
 
-gulp.task( 'default', gulp.parallel( 'css', 'webpack' ) );
+gulp.task( 'default', gulp.parallel( 'set-prod-node-env', 'cssprocess', 'webpack' ) );

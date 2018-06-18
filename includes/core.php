@@ -7,10 +7,6 @@ namespace TenUpScaffold\Core;
 /**
  * Set up theme defaults and register supported WordPress features.
  *
- * @since 0.1.0
- *
- * @uses add_action()
- *
  * @return void
  */
 function setup() {
@@ -31,10 +27,6 @@ function setup() {
  * If you're building a theme based on "tenup-scaffold", change the
  * filename of '/languages/TenUpScaffold.pot' to the name of your project.
  *
- * @uses load_theme_textdomain() For translation/localization support.
- *
- * @since 0.1.0
- *
  * @return void
  */
 function i18n() {
@@ -45,30 +37,26 @@ function i18n() {
  * Sets up theme defaults and registers support for various WordPress features.
  */
 function theme_setup() {
-	// add_theme_support( 'automatic-feed-links' );
-	// add_theme_support( 'title-tag' );
-	// add_theme_support( 'post-thumbnails' );
-	// add_theme_support(
-	// 	'html5', array(
-	// 		'search-form',
-	// 		'gallery'
-	// 	)
-	// );
+	add_theme_support( 'automatic-feed-links' );
+	add_theme_support( 'title-tag' );
+	add_theme_support( 'post-thumbnails' );
+	add_theme_support(
+		'html5', array(
+		'search-form',
+		'gallery'
+		)
+	);
 
-	// // This theme uses wp_nav_menu() in three locations.
-	// register_nav_menus(
-	// 	array(
-	// 		'primary'        => esc_html__( 'Primary Menu', 'tenup' ),
-	// 	)
-	// );
+	// This theme uses wp_nav_menu() in three locations.
+	register_nav_menus(
+		array(
+			'primary'        => esc_html__( 'Primary Menu', 'tenup' ),
+		)
+	);
 }
 
 /**
  * Enqueue scripts for front-end.
- *
- * @uses wp_enqueue_script() to load front end scripts.
- *
- * @since 0.1.0
  *
  * @return void
  */
@@ -87,10 +75,6 @@ function scripts() {
 /**
  * Enqueue styles for front-end.
  *
- * @uses wp_enqueue_style() to load front end styles.
- *
- * @since 0.1.0
- *
  * @return void
  */
 function styles() {
@@ -102,4 +86,3 @@ function styles() {
 		TENUP_SCAFFOLD_VERSION
 	);
 }
-

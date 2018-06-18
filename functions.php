@@ -1,9 +1,6 @@
 <?php
 /**
  * WP Theme constants and setup functions
- *
- * @package TenUpScaffold
- * @since 0.1.0
  */
 
 // Useful global constants.
@@ -19,7 +16,7 @@ require_once TENUP_SCAFFOLD_INC . 'template-tags.php';
 // Run the setup functions.
 TenUpScaffold\Core\setup();
 
-// What does this do?
+// Require Composer autoloader if it exists.
 if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 	require_once 'vendor/autoload.php';
 }

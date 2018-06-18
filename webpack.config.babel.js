@@ -24,9 +24,6 @@ const config = {
 				test: /\.js$/,
 				enforce: 'pre',
 				loader: 'eslint-loader',
-				query: {
-					configFile: './.eslintrc'
-				}
 			},
 			{
 				test: /\.js$/,
@@ -40,7 +37,7 @@ const config = {
 			}
 		]
 	},
-	mode: 'production',
+	mode: process.env.NODE_ENV,
 	plugins: [
 		new webpack.NoEmitOnErrorsPlugin(),
 	],

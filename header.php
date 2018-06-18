@@ -1,11 +1,8 @@
 <?php
 /**
  * The template for displaying the header.
- *
- * @package TenUpScaffold
- * @since 0.1.0
  */
- ?>
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 	<head>
@@ -13,3 +10,4 @@
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
+		<?php do_action( 'after_body' ); ?>
