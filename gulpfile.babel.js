@@ -11,9 +11,9 @@ gulp.task( 'js', () => {
 	);
 } );
 
-gulp.task( 'css', () => {
+gulp.task( 'cssprocess', () => {
 	runSequence(
-		'cssnext',
+		'css',
 		'cssnano',
 		'cssclean'
 	);
@@ -22,14 +22,14 @@ gulp.task( 'css', () => {
 gulp.task( 'watch', () => {
 	process.env.NODE_ENV = 'development';
 	livereload.listen( { basePath: 'dist' } );
-	gulp.watch( ['./assets/css/**/*.css', '!./assets/css/src/**/*.css'], ['css'] );
+	gulp.watch( ['./assets/css/**/*.css', '!./assets/css/src/**/*.css'], ['cssprocess'] );
 	gulp.watch( './assets/js/**/*.js', ['js'] );
 } );
 
 gulp.task( 'default', () => {
 	runSequence(
 		'set-prod-node-env',
-		'css',
+		'cssprocess',
 		'webpack'
 	);
 } );

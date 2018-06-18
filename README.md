@@ -25,6 +25,7 @@ Install 10up's command line tool for scaffolding new projects. You can download 
 	- TENUP_SCAFFOLD
 	- tenup-scaffold
 	- tenup_scaffold
+	- 10up Scaffold
 
 - `cd` into the theme folder
 - run `npm run start`
@@ -85,3 +86,5 @@ We don't know everything! We welcome pull requests and spirited, but respectful,
 - [Webpack](https://www.npmjs.com/package/webpack)
 - [Webpack CLI](https://www.npmjs.com/package/webpack-cli)
 - [Webpack Stream](https://www.npmjs.com/package/webpack-stream)
+- [Husky@next](https://www.npmjs.com/package/husky)
+- [Lint Staged](https://www.npmjs.com/package/lint-staged)
