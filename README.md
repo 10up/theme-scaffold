@@ -75,3 +75,5 @@ We don't know everything! We welcome pull requests and spirited, but respectful,
 - [Webpack](https://www.npmjs.com/package/webpack)
 - [Webpack CLI](https://www.npmjs.com/package/webpack-cli)
 - [Webpack Stream](https://www.npmjs.com/package/webpack-stream)
+- [Husky@next](https://www.npmjs.com/package/husky)
+- [Lint Staged](https://www.npmjs.com/package/lint-staged)
