@@ -15,4 +15,4 @@ gulp.task( 'watch', () => {
 	gulp.watch( './assets/js/**/*.js', gulp.series( 'js' ) );
 } );
 
-gulp.task( 'default', gulp.parallel( 'set-prod-node-env', 'cssprocess', 'webpack' ) );
+gulp.task( 'default', gulp.parallel( 'cssprocess', gulp.series( 'set-prod-node-env', 'webpack' ) ) );
