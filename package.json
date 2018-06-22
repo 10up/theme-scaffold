@@ -18,10 +18,12 @@
     "watch": "gulp watch",
     "build": "gulp",
     "deploy": "npm install && composer install --no-dev -o && gulp",
+    "lint-php": "./vendor/bin/phpcs ./ --extensions=php --warning-severity=8  -s",
+    "format-php": "./vendor/bin/phpcbf ./ --extensions=php --warning-severity=8",
     "lint-js": "eslint assets/js",
     "format-js": "eslint --fix assets/js",
-    "lint": "npm run lint-js",
-    "format": "npm run format-js"
+    "lint": "npm run lint-js && npm run lint-php",
+    "format": "npm run format-js && npm run format-php"
   },
   "husky": {
     "hooks": {
@@ -31,6 +33,9 @@
   "lint-staged": {
     "*.js": [
       "eslint"
+    ],
+    "*.php": [
+      "./vendor/bin/phpcs --extensions=php --warning-severity=8 -s"
     ]
   },
   "license": "MIT",
