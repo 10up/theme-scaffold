@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<ruleset name="10up PHPCS">
+	<description>10up PHPCS</description>
+
+	<exclude-pattern>*/phpunit.xml*</exclude-pattern>
+	<exclude-pattern>*/languages/*</exclude-pattern>
+	<exclude-pattern>*/tests/*</exclude-pattern>
+
+	<!-- Third-party code -->
+	<exclude-pattern>*/bower-components/*</exclude-pattern>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+
+
+	<rule ref="WordPress-VIP-Go">
+		<!-- Inline control structures are not allowed -->
+		<exclude name="Generic.ControlStructures.InlineControlStructure.NotAllowed" />
+
+		<!-- File must end with a newline character -->
+		<exclude name="Generic.Files.EndFileNewline.NotFound" />
+
+		<!-- End of line character is invalid; expected "\n" but found "<string>" -->
+		<exclude name="Generic.Files.LineEndings.InvalidEOLChar" />
+
+		<!-- Each PHP statement must be on a line by itself -->
+		<exclude name="Generic.Formatting.DisallowMultipleStatements.SameLine" />
+
+		<!-- How we open our functions -->
+		<exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie" />
+
+		<!-- String concat is not required here; use a single string instead -->
+		<exclude name="Generic.Strings.UnnecessaryStringConcat.Found" />
+
+		<!-- Generic whitespace rules -->
+		<exclude name="Generic.WhiteSpace" />
+
+
+		<!-- Multi-line function call not indented correctly; expected X spaces but found Y -->
+		<exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
+
+		<!-- Space before opening parenthesis of function call prohibited -->
+		<exclude name="PEAR.Functions.FunctionCallSignature.SpaceBeforeOpenBracket" />
+
+		<!-- The PEAR standards opinionated about functions' call signatures -->
+		<exclude name="PEAR.Functions.FunctionCallSignature" />
+
+
+		<!-- Control structures' signatures -->
+		<exclude name="Squiz.ControlStructures.ControlSignature" />
+
+		<!-- Function definitions -->
+		<exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing" />
+
+		<!-- Drop all of the SuperflouousWhitespace checks -->
+		<exclude name="Squiz.WhiteSpace.SuperfluousWhitespace" />
+
+		<!-- String "<string>" does not require double quotes; use single quotes instead -->
+		<exclude name="Squiz.Strings.DoubleQuoteUsage.NotRequired" />
+
+
+		<!-- A lot can go wrong when defining an array -->
+		<exclude name="WordPress.Arrays.ArrayDeclaration" />
+		<exclude name="WordPress.Arrays.ArrayKeySpacingRestrictions" />
+
+		<!-- WordPress <3s Whitespace -->
+		<exclude name="WordPress.WhiteSpace" />
+
+		<!-- WordPress naming conventions -->
+		<exclude name="WordPress.NamingConventions" />
+
+		<exclude name="WordPress.Files.FileName.NotHyphenatedLowercase" />
+
+		<exclude name="WordPress.Files.FileName.InvalidClassFileName" />
+
+		<exclude name="WordPress.WP.I18n.MissingTranslatorsComment" />
+	</rule>
+</ruleset>
