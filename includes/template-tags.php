@@ -9,4 +9,8 @@
  * pollution of the global namespace and potential conflicts with functions
  * from plugins.
  * Example: `tenup_function()`
+ *
+ * @package ThemeScaffold\Template_Tags
  */
+
+// Define your template functions here
