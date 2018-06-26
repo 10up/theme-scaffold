@@ -15,15 +15,8 @@
       "TenUpScaffold\\": "includes/classes/"
     }
   },
-  "repositories": [
-    {
-        "type": "vcs",
-        "url": "https://github.com/Automattic/VIP-Coding-Standards.git"
-    }
-  ],
   "require-dev": {
     "10up/wp_mock": "dev-dev",
-    "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",
-    "automattic/vipwpcs": "dev-master"
+    "10up/phpcs-composer": "dev-master"
   }
 }
