@@ -1,15 +1,6 @@
 <?xml version="1.0"?>
 <ruleset name="10up PHPCS">
-	<description>10up PHPCS</description>
-
-	<exclude-pattern>*/phpunit.xml*</exclude-pattern>
-	<exclude-pattern>*/languages/*</exclude-pattern>
-	<exclude-pattern>*/tests/*</exclude-pattern>
-
-	<!-- Third-party code -->
-	<exclude-pattern>*/bower-components/*</exclude-pattern>
-	<exclude-pattern>*/node_modules/*</exclude-pattern>
-	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<description>10up PHPCS extended.</description>
 
 	<rule ref="10up-Default" />
 </ruleset>

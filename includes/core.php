@@ -53,7 +53,7 @@ function theme_setup() {
 	// This theme uses wp_nav_menu() in three locations.
 	register_nav_menus(
 		array(
-			'primary'        => esc_html__( 'Primary Menu', 'tenup' ),
+			'primary' => esc_html__( 'Primary Menu', 'tenup' ),
 		)
 	);
 }
