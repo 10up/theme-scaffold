@@ -20,8 +20,8 @@
     "deploy": "npm install && composer install --no-dev -o && gulp",
     "lint-js": "eslint assets/js",
     "format-js": "eslint --fix assets/js",
-    "lint": "npm run lint-js && npm run lint-php",
-    "format": "npm run format-js && npm run format-php"
+    "lint": "npm run lint-js",
+    "format": "npm run format-js"
   },
   "husky": {
     "hooks": {
