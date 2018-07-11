@@ -1,7 +1,10 @@
 <?php
 /**
  * The template for displaying the header.
+ *
+ * @package ThemeScaffold
  */
+
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
