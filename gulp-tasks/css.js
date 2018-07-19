@@ -18,7 +18,8 @@ gulp.task( 'css', ( cb ) => {
 
 	const taskOpts = [
 		require( 'postcss-import' ),
-		require( 'postcss-preset-env' )( cssOpts )
+		require( 'postcss-preset-env' )( cssOpts ),
+		require( 'autoprefixer' )
 	];
 
 	pump( [
