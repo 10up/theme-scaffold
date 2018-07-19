@@ -68,5 +68,8 @@
   "engineStrict": true,
   "engines": {
     "node": "~8.11"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.0"
   }
 }
