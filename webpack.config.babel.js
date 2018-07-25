@@ -24,6 +24,9 @@ const config = {
 				test: /\.js$/,
 				enforce: 'pre',
 				loader: 'eslint-loader',
+				options: {
+					fix: true
+				}
 			},
 			{
 				test: /\.js$/,
