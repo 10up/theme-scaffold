@@ -8,7 +8,8 @@ gulp.task( 'css', ( cb ) => {
 		'./assets/css/admin/admin-style.css',
 		'./assets/css/frontend/editor-style.css',
 		'./assets/css/frontend/style.css',
-		'./assets/css/shared/shared-style.css'
+		'./assets/css/shared/shared-style.css',
+		'./assets/css/styleguide/styleguide.css'
 	];
 	const fileDest = './dist';
 
