@@ -10,6 +10,7 @@ At 10up, we strive to provide digital products that yield a top-notch user exper
 1. [Node & NPM](https://www.npmjs.com/get-npm) - Build packages and 3rd party dependencies are managed through NPM, so you will need that installed globally
 2. [Gulp](https://gulpjs.com/) - Gulp is used as the main task runner, it runs PostCSS, processes images, handles SVG sprites (if needed), and executes Webpack
 3. [Webpack](https://webpack.js.org/) - Webpack is used to process the JavaScript
+4. [Composer](https://getcomposer.org/) - Composer is used to manage PHP.
 
 ## Getting Started
 
@@ -30,7 +31,7 @@ Install 10up's command line tool for scaffolding new projects. You can download 
 - `cd` into the theme folder
 - run `npm run start`
 
-## Commands
+## NPM Commands
 
 `npm run start` (install dependencies and run initial gulp)
 
@@ -39,6 +40,12 @@ Install 10up's command line tool for scaffolding new projects. You can download 
 `npm run build` (build all files)
 
 `npm run deploy` (build all files for deploy)
+
+## Composer Commands
+
+`composer lint` (link PHP files)
+
+`composer lint-fix` (link PHP files and automatically correct coding standard violations)
 
 ## Contributing
 
@@ -77,3 +84,4 @@ We don't know everything! We welcome pull requests and spirited, but respectful,
 - [Webpack Stream](https://www.npmjs.com/package/webpack-stream)
 - [Husky@next](https://www.npmjs.com/package/husky)
 - [Lint Staged](https://www.npmjs.com/package/lint-staged)
+- [PHPCS](https://github.com/squizlabs/PHP_CodeSniffer)
