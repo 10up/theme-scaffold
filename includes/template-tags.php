@@ -15,7 +15,6 @@
 
 
 // Extract colors from a CSS or Sass file
-// Extract colors from a CSS or Sass file
 function get_colors( $path ) {
 
 	$dir = get_stylesheet_directory();
