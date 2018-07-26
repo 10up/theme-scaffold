@@ -1,6 +1,8 @@
 <?php
 /**
  * Template Name: Style Guide
+ *
+ * @package ThemeScaffold
  */
 
 get_header();
@@ -17,23 +19,24 @@ get_header();
 	<div class="uikit__content">
 
 		<?php
-		$colors = get_colors( '/assets/css/frontend/global/variables.css' );
+			$colors = get_colors( '/assets/css/frontend/global/variables.css' );
 
-		if ( ! empty( $colors ) ) : ?>
+		if ( ! empty( $colors ) ) :
+			?>
 		<section class="uikit__section" id="colors">
 			<h2 class="heading">Primary Palette</h2>
-			
+
 			<div class="content">
 				<ul class="uikit__colors">
-				
-				<?php foreach( $colors as $color ): ?>
-				
+
+				<?php foreach ( $colors as $color ) : ?>
+
 					<li class="uikit__color" style="background: <?php echo esc_attr( $color ); ?>; border-color: <?php echo esc_attr( adjust_brightness( $color, -25 ) ); ?>">
-						<p class="uikit__color--label uikit__text--small"><?php echo  esc_html( $color ); ?></p>
+						<p class="uikit__color--label uikit__text--small"><?php echo esc_html( $color ); ?></p>
 					</li>
-				
+
 				<?php endforeach; ?>
-				
+
 				</ul>
 			</div><!--/.content-->
 
@@ -115,17 +118,17 @@ get_header();
 					<label for="volume">Range Input</label>
 					<input type="range" id="start" name="" min="0" max="11" />
 				</div>
-				
+
 				<div class="uikit-mb-1">
 					<label for="date">Date Input</label>
 					<input type="date" id="date" name="" value="" />
 				</div>
-				
+
 				<div class="uikit-mb-1">
 					<label for="num">Number Input</label>
 					<input type="number" id="num" name="" value="" />
 				</div>
-				
+
 				<div class="uikit-mb-1">
 					<label for="w3">Label</label>
 					<select id="w3">
@@ -137,7 +140,7 @@ get_header();
 						<option value="5">Option 5</option>
 					</select>
 				</div>
-				
+
 				<div class="uikit-mb-1">
 					<fieldset>
 						<legend>Checkbox Field Grouping</legend>
