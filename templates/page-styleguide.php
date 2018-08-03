@@ -12,7 +12,7 @@ get_header();
 
 	<h1 class="uikit__heading">
 		<div class="uikit__block">
-			<span><?php echo esc_html( get_the_title(), 'sep' ); ?></span>
+			<span><?php echo esc_html( get_the_title() ); ?></span>
 		</div>
 	</h1>
 

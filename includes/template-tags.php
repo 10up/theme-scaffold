@@ -35,6 +35,7 @@ function get_colors( $path ) {
  *
  * @param string $hex The hex code for the color
  * @param number $steps amount you want to change the brightness
+ * @return string new color with brightness adjusted
  */
 function adjust_brightness( $hex, $steps ) {
 
