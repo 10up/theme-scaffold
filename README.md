@@ -43,9 +43,9 @@ Install 10up's command line tool for scaffolding new projects. You can download 
 
 ## Composer Commands
 
-`composer lint` (link PHP files)
+`composer lint` (lint PHP files)
 
-`composer lint-fix` (link PHP files and automatically correct coding standard violations)
+`composer lint-fix` (lint PHP files and automatically correct coding standard violations)
 
 ## Contributing
 
