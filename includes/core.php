@@ -88,4 +88,13 @@ function styles() {
 		[],
 		TENUP_SCAFFOLD_VERSION
 	);
+
+	if ( is_page_template( 'templates/page-styleguide.php' ) ) {
+		wp_enqueue_style(
+			'styleguide',
+			TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/css/styleguide.min.css',
+			[],
+			TENUP_SCAFFOLD_VERSION
+		);
+	}
 }
