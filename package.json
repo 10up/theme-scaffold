@@ -21,7 +21,8 @@
     "lint-js": "eslint assets/js",
     "format-js": "eslint --fix assets/js",
     "lint": "npm run lint-js",
-    "format": "npm run format-js"
+    "format": "npm run format-js",
+    "test-a11y": "node tests/accessibility/compliance/pa11y.js"
   },
   "husky": {
     "hooks": {
@@ -45,6 +46,7 @@
     "babel-preset-env": "^1.6.1",
     "browserslist": "^3.2.8",
     "caniuse-db": "^1.0.30000853",
+    "chalk": "^2.4.1",
     "del": "^3.0.0",
     "eslint": "^4.18.2",
     "eslint-loader": "^2.0.0",
@@ -57,6 +59,7 @@
     "gulp-sourcemaps": "^2.6.4",
     "husky": "^1.0.0-rc.7",
     "lint-staged": "^7.1.2",
+    "pa11y": "^5.0.4",
     "postcss-import": "^10.0.0",
     "postcss-preset-env": "^5.1.0",
     "pump": "^1.0.3",
@@ -64,6 +67,16 @@
     "webpack": "^4.12.0",
     "webpack-cli": "^2.1.5",
     "webpack-stream": "^3.2.0"
+  },
+  "testing": {
+    "urls": {
+      "local": "http://tenup-scaffold.test/",
+      "staging": "https://oshpd.10uplabs.com",
+      "production": "http://csskarma.com"
+    },
+    "accessibility": {
+      "compliance": "WCAG2A"
+    }
   },
   "engineStrict": true,
   "engines": {
