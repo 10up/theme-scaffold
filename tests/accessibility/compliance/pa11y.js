@@ -1,4 +1,4 @@
-/* global require, process, __dirname */
+/* global require, process */
 
 'use strict';
 
@@ -6,8 +6,8 @@ const pa11y = require( 'pa11y' );
 const chalk = require( 'chalk' );
 const packageJson = require( '../../../package.json' );
 const testingUrls = packageJson.testing.urls;
-const user = 'pa11y-bot-2';
-const pass = 'iiF#zroi$FDRzJuCTeBTWGiQ';
+const user = '';
+const pass = '';
 
 // Initialize variables
 let stageActions = '';
@@ -25,7 +25,7 @@ if ( process.argv[2] ) {
 			url = packageJson.testing.urls[key];
 
 			// If staging, it will need to sign into WordPress
-			if ( 'staging' === key && '' !== user &&  '' !== pass ) {
+			if ( key === 'staging' && user !== '' &&  pass !== '' ) {
 	
 				// Set up actions for staging, we don't need them for any other environment
 				stageActions = [
@@ -37,10 +37,10 @@ if ( process.argv[2] ) {
 
 			} else {
 
-				console.log(' ');
+				console.log( ' ' );
 				console.log( chalk.red.bold( '✘ Please provide staging credentials' ) );
-				console.log(' ');
-				console.log(' ');
+				console.log( ' ' );
+				console.log( ' ' );
 				process.exit( 1 );
 
 			}

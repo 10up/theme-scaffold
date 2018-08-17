@@ -71,8 +71,8 @@
   "testing": {
     "urls": {
       "local": "http://tenup-scaffold.test/",
-      "staging": "https://oshpd.10uplabs.com",
-      "production": "http://csskarma.com"
+      "staging": "https://tenup-scaffold.10uplabs.com",
+      "production": ""
     },
     "accessibility": {
       "compliance": "WCAG2A"
