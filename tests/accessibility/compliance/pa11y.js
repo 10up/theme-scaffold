@@ -19,7 +19,7 @@ if ( process.argv[2] ) {
 		if ( key === process.argv[2] ) {
 
 			// Set the testing URL
-			if ( '' !== packageJson.testing.urls[key] ) {
+			if ( packageJson.testing.urls[key] !== '' ) {
 
 				url = packageJson.testing.urls[key];
 
