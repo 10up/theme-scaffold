@@ -70,7 +70,7 @@
   },
   "testing": {
     "urls": {
-      "local": "http://tenup-scaffold.test/",
+      "local": "http://tenup-scaffold.test",
       "staging": "https://tenup-scaffold.10uplabs.com",
       "production": ""
     },
