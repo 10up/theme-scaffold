@@ -19,11 +19,22 @@ if ( process.argv[2] ) {
 		if ( key === process.argv[2] ) {
 
 			// Set the testing URL
-			url = packageJson.testing.urls[key];
+			if ( '' !== packageJson.testing.urls[key] ) {
+
+				url = packageJson.testing.urls[key];
+
+			} else {
+
+				// If the URL object exists, but is empty
+				console.log( chalk.red.bold( '✘ Error: Please add a URL for ' + key ) );
+				console.log( '' );
+				process.exit( 1 );
+
+			}
 
 		}
 
-	}
+	} // for()
 
 } else {
 

@@ -14,4 +14,4 @@
 	</head>
 	<body <?php body_class(); ?>>
 		<?php do_action( 'after_body' ); ?>
-		<h1><?php bloginfo( 'name' );?></h1>
+		<h1><?php bloginfo( 'name' ); ?></h1>
