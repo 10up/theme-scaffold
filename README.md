@@ -47,6 +47,13 @@ Install 10up's command line tool for scaffolding new projects. You can download 
 
 `composer lint-fix` (lint PHP files and automatically correct coding standard violations)
 
+## Automated Style Guide
+The Theme Scaffolding ships with a default style guide you can find in `/templates/page-styleguide.php`. This file contains all the basic HTML elements you would find at the very top of the cascade (headings, typography, tables, forms, etc.) These base elements will be styled and displayed as you naturally build out your CSS. The style guide also automatically pulls in the color variables used in the project. Any hex codes added into `/assets/css/frontend/global/variables.css` will be displayed in the style guide. To set up your style guide, you just need to create a new page in WordPress and assign it the "Style Guide" template.
+
+If you need to update the core styles that power the style guide they are located in `/assets/css/styleguide` and will naturally process with the rest of the CSS.
+
+As your site grows you can add components to the style guide by updating `/templates/page-styleguide.php` as you see fit. All the JS and CSS for the site will already be included in the template, so everything should just work.
+
 ## Contributing
 
 We don't know everything! We welcome pull requests and spirited, but respectful, debates. Please contribute via [pull requests on GitHub](https://github.com/10up/theme-scaffold/compare).
