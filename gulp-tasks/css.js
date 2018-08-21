@@ -14,12 +14,15 @@ gulp.task( 'css', ( cb ) => {
 	const fileDest = './dist';
 
 	const cssOpts = {
-		stage: 0
+		stage: 0,
+		autoprefixer: {
+			grid: true
+		}
 	};
 
 	const taskOpts = [
 		require( 'postcss-import' ),
-		require( 'postcss-preset-env' )( cssOpts )
+		require( 'postcss-preset-env' )( cssOpts ),
 	];
 
 	pump( [
