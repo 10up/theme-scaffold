@@ -41,11 +41,27 @@ Install 10up's command line tool for scaffolding new projects. You can download 
 
 `npm run deploy` (build all files for deploy)
 
+`npm run test-a11y` (run accessibility tests)
+
 ## Composer Commands
 
 `composer lint` (lint PHP files)
 
 `composer lint-fix` (lint PHP files and automatically correct coding standard violations)
+
+## Automated Style Guide
+The Theme Scaffolding ships with a default style guide you can find in `/templates/page-styleguide.php`. This file contains all the basic HTML elements you would find at the very top of the cascade (headings, typography, tables, forms, etc.) These base elements will be styled and displayed as you naturally build out your CSS. The style guide also automatically pulls in the color variables used in the project. Any hex codes added into `/assets/css/frontend/global/variables.css` will be automatically displayed in the style guide. To set up your style guide, you just need to create a new page in WordPress and assign it the "Style Guide" template.
+
+If you need to update the core styles that power the style guide they are located in `/assets/css/styleguide` and will naturally process with the rest of the CSS.
+
+As your site grows you can add components to the style guide by updating `/templates/page-styleguide.php` as you see fit. All the JS and CSS for the site will already be included in the template, so everything should just work.
+
+## Automated Accessibility Testing
+Automated accessibility testing in the Theme Scaffolding is done with [Pa11y](https://www.npmjs.com/package/pa11y) and is executed with the command `npm run test-a11y`. You can find any configuration options inside your `package.json` file inside the `testing` object. You will see default URL options (local, staging, production), but you can add as many as you'd like. The default script runs over the `local` URL and any others will run with an argument like `npm run test-a11y production`, over a production URL. You can also add more template URLs for testing like `npm run a11y-test article-template`. Be sure to check with your systems person on a project to make sure accessibility tests are also hooked up through the deploy process.
+
+Compliance levels can also be updated through the `testing.accessibility.compliance` object in the `package.json` file. The default is WCAG Level A, but it can be updated to anything listed in the [pa11y documentation](https://github.com/pa11y/pa11y).
+
+The test file lives in `/tests/accessibility/compliance/pa11y.js` if any edits are needed (such as staging credentials, if you're running tests in an environment that requires authentication).
 
 ## Contributing
 
@@ -64,6 +80,7 @@ We don't know everything! We welcome pull requests and spirited, but respectful,
 - [Babel loader](https://www.npmjs.com/package/babel-loader)
 - [Babel preset env](https://www.npmjs.com/package/babel-preset-env)
 - [Can I Use DB](https://www.npmjs.com/package/caniuse-db)
+- [Chalk](https://www.npmjs.com/package/chalk)
 - [Del](https://www.npmjs.com/package/del)
 - [Eslint](https://www.npmjs.com/package/eslint)
 - [Eslint loader](https://www.npmjs.com/package/eslint-loader)
@@ -74,6 +91,7 @@ We don't know everything! We welcome pull requests and spirited, but respectful,
 - [Gulp PostCSS](https://www.npmjs.com/package/gulp-postcss)
 - [Gulp Rename](https://www.npmjs.com/package/gulp-rename)
 - [Gulp Sourcemaps](https://www.npmjs.com/package/gulp-sourcemaps)
+- [Pa11y](https://www.npmjs.com/package/pa11y)
 - [PostCSS CSSNext](https://www.npmjs.com/package/gulp-postcss)
 - [PostCSS Import](https://www.npmjs.com/package/postcss-import)
 - [Pump](https://www.npmjs.com/package/pump)
