@@ -4,6 +4,14 @@ import browserSync from 'browser-sync';
 
 requireDir( './gulp-tasks' );
 
+const configProject = require('./config.json');
+const configLocal = require('./config-local.json');
+
+const config = {
+	...configProject,
+	...configLocal
+};
+
 const bs = browserSync.create();
 
 gulp.task( 'bs-reload-css', ( cb ) => {
@@ -23,7 +31,7 @@ gulp.task( 'cssprocess', gulp.series( 'css', 'cssnano', 'cssclean' ) );
 gulp.task( 'watch', () => {
 	process.env.NODE_ENV = 'development';
 	bs.init({
-		proxy: 'local-theme-url.test',
+		proxy: config.localUrl,
 		snippetOptions: {
 			whitelist: ["/wp-admin/admin-ajax.php"],
 			blacklist: ["/wp-admin/**"]
