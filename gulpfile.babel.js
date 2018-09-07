@@ -4,6 +4,8 @@ import browserSync from 'browser-sync';
 
 requireDir( './gulp-tasks' );
 
+const packageJson = require('../../../package.json');
+const localURL = packageJson.testing.urls.local;
 const bs = browserSync.create();
 gulp.task( 'js', gulp.series( 'webpack' ) );
 
