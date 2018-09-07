@@ -63,6 +63,11 @@ Compliance levels can also be updated through the `testing.accessibility.complia
 
 The test file lives in `/tests/accessibility/compliance/pa11y.js` if any edits are needed (such as staging credentials, if you're running tests in an environment that requires authentication).
 
+## Browsersync
+Browsersync allows for live injecting CSS and JavaScript changes while you're developing locally. There are other features as well, including scroll/click synching between browsers.
+
+Browsersync requires a local development URL. This is currently set in the `package.json`
+
 ## Contributing
 
 We don't know everything! We welcome pull requests and spirited, but respectful, debates. Please contribute via [pull requests on GitHub](https://github.com/10up/theme-scaffold/compare).
@@ -79,6 +84,7 @@ We don't know everything! We welcome pull requests and spirited, but respectful,
 - [Babel eslint](https://www.npmjs.com/package/babel-eslint)
 - [Babel loader](https://www.npmjs.com/package/babel-loader)
 - [Babel preset env](https://www.npmjs.com/package/babel-preset-env)
+- [Browsersync](https://browsersync.io/)
 - [Can I Use DB](https://www.npmjs.com/package/caniuse-db)
 - [Chalk](https://www.npmjs.com/package/chalk)
 - [Del](https://www.npmjs.com/package/del)
@@ -87,7 +93,6 @@ We don't know everything! We welcome pull requests and spirited, but respectful,
 - [Gulp](https://www.npmjs.com/package/gulp)
 - [Gulp CSSNano](https://www.npmjs.com/package/gulp-cssnano)
 - [Gulp filter](https://www.npmjs.com/package/gulp-filter)
-- [Gulp Live Reload](https://www.npmjs.com/package/gulp-livereload)
 - [Gulp PostCSS](https://www.npmjs.com/package/gulp-postcss)
 - [Gulp Rename](https://www.npmjs.com/package/gulp-rename)
 - [Gulp Sourcemaps](https://www.npmjs.com/package/gulp-sourcemaps)
