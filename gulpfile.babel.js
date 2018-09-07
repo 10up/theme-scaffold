@@ -7,6 +7,17 @@ requireDir( './gulp-tasks' );
 const packageJson = require('../../../package.json');
 const localURL = packageJson.testing.urls.local;
 const bs = browserSync.create();
+
+gulp.task( 'bs-reload-css', ( cb ) => {
+	bs.reload('*.css');
+	cb();
+});
+
+gulp.task( 'bs-reload', ( cb ) => {
+	bs.reload();
+	cb();
+});
+
 gulp.task( 'js', gulp.series( 'webpack' ) );
 
 gulp.task( 'cssprocess', gulp.series( 'css', 'cssnano', 'cssclean' ) );
