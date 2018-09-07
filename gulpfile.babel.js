@@ -4,6 +4,7 @@ import browserSync from 'browser-sync';
 
 requireDir( './gulp-tasks' );
 
+const bs = browserSync.create();
 gulp.task( 'js', gulp.series( 'webpack' ) );
 
 gulp.task( 'cssprocess', gulp.series( 'css', 'cssnano', 'cssclean' ) );
