@@ -1,6 +1,6 @@
 import gulp from 'gulp';
 import requireDir from 'require-dir';
-import livereload from 'gulp-livereload';
+import browserSync from 'browser-sync';
 
 requireDir( './gulp-tasks' );
 
