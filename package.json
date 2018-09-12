@@ -78,6 +78,7 @@
       "compliance": "WCAG2A"
     }
   },
+  "localUrl": "http://tenup-scaffold.test",
   "engineStrict": true,
   "engines": {
     "node": "~8.11"
