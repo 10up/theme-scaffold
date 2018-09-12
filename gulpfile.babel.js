@@ -5,7 +5,7 @@ import browserSync from 'browser-sync';
 requireDir( './gulp-tasks' );
 
 const packageJson = require('../../../package.json');
-const localURL = packageJson.testing.urls.local;
+const localUrl = packageJson.localUrl;
 const bs = browserSync.create();
 
 gulp.task( 'bs-reload-css', ( cb ) => {
@@ -27,7 +27,7 @@ gulp.task( 'watch', () => {
 	// https://browsersync.io/docs/options
 	bs.init({
 		open: false,     // Automatically open project in new tab?
-		proxy: localURL, // Set in package.json
+		proxy: localUrl, // Set in package.json
 		snippetOptions: {
 			whitelist: ["/wp-admin/admin-ajax.php"],
 			blacklist: ["/wp-admin/**"]
