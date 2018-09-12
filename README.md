@@ -17,6 +17,8 @@ At 10up, we strive to provide digital products that yield a top-notch user exper
 ### Quick Start
 Install 10up's command line tool for scaffolding new projects. You can download it from the [Project Scaffold repository](https://github.com/10up/project-scaffold). Setting up a new theme is as easy as running `create-10up theme theme-name-here` in the terminal!
 
+Browsersync requires a local development URL. This is currently set in the `package.json`, as `localUrl`.
+
 ### Direct Install
 - Clone the repository
 - Rename folder theme-scaffold -> your project's name
@@ -62,11 +64,6 @@ Automated accessibility testing in the Theme Scaffolding is done with [Pa11y](ht
 Compliance levels can also be updated through the `testing.accessibility.compliance` object in the `package.json` file. The default is WCAG Level A, but it can be updated to anything listed in the [pa11y documentation](https://github.com/pa11y/pa11y).
 
 The test file lives in `/tests/accessibility/compliance/pa11y.js` if any edits are needed (such as staging credentials, if you're running tests in an environment that requires authentication).
-
-## Browsersync
-Browsersync allows for live injecting CSS and JavaScript changes while you're developing locally. There are other features as well, including scroll/click synching between browsers.
-
-Browsersync requires a local development URL. This is currently set in the `package.json`
 
 ## Contributing
 
