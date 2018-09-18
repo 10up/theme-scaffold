@@ -64,6 +64,7 @@
     "postcss-preset-env": "^5.3.0",
     "pump": "^3.0.0",
     "require-dir": "^0.3.2",
+    "require-uncached": "^1.0.3",
     "webpack": "^4.17.1",
     "webpack-cli": "^3.1.0",
     "webpack-stream": "^5.1.1"
