@@ -80,6 +80,10 @@
     }
   },
   "localUrl": "http://tenup-scaffold.test",
+  "browserSync": {
+    "live": true,
+    "proxyUrl": "http://tenup-scaffold.test"
+  },
   "engineStrict": true,
   "engines": {
     "node": "~8.11"
