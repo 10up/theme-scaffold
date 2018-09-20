@@ -79,7 +79,6 @@
       "compliance": "WCAG2A"
     }
   },
-  "localUrl": "http://tenup-scaffold.test",
   "browserSync": {
     "live": true,
     "proxyUrl": "http://tenup-scaffold.test"
