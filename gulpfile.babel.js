@@ -30,7 +30,7 @@ gulp.task( 'watch', () => {
 	if ( proxyUrl ) {
 		// https://browsersync.io/docs/options
 		bs.init({
-			proxy: packproxyUrl,
+			proxy: proxyUrl,
 			snippetOptions: {
 				whitelist: ["/wp-admin/admin-ajax.php"],
 				blacklist: ["/wp-admin/**"]
