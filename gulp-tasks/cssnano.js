@@ -11,14 +11,15 @@ gulp.task( 'cssnano', ( cb ) => {
 		fileSrc = [
 			'./dist/*.css'
 		],
-		taskOpts = [cssnano( {
+		taskOpts = {
 			autoprefixer: false,
 			calc: {
 				precision: 8
 			},
 			zindex: false,
-			convertValues: true
-		} )];
+			convertValues: true,
+			mergeLonghand: false,
+		};
 
 	pump( [
 		gulp.src( fileSrc ),
