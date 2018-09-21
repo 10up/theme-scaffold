@@ -20,6 +20,17 @@ Install 10up's command line tool for scaffolding new projects. You can download 
 ### Direct Install
 - Clone the repository
 - Rename folder theme-scaffold -> your project's name
+- If copying files manually to an existing theme directory instead of cloning directly from the repository, make sure to include the following files which may be hidden:
+
+```
+.babelrc
+.browserslistrc
+.editorconfig
+.eslintignore
+.eslintrc
+.gitignore
+```
+
 - Do case-sensitive search/replace for the following:
 
 	- TenUpScaffold
