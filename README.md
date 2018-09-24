@@ -31,8 +31,6 @@ Install 10up's command line tool for scaffolding new projects. You can download 
 .gitignore
 ```
 
-The NPM commands will fail without these files present.
-
 - Do case-sensitive search/replace for the following:
 
 	- TenUpScaffold
