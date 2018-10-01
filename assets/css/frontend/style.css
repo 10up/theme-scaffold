@@ -4,7 +4,7 @@
  *
  */
 
-/* Resets - include normalize.css via NPM */
+/* Resets - installed via NPM */
 @import url("normalize.css");
 
 /* Global - global pieces like media queries, mixins and placholders */
