@@ -22,6 +22,7 @@ const config = {
 		rules: [
 			{
 				test: /\.js$/,
+				exclude: /(node_modules|bower_components)/,
 				enforce: 'pre',
 				loader: 'eslint-loader',
 				options: {
@@ -30,6 +31,7 @@ const config = {
 			},
 			{
 				test: /\.js$/,
+				exclude: /(node_modules|bower_components)/,
 				use: [{
 					loader: 'babel-loader',
 					options: {
