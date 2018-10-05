@@ -5,7 +5,7 @@ import requireDir from 'require-dir';
 requireDir( './gulp-tasks' );
 
 // We store some config objects here. So, let's load:
-const packageJson = require('../../../package.json');
+const packageJson = require('./package.json');
 // Create a BrowserSync instance:
 const bs = browserSync.create();
 const proxyUrl = packageJson.browserSync.proxyUrl;
