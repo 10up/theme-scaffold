@@ -6,7 +6,7 @@ requireDir( './gulp-tasks' );
 
 gulp.task( 'js', gulp.series( 'webpack' ) );
 
-gulp.task( 'cssprocess', gulp.series( 'css', 'cssnano', 'cssclean' ) );
+gulp.task( 'cssprocess', gulp.series( 'csslint', 'css', 'cssnano', 'cssclean' ) );
 
 gulp.task( 'watch', () => {
 	process.env.NODE_ENV = 'development';
