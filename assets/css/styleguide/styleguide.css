@@ -3,8 +3,9 @@
 	--c-uikit-accent: #767676;
 	--c-uikit-hightlight: #f6f6f6;
 	--c-uikit-border: #ccc;
+	--c-uikit-primary: #000;
 	
-	@custom-media --bp-uikit-small ( min-width: 40.625em );
+	@custom-media --bp-uikit-small (min-width: 40.625em);
 	
 }
 
@@ -14,10 +15,10 @@
 }
 
 .uikit__heading {
-	border-bottom: 1px solid var( --c-uikit-border );
+	border-bottom: 1px solid var(--c-uikit-border);
 	font-size: 56px;
 	font-weight: 400;
-	letter-spacing: .055em;
+	letter-spacing: 0.055em;
 	margin: 100px auto 130px;
 	max-width: 720px;
 	padding: 0;
@@ -26,7 +27,7 @@
 }
 
 .uikit__heading span {
-	background: var( --c-uikit-base );
+	background: var(--c-uikit-base);
 	display: inline-block;
 	padding: 0 40px;
 }
@@ -51,10 +52,10 @@
 
 .uikit__color {
 	align-items: center;
-	border: 1px solid var( --c-uikit-border );
+	border: 1px solid var(--c-uikit-border);
 	display: flex;
-	font-size: .85em;
 	float: left;
+	font-size: 0.85em;
 	height: 90px;
 	justify-content: center;
 	margin-bottom: 32px;
@@ -63,15 +64,15 @@
 }
 
 .uikit__color--label {
-	color: #000;
+	color: var(--c-primary);
 	left: -999em;
 	margin: 0;
 	padding: 0;
 	position: absolute;
 }
 
-.uikit__color--label.light{
-	color: var( --c-uikit-base );;
+.uikit__color--label.light {
+	color: var(--c-uikit-base);
 }
 
 .uikit__icons {
@@ -80,7 +81,7 @@
 
 .uikit__icon {
 	align-items: center;
-	background: var( --c-uikit-hightlight );
+	background: var(--c-uikit-hightlight);
 	display: flex;
 	float: left;
 	height: 62px;
@@ -91,8 +92,8 @@
 }
 
 .uikit__icon--label {
-	position: absolute;
 	left: -999em;
+	position: absolute;
 }
 
 .uikit__section {
@@ -101,7 +102,7 @@
 
 .uikit__section > .heading {
 	box-sizing: border-box;
-	color: var( --c-uikit-accent );
+	color: var(--c-uikit-accent);
 	display: inline-block;
 	font-size: 14px;
 	font-weight: 400;
@@ -122,7 +123,7 @@
 	margin-bottom: 1em;
 }
 
-@media ( --bp-uikit-small ) {
+@media (--bp-uikit-small) {
 
 	.uikit__section > .heading {
 		width: 135px;
