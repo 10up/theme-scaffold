@@ -31,3 +31,7 @@
 		text-align: right;
 	}
 }
+
+.wp-caption-text {
+	margin: 0;
+}

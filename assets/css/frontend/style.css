@@ -12,7 +12,7 @@
 
 /* Base - base styles such as fonts, typography, and wordpress overrides */
 /* as well as some global micro-elements like icons */
-/* @import url("base/index"); */
+@import url("base/index");
 
 /* Layout - styles specific to layout */
 /* @import url("layout/index"); */
