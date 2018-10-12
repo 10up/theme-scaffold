@@ -2,14 +2,12 @@ import gulp from 'gulp';
 import pump from 'pump';
 import webpack from 'webpack';
 import webpackStream from 'webpack-stream';
-import livereload from 'gulp-livereload';
 
 function processWebpack( src, conf, dest, cb ) {
 	pump( [
 		gulp.src( src ),
 		webpackStream( require( conf ), webpack ),
-		gulp.dest( dest ),
-		livereload()
+		gulp.dest( dest )
 	], cb );
 }
 

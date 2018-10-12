@@ -4,7 +4,7 @@
  *
  */
 
-/* Resets - include normalize.css via NPM */
+/* Resets - installed via NPM */
 @import url("normalize.css");
 
 /* Global - global pieces like media queries, mixins and placholders */
@@ -12,13 +12,13 @@
 
 /* Base - base styles such as fonts, typography, and wordpress overrides */
 /* as well as some global micro-elements like icons */
-@import url("base/index");
+/* @import url("base/index"); */
 
 /* Layout - styles specific to layout */
-@import url("layout/index");
+/* @import url("layout/index"); */
 
 /* Templates */
-@import url("templates/index");
+/* @import url("templates/index"); */
 
 /* Components */
-@import url("components/index");
+/* @import url("components/index"); */
