@@ -11,8 +11,7 @@
 @import url("global/index.css");
 
 /* Base - base styles such as fonts, typography, and wordpress overrides */
-
-/* @import url("base/index.css"); */
+@import url("base/index.css");
 
 /* Layout - styles specific to layout */
 
