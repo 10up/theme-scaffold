@@ -22,7 +22,7 @@ gulp.task( 'bs-reload', ( cb ) => {
 
 gulp.task( 'js', gulp.series( 'webpack' ) );
 
-gulp.task( 'cssprocess', gulp.series( 'css', 'cssnano', 'cssclean' ) );
+gulp.task( 'cssprocess', gulp.series( 'lint-css', 'css', 'cssnano', 'cssclean' ) );
 
 gulp.task( 'watch', () => {
 	process.env.NODE_ENV = 'development';
