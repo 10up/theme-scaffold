@@ -18,9 +18,11 @@
     "watch": "gulp watch",
     "build": "gulp",
     "deploy": "npm install && composer install --no-dev -o && gulp",
+    "deploy-lint": "npm install && composer install && npm run lint",
     "lint-js": "eslint assets/js",
+    "lint-php": "composer run lint",
     "format-js": "eslint --fix assets/js",
-    "lint": "npm run lint-js",
+    "lint": "npm run lint-js && npm run lint-php",
     "format": "npm run format-js",
     "test-a11y": "node tests/accessibility/compliance/pa11y.js"
   },
