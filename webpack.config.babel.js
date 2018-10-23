@@ -12,7 +12,7 @@ const config = {
 	},
 	output: {
 		path: DIST_PATH,
-		filename: '[name].min.js',
+		filename: data => `${ data.chunk.name.replace( /\.?([A-Z])/g, letter => '-' + letter.toLowerCase() ).replace( '_', '-' ) }.min.js`,
 	},
 	resolve: {
 		modules: ['node_modules'],
