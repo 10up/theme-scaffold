@@ -54,7 +54,7 @@ The NPM commands will fail without these files present.
 
 `npm run build` (build all files)
 
-`npm run deploy` (build all files for deploy)
+`npm run build-release` (build all files for release)
 
 `npm run test-a11y` (run accessibility tests)
 
