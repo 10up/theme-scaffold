@@ -74,7 +74,8 @@
     "stylelint-order": "^1.0.0",
     "webpack": "^4.17.1",
     "webpack-cli": "^3.1.0",
-    "webpack-stream": "^5.1.1"
+    "webpack-stream": "^5.1.1",
+    "webpackbar": "^3.1.5"
   },
   "testing": {
     "urls": {
