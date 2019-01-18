@@ -1,0 +1,6 @@
+{
+	"extends": [
+		"wordpress",
+		"@10up/eslint-config"
+	]
+}
