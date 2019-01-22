@@ -8,7 +8,7 @@
 	*,
 	*::before,
 	*::after {
-		animation: none !important;
-		transition: none !important;
+		animation-duration: 0 !important;
+		transition-duration: 0 !important;
 	}
 }
