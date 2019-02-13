@@ -19,10 +19,11 @@
     "build": "gulp",
     "build-release": "npm install && composer install --no-dev -o && gulp",
     "lint-release": "npm install && composer install && npm run lint",
+    "lint-css": "stylelint assets/css",
     "lint-js": "eslint assets/js",
     "lint-php": "composer run lint",
     "format-js": "eslint --fix assets/js",
-    "lint": "npm run lint-js && npm run lint-php",
+    "lint": "npm run lint-css && npm run lint-js && npm run lint-php",
     "format": "npm run format-js",
     "test-a11y": "node tests/accessibility/compliance/pa11y.js"
   },
@@ -32,6 +33,9 @@
     }
   },
   "lint-staged": {
+    "*.css": [
+      "stylelint"
+    ],
     "*.js": [
       "eslint"
     ],
