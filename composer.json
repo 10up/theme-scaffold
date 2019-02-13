@@ -3,8 +3,8 @@
   "type": "wordpress-theme",
   "authors": [
     {
-      "name": "Author",
-      "email": "email@10up.com"
+      "name": "10up",
+      "email": "info@10up.com"
     }
   ],
   "require": {
