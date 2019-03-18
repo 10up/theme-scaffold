@@ -76,6 +76,16 @@ function scripts() {
 		true
 	);
 
+	if ( is_page_template( 'templates/page-styleguide.php' ) ) {
+		wp_enqueue_script(
+			'styleguide',
+			TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/js/styleguide.min.js',
+			[],
+			TENUP_SCAFFOLD_VERSION,
+			true
+		);
+	}
+
 }
 
 /**
