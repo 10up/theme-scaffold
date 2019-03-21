@@ -86,7 +86,7 @@ export default class UIKitSection {
 	toggleCollapsible( e, wrapper, button ) {
 
 		// Expanded state as bool
-		let expanded = 'true' === button.getAttribute( 'aria-expanded' ) || false;
+		const expanded = 'true' === button.getAttribute( 'aria-expanded' ) || false;
 
 		// Toggle expanded state and visibility
 		button.setAttribute( 'aria-expanded', !expanded );
