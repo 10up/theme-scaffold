@@ -4,9 +4,9 @@
 	--c-uikit-hightlight: #f6f6f6;
 	--c-uikit-border: #ccc;
 	--c-uikit-primary: #000;
-	
+
 	@custom-media --bp-uikit-small (min-width: 40.625em);
-	
+
 }
 
 .uikit__container {
@@ -96,10 +96,6 @@
 	position: absolute;
 }
 
-.uikit__section {
-	margin-bottom: 100px;
-}
-
 .uikit__section > .heading {
 	box-sizing: border-box;
 	color: var(--c-uikit-accent);
@@ -112,11 +108,50 @@
 	width: 100%;
 }
 
+.uikit__section > .heading > .toggle {
+	background-color: transparent;
+	border: 0;
+	color: inherit;
+	cursor: pointer;
+	font-size: inherit;
+	font-weight: inherit;
+	overflow: hidden;
+	padding: 0 18px 0 0;
+	position: relative;
+}
+
+.uikit__chevron-up,
+.uikit__chevron-down {
+	fill: currentColor;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translate(0, -50%);
+}
+
+.uikit__chevron-up {
+	display: none;
+}
+
+.uikit__section > .heading > .toggle[aria-expanded="true"] .uikit__chevron-up,
+.uikit__chevron-down {
+	display: block;
+}
+
+.uikit__section > .heading > .toggle[aria-expanded="true"] .uikit__chevron-down {
+	display: none;
+}
+
 .uikit__section > .content {
 	box-sizing: border-box;
 	display: inline-block;
+	margin-bottom: 100px;
 	vertical-align: top;
 	width: 100%;
+}
+
+.uikit__section > .content[hidden] {
+	display: none;
 }
 
 .uikit-mb-1 {
@@ -126,7 +161,7 @@
 @media (--bp-uikit-small) {
 
 	.uikit__section > .heading {
-		width: 135px;
+		width: 145px;
 	}
 
 	.uikit__section.-secondary > .heading {
@@ -134,7 +169,7 @@
 	}
 
 	.uikit__section > .content {
-		width: calc(100% - 140px);
+		width: calc(100% - 150px);
 	}
 
 	.uikit__section.-secondary > .content {

@@ -9,7 +9,8 @@ const config = {
 	entry: {
 		admin: './assets/js/admin/admin.js',
 		frontend: './assets/js/frontend/frontend.js',
-		shared: './assets/js/shared/shared.js'
+		shared: './assets/js/shared/shared.js',
+		styleguide: './assets/js/styleguide/styleguide.js'
 	},
 	output: {
 		path: DIST_PATH,
