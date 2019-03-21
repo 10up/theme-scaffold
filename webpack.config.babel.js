@@ -1,5 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
+import WebpackBar from 'webpackbar';
 
 const DIST_PATH = path.resolve( './dist/js' );
 
@@ -43,6 +44,7 @@ const config = {
 	mode: process.env.NODE_ENV,
 	plugins: [
 		new webpack.NoEmitOnErrorsPlugin(),
+		new WebpackBar()
 	],
 	stats: {
 		colors: true
