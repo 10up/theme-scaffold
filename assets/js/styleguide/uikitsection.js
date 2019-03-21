@@ -45,7 +45,7 @@ export default class UIKitSection {
 		const sectionID = sectionHeading.parentNode.id;
 
 		// Default state
-		let expanded = false;
+		let expanded = true;
 
 		// Check localStorage to see if we want to expand some sections by default
 		if ( localStorage ) {

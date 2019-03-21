@@ -96,10 +96,6 @@
 	position: absolute;
 }
 
-.uikit__section {
-	margin-bottom: 100px;
-}
-
 .uikit__section > .heading {
 	box-sizing: border-box;
 	color: var(--c-uikit-accent);
@@ -116,8 +112,10 @@
 	background-color: transparent;
 	border: 0;
 	color: inherit;
+	cursor: pointer;
 	font-size: inherit;
 	font-weight: inherit;
+	overflow: hidden;
 	padding: 0 18px 0 0;
 	position: relative;
 }
@@ -147,6 +145,7 @@
 .uikit__section > .content {
 	box-sizing: border-box;
 	display: inline-block;
+	margin-bottom: 100px;
 	vertical-align: top;
 	width: 100%;
 }
