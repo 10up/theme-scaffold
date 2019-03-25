@@ -70,7 +70,7 @@ function scripts() {
 
 	wp_enqueue_script(
 		'frontend',
-		TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/js/frontend.min.js',
+		TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/js/frontend.js',
 		[],
 		TENUP_SCAFFOLD_VERSION,
 		true
@@ -79,7 +79,7 @@ function scripts() {
 	if ( is_page_template( 'templates/page-styleguide.php' ) ) {
 		wp_enqueue_script(
 			'styleguide',
-			TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/js/styleguide.min.js',
+			TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/js/styleguide.js',
 			[],
 			TENUP_SCAFFOLD_VERSION,
 			true
@@ -97,7 +97,7 @@ function styles() {
 
 	wp_enqueue_style(
 		'styles',
-		TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/css/style.min.css',
+		TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/css/style.css',
 		[],
 		TENUP_SCAFFOLD_VERSION
 	);
@@ -105,7 +105,7 @@ function styles() {
 	if ( is_page_template( 'templates/page-styleguide.php' ) ) {
 		wp_enqueue_style(
 			'styleguide',
-			TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/css/styleguide.min.css',
+			TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/css/styleguide-style.css',
 			[],
 			TENUP_SCAFFOLD_VERSION
 		);
