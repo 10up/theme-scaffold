@@ -39,7 +39,7 @@ gulp.task( 'watch', () => {
 	}
 
 	gulp.watch( ['./assets/css/**/*.css', '!./assets/css/src/**/*.css'], gulp.series( 'cssprocess', 'bs-reload-css' ) );
-	gulp.watch( './assets/js/**/*.js', gulp.series( 'js', 'bs-reload' ) );
+	gulp.watch( ['./assets/js/**/*.js', './includes/gutenberg/**/*.js'], gulp.series( 'js', 'bs-reload' ) );
 } );
 
 gulp.task( 'default', gulp.parallel( 'cssprocess', gulp.series( 'set-prod-node-env', 'webpack' ) ) );

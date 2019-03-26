@@ -7,10 +7,12 @@ const DIST_PATH = path.resolve( './dist/js' );
 const config = {
 	cache: true,
 	entry: {
-		admin: './assets/js/admin/admin.js',
-		frontend: './assets/js/frontend/frontend.js',
-		shared: './assets/js/shared/shared.js',
-		styleguide: './assets/js/styleguide/styleguide.js'
+		'admin': './assets/js/admin/admin.js',
+		'frontend': './assets/js/frontend/frontend.js',
+		'gutenberg': './assets/js/gutenberg/gutenberg.js',
+		'shared': './assets/js/shared/shared.js',
+		'styleguide': './assets/js/styleguide/styleguide.js',
+		'gutenberg-editor': './includes/gutenberg/gutenberg-editor.js',
 	},
 	output: {
 		path: DIST_PATH,
