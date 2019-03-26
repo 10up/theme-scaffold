@@ -1,14 +1,13 @@
 /**
- * TenUpScaffold - Admin Styles
+ * TenUpScaffold: Gutenberg Styles
  * https://project-website.tld
  *
  */
 
 /**
- * Gutenberg blocks admin styles:
- * if block editor styles differ from front-end block styles,
- * create new partials here as needed
- */
+* Gutenberg blocks front-end styles:
+* create new partials here as needed
+*/
 
 /* @import url("example-block-1.css"); */
 
