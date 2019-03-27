@@ -1,11 +1,11 @@
 <?php
 /**
- * Gutenberg setup
+ * Gutenberg Blocks setup
  *
  * @package ThemeScaffold\Core
  */
 
-namespace TenUpScaffold\Gutenberg;
+namespace TenUpScaffold\Blocks;
 
 /**
  * Set up blocks
@@ -17,10 +17,10 @@ function setup() {
 		return __NAMESPACE__ . "\\$function";
 	};
 
-	add_action( 'enqueue_block_assets', $n( 'gutenberg_scripts' ) );
-	add_action( 'enqueue_block_editor_assets', $n( 'gutenberg_editor_scripts' ) );
+	add_action( 'enqueue_block_assets', $n( 'blocks_scripts' ) );
+	add_action( 'enqueue_block_editor_assets', $n( 'blocks_editor_scripts' ) );
 
-	add_filter( 'block_categories', $n( 'block_categories' ), 10, 2 );
+	add_filter( 'block_categories', $n( 'blocks_categories' ), 10, 2 );
 }
 
 /**
@@ -28,11 +28,11 @@ function setup() {
  *
  * @return void
  */
-function gutenberg_scripts() {
+function blocks_scripts() {
 
 	wp_enqueue_script(
-		'gutenberg',
-		TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/js/gutenberg.min.js',
+		'blocks',
+		TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/js/blocks.min.js',
 		[],
 		TENUP_SCAFFOLD_VERSION,
 		true
@@ -45,11 +45,11 @@ function gutenberg_scripts() {
  *
  * @return void
  */
-function gutenberg_editor_scripts() {
+function blocks_editor_scripts() {
 
 	wp_enqueue_script(
-		'gutenberg-editor',
-		TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/js/gutenberg-editor.min.js',
+		'blocks-editor',
+		TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/js/blocks-editor.min.js',
 		[ 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-components' ],
 		TENUP_SCAFFOLD_VERSION,
 		false
@@ -72,7 +72,7 @@ function gutenberg_editor_scripts() {
  *
  * @return array Filtered categories.
  */
-function block_categories( $categories, $post ) {
+function blocks_categories( $categories, $post ) {
 	if ( ! in_array( $post->post_type, array( 'post', 'page' ), true ) ) {
 		return $categories;
 	}

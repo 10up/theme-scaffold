@@ -9,10 +9,10 @@ const config = {
 	entry: {
 		'admin': './assets/js/admin/admin.js',
 		'frontend': './assets/js/frontend/frontend.js',
-		'gutenberg': './assets/js/gutenberg/gutenberg.js',
+		'blocks': './assets/js/blocks/blocks.js',
 		'shared': './assets/js/shared/shared.js',
 		'styleguide': './assets/js/styleguide/styleguide.js',
-		'gutenberg-editor': './includes/gutenberg/gutenberg-editor.js',
+		'blocks-editor': './includes/blocks/blocks-editor.js',
 	},
 	output: {
 		path: DIST_PATH,
