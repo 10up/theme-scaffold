@@ -51,6 +51,7 @@
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.0.0",
+    "@wordpress/babel-preset-default": "^4.1.0",
     "babel-eslint": "^9.0.0",
     "babel-loader": "^8.0.0",
     "browser-sync": "^2.24.7",
