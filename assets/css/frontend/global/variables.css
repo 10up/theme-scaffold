@@ -1,0 +1,12 @@
+:root {
+
+	--c-black: #000;
+	--c-white: #fff;
+	
+	/* Breakpoints */
+	@custom-media --bp-tiny ( min-width: 25em ); /* 400px */
+	@custom-media --bp-small ( min-width: 40.625em ); /* 650px */
+	@custom-media --bp-medium ( min-width: 53.125em ); /* 850px */
+	@custom-media --bp-large ( min-width: 62.5em ); /* 1000px */
+
+}

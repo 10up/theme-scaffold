@@ -1,5 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
+import WebpackBar from 'webpackbar';
 
 const DIST_PATH = path.resolve( './dist/js' );
 
@@ -8,7 +9,8 @@ const config = {
 	entry: {
 		admin: './assets/js/admin/admin.js',
 		frontend: './assets/js/frontend/frontend.js',
-		shared: './assets/js/shared/shared.js'
+		shared: './assets/js/shared/shared.js',
+		styleguide: './assets/js/styleguide/styleguide.js'
 	},
 	output: {
 		path: DIST_PATH,
@@ -24,6 +26,9 @@ const config = {
 				test: /\.js$/,
 				enforce: 'pre',
 				loader: 'eslint-loader',
+				options: {
+					fix: true
+				}
 			},
 			{
 				test: /\.js$/,
@@ -40,6 +45,7 @@ const config = {
 	mode: process.env.NODE_ENV,
 	plugins: [
 		new webpack.NoEmitOnErrorsPlugin(),
+		new WebpackBar()
 	],
 	stats: {
 		colors: true

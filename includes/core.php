@@ -21,6 +21,8 @@ function setup() {
 	add_action( 'after_setup_theme', $n( 'theme_setup' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
+
+	add_filter( 'script_loader_tag', $n( 'script_loader_tag' ), 10, 2 );
 }
 
 /**
@@ -44,7 +46,8 @@ function theme_setup() {
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support(
-		'html5', array(
+		'html5',
+		array(
 			'search-form',
 			'gallery',
 		)
@@ -73,6 +76,16 @@ function scripts() {
 		true
 	);
 
+	if ( is_page_template( 'templates/page-styleguide.php' ) ) {
+		wp_enqueue_script(
+			'styleguide',
+			TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/js/styleguide.min.js',
+			[],
+			TENUP_SCAFFOLD_VERSION,
+			true
+		);
+	}
+
 }
 
 /**
@@ -88,4 +101,47 @@ function styles() {
 		[],
 		TENUP_SCAFFOLD_VERSION
 	);
+
+	if ( is_page_template( 'templates/page-styleguide.php' ) ) {
+		wp_enqueue_style(
+			'styleguide',
+			TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/css/styleguide.min.css',
+			[],
+			TENUP_SCAFFOLD_VERSION
+		);
+	}
+}
+
+/**
+ * Add async/defer attributes to enqueued scripts that have the specified script_execution flag.
+ *
+ * @link https://core.trac.wordpress.org/ticket/12009
+ * @param string $tag    The script tag.
+ * @param string $handle The script handle.
+ * @return string
+ */
+function script_loader_tag( $tag, $handle ) {
+	$script_execution = wp_scripts()->get_data( $handle, 'script_execution' );
+
+	if ( ! $script_execution ) {
+		return $tag;
+	}
+
+	if ( 'async' !== $script_execution && 'defer' !== $script_execution ) {
+		return $tag; // _doing_it_wrong()?
+	}
+
+	// Abort adding async/defer for scripts that have this script as a dependency. _doing_it_wrong()?
+	foreach ( wp_scripts()->registered as $script ) {
+		if ( in_array( $handle, $script->deps, true ) ) {
+			return $tag;
+		}
+	}
+
+	// Add the attribute if it hasn't already been added.
+	if ( ! preg_match( ":\s$script_execution(=|>|\s):", $tag ) ) {
+		$tag = preg_replace( ':(?=></script>):', " $script_execution", $tag, 1 );
+	}
+
+	return $tag;
 }

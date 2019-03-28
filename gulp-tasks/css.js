@@ -8,17 +8,21 @@ gulp.task( 'css', ( cb ) => {
 		'./assets/css/admin/admin-style.css',
 		'./assets/css/frontend/editor-style.css',
 		'./assets/css/frontend/style.css',
-		'./assets/css/shared/shared-style.css'
+		'./assets/css/shared/shared-style.css',
+		'./assets/css/styleguide/styleguide.css'
 	];
 	const fileDest = './dist';
 
 	const cssOpts = {
-		stage: 0
+		stage: 0,
+		autoprefixer: {
+			grid: true
+		}
 	};
 
 	const taskOpts = [
 		require( 'postcss-import' ),
-		require( 'postcss-preset-env' )( cssOpts )
+		require( 'postcss-preset-env' )( cssOpts ),
 	];
 
 	pump( [
