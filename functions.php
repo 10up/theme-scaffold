@@ -2,7 +2,7 @@
 /**
  * WP Theme constants and setup functions
  *
- * @package ThemeScaffold
+ * @package TenUpScaffold
  */
 
 // Useful global constants.
