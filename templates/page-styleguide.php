@@ -2,7 +2,7 @@
 /**
  * Template Name: Style Guide
  *
- * @package ThemeScaffold
+ * @package TenUpScaffold
  */
 
 get_header();

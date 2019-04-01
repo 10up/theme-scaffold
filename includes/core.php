@@ -2,7 +2,7 @@
 /**
  * Core setup, site hooks and filters.
  *
- * @package ThemeScaffold\Core
+ * @package TenUpScaffold\Core
  */
 
 namespace TenUpScaffold\Core;
