@@ -10,7 +10,7 @@
  * from plugins.
  * Example: `tenup_function()`
  *
- * @package ThemeScaffold\Template_Tags
+ * @package TenUpScaffold\Template_Tags
  */
 
 /**

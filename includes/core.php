@@ -2,7 +2,7 @@
 /**
  * Core setup, site hooks and filters.
  *
- * @package ThemeScaffold\Core
+ * @package TenUpScaffold\Core
  */
 
 namespace TenUpScaffold\Core;
@@ -21,6 +21,7 @@ function setup() {
 	add_action( 'after_setup_theme', $n( 'theme_setup' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
+	add_action( 'wp_head', $n( 'js_detection' ), 0 );
 
 	add_filter( 'script_loader_tag', $n( 'script_loader_tag' ), 10, 2 );
 }
@@ -113,6 +114,18 @@ function styles() {
 }
 
 /**
+ * Handles JavaScript detection.
+ *
+ * Adds a `js` class to the root `<html>` element when JavaScript is detected.
+ *
+ * @return void
+ */
+function js_detection() {
+
+	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
+}
+
+/**
  * Add async/defer attributes to enqueued scripts that have the specified script_execution flag.
  *
  * @link https://core.trac.wordpress.org/ticket/12009
@@ -144,4 +157,13 @@ function script_loader_tag( $tag, $handle ) {
 	}
 
 	return $tag;
+}
+
+/**
+ * Shim for the the new wp_body_open() function that was added in 5.2
+ */
+if ( ! function_exists( 'wp_body_open' ) ) {
+	function wp_body_open() {
+		do_action( 'wp_body_open' );
+	}
 }

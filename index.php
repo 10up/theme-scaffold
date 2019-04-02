@@ -2,7 +2,7 @@
 /**
  * The main template file
  *
- * @package ThemeScaffold
+ * @package TenUpScaffold
  */
 
 get_header(); ?>
