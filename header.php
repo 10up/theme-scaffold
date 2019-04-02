@@ -13,5 +13,6 @@
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
-		<?php wp_body_open() ?>
+		<?php // PAUSE: wp_body_open() ?>
+		<?php do_action( 'after_body' ); ?>
 		<h1><?php bloginfo( 'name' ); ?></h1>
