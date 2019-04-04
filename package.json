@@ -29,7 +29,7 @@
     "test:visual-start": "pushd tests/visual/ && backstop init && rm backstop.json && popd",
     "test:visual-reference": "pushd tests/visual/ && ../../node_modules/backstopjs/cli/index.js reference --config=local-visual-test.json && popd",
     "test:visual": "pushd tests/visual/ && ../../node_modules/backstopjs/cli/index.js test --config=local-visual-test.json && popd",
-    "test:visual-approve": "pushd tests/visual/ && ../../node_modules/backstopjs/cli/index.js approve --config=local-visual-test.json && popd",
+    "test:visual-approve": "pushd tests/visual/ && ../../node_modules/backstopjs/cli/index.js approve --config=local-visual-test.json && popd"
   },
   "husky": {
     "hooks": {
@@ -51,18 +51,18 @@
   "devDependencies": {
     "@10up/eslint-config": "^1.0.9",
     "@10up/stylelint-config": "^1.0.3",
-    "@babel/core": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
     "@babel/register": "^7.0.0",
     "babel-eslint": "^9.0.0",
     "babel-loader": "^8.0.0",
     "backstopjs": "^3.2",
     "browser-sync": "^2.24.7",
-    "browserslist": "^4.1.0",
-    "caniuse-db": "^1.0.30000878",
+    "browserslist": "^4.5.4",
+    "caniuse-db": "^1.0.30000957",
     "chalk": "^2.4.1",
     "del": "^3.0.0",
-    "eslint": "^5.4.0",
+    "eslint": "^5.16.0",
     "eslint-loader": "^2.1.0",
     "gulp": "^4.0.0",
     "gulp-cssnano": "^2.1.2",
