@@ -1,0 +1,66 @@
+{
+  "id": "tenup-scaffold",
+  "viewports": [
+    {
+      "label": "x-small",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "label": "small",
+      "width": 480,
+      "height": 800
+    },
+    {
+      "label": "medium",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "label": "large",
+      "width": 960,
+      "height": 1024
+    },
+    {
+      "label": "x-large",
+      "width": 1280,
+      "height": 1024
+    }
+  ],
+  "onBeforeScript": "puppet/onBefore.js",
+  "onReadyScript": "puppet/onReady.js",
+  "scenarios": [
+    {
+      "label": "10up Scaffold Homepage",
+      "cookiePath": "backstop_data/engine_scripts/cookies.json",
+      "url": "http://tenup-scaffold.test/",
+      "referenceUrl": "",
+      "readyEvent": "",
+      "readySelector": "",
+      "delay": 0,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "hoverSelector": "",
+      "clickSelector": "",
+      "postInteractionWait": 0,
+      "selectors": [],
+      "selectorExpansion": true,
+      "misMatchThreshold" : 0.1,
+      "requireSameDimensions": true
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "backstop_data/bitmaps_reference",
+    "bitmaps_test": "backstop_data/bitmaps_test",
+    "engine_scripts": "backstop_data/engine_scripts",
+    "html_report": "backstop_data/html_report",
+    "ci_report": "backstop_data/ci_report"
+  },
+  "report": ["browser"],
+  "engine": "puppeteer",
+  "engineFlags": [],
+  "asyncCaptureLimit": 5,
+  "asyncCompareLimit": 50,
+  "debug": false,
+  "debugWindow": false
+}

@@ -78,6 +78,16 @@ Compliance levels can also be updated through the `testing.accessibility.complia
 
 The test file lives in `/tests/accessibility/compliance/pa11y.js` if any edits are needed (such as staging credentials, if you're running tests in an environment that requires authentication).
 
+### Visual Regression Testing
+
+These npm commands are sugar syntax for base backstop commands to target specific configurations. See the [default config file](https://github.com/10up/theme-scaffold/tests/visual/local-visual-test.json)
+
+`npm test:visual-reference` (set base for future tests)
+
+`npm test:visual` (run vrt against base)
+
+`npm test:visual-approve` (set latest test as new base, this doesn't check that the latest test passed, and there's no undo, so ensure the tests are all valid before approving)
+
 ## Contributing
 
 We don't know everything! We welcome pull requests and spirited, but respectful, debates. Please contribute via [pull requests on GitHub](https://github.com/10up/theme-scaffold/compare).
@@ -95,6 +105,7 @@ We don't know everything! We welcome pull requests and spirited, but respectful,
 - [Babel loader](https://www.npmjs.com/package/babel-loader)
 - [Babel preset env](https://www.npmjs.com/package/babel-preset-env)
 - [Browsersync](https://browsersync.io/)
+- [BackstopJS](https://github.com/garris/BackstopJS)
 - [Can I Use DB](https://www.npmjs.com/package/caniuse-db)
 - [Chalk](https://www.npmjs.com/package/chalk)
 - [Del](https://www.npmjs.com/package/del)

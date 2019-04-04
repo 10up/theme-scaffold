@@ -14,7 +14,7 @@
     "role": "developer"
   },
   "scripts": {
-    "start": "npm install && gulp",
+    "start": "npm install && gulp && npm run test:visual-start",
     "watch": "gulp watch --silent",
     "build": "gulp",
     "build-release": "npm install && composer install --no-dev -o && gulp",
@@ -25,7 +25,11 @@
     "format-js": "eslint --fix assets/js",
     "lint": "npm run lint-css && npm run lint-js && npm run lint-php",
     "format": "npm run format-js",
-    "test-a11y": "node tests/accessibility/compliance/pa11y.js"
+    "test:a11y": "node tests/accessibility/compliance/pa11y.js",
+    "test:visual-start": "pushd tests/visual/ && backstop init && rm backstop.json && popd",
+    "test:visual-reference": "pushd tests/visual/ && ../../node_modules/backstopjs/cli/index.js reference --config=local-visual-test.json && popd",
+    "test:visual": "pushd tests/visual/ && ../../node_modules/backstopjs/cli/index.js test --config=local-visual-test.json && popd",
+    "test:visual-approve": "pushd tests/visual/ && ../../node_modules/backstopjs/cli/index.js approve --config=local-visual-test.json && popd",
   },
   "husky": {
     "hooks": {
@@ -52,6 +56,7 @@
     "@babel/register": "^7.0.0",
     "babel-eslint": "^9.0.0",
     "babel-loader": "^8.0.0",
+    "backstopjs": "^3.2",
     "browser-sync": "^2.24.7",
     "browserslist": "^4.1.0",
     "caniuse-db": "^1.0.30000878",
