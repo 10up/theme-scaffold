@@ -49,6 +49,15 @@ module.exports = {
 	// Build rules to handle asset files.
 	module: {
 		rules: [
+			// Lint JS.
+			{
+				test: /\.js$/,
+				enforce: 'pre',
+				loader: 'eslint-loader',
+				options: {
+					fix: true
+				}
+			},
 
 			// Scripts.
 			{
