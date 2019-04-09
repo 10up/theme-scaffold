@@ -74,6 +74,7 @@
     "stylelint-config-wordpress": "^13.1.0",
     "stylelint-declaration-use-variable": "^1.7.0",
     "stylelint-order": "^1.0.0",
+    "stylelint-webpack-plugin": "^0.10.5",
     "terser": "^3.17.0",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",

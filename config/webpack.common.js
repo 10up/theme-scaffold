@@ -5,6 +5,7 @@ const CleanWebpackPlugin = require( 'clean-webpack-plugin' );
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 const FixStyleOnlyEntriesPlugin = require( 'webpack-fix-style-only-entries' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
+const StyleLintPlugin = require( 'stylelint-webpack-plugin' );
 const WebpackBar = require( 'webpackbar' );
 
 const isProduction = 'production' === process.env.NODE_ENV;
@@ -127,6 +128,12 @@ module.exports = {
 				context: path.resolve( process.cwd(), settings.paths.src.base ),
 			},
 		] ),
+
+		// Lint CSS.
+		new StyleLintPlugin( {
+			context: path.resolve( process.cwd(), settings.paths.src.css ),
+			files: '**/*.css',
+		} ),
 
 		// Fancy WebpackBar.
 		new WebpackBar(),
