@@ -52,6 +52,13 @@ The NPM commands will fail without these files present.
 - `npm run build` (build all files)
 - `npm run build-release` (build all files for release)
 - `npm run dev` (build all files for development)
+- `npm run lint-release` (install dependencies and run linting)
+- `npm run lint-css` (lint CSS)
+- `npm run lint-js` (lint JS)
+- `npm run lint-php` (lint PHP)
+- `npm run lint` (run all lints)
+- `npm run format-js` (format JS using eslint)
+- `npm run format` (alias for `npm run format-js`)
 - `npm run test-a11y` (run accessibility tests)
 
 ## Composer Commands
