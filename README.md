@@ -45,6 +45,17 @@ The NPM commands will fail without these files present.
 - `cd` into the theme folder
 - run `npm run start`
 
+## Webpack config
+
+Webpack config files can be found in `config` folder:
+
+- `webpack.dev.js`
+- `webpack.common.js`
+- `webpack.prod.js`
+- `webpack.settings.js`
+
+In most cases `webpack.settings.js` is the main file which would change from project to project. For example adding or removing entry points for JS and CSS.
+
 ## NPM Commands
 
 - `npm run start` (install dependencies)
