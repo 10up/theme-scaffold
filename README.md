@@ -16,7 +16,7 @@ At 10up, we strive to provide digital products that yield a top-notch user exper
 ### Quick Start
 Install 10up's command line tool for scaffolding new projects. You can download it from the [Project Scaffold repository](https://github.com/10up/project-scaffold). Setting up a new theme is as easy as running `create-10up theme theme-name-here` in the terminal!
 
-Browsersync requires a local development URL. This is currently set in the `package.json`, as `proxyUrl`.
+Browsersync requires a local development URL. This is currently set in the `config/webpack.settings.js`, as `BrowserSyncConfig.proxy`.
 
 ### Direct Install
 - Clone the repository
