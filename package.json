@@ -92,9 +92,6 @@
       "compliance": "WCAG2A"
     }
   },
-  "browserSync": {
-    "proxyUrl": "http://tenup-scaffold.test"
-  },
   "engineStrict": true,
   "engines": {
     "node": ">=8.11"
