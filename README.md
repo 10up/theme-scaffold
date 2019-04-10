@@ -47,7 +47,7 @@ The NPM commands will fail without these files present.
 
 ## NPM Commands
 
-`npm run start` (install dependencies and run initial gulp)
+`npm run start` (install dependencies)
 
 `npm run watch` (watch)
 
