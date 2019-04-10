@@ -47,15 +47,12 @@ The NPM commands will fail without these files present.
 
 ## NPM Commands
 
-`npm run start` (install dependencies)
-
-`npm run watch` (watch)
-
-`npm run build` (build all files)
-
-`npm run build-release` (build all files for release)
-
-`npm run test-a11y` (run accessibility tests)
+- `npm run start` (install dependencies)
+- `npm run watch` (watch)
+- `npm run build` (build all files)
+- `npm run build-release` (build all files for release)
+- `npm run dev` (build all files for development)
+- `npm run test-a11y` (run accessibility tests)
 
 ## Composer Commands
 
