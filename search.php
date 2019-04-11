@@ -10,7 +10,10 @@ get_header(); ?>
 	<section itemscope itemtype="https://schema.org/SearchResultsPage">
 		<?php if ( have_posts() ) : ?>
 			<h1>
-				<?php printf( esc_html__( 'Search Results for: %s', 'tenup' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?>
+				<?php
+				/* translators: the search query */
+				printf( esc_html__( 'Search Results for: %s', 'tenup' ), '<span>' . esc_html( get_search_query() ) . '</span>' );
+				?>
 			</h1>
 
 			<ul>
