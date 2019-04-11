@@ -19,13 +19,23 @@ get_header(); ?>
 				the_post();
 				?>
 
-				<li>
-					<h2><?php the_title(); ?></h2>
-					<?php the_excerpt(); ?>
+				<li itemscope itemtype="https://schema.org/Thing">
+					<?php
+					if ( has_post_thumbnail() ) {
+						the_post_thumbnail();
+					}
+
+					the_title( '<span itemprop="name"><a href="' . esc_url( get_permalink() ) . '" itemprop="url">', '</a></span>' );
+					?>
+					<div itemprop="description">
+						<?php the_excerpt(); ?>
+					</div>
 				</li>
 
 			<?php endwhile; ?>
 			</ul>
+
+			<?php the_posts_navigation(); ?>
 		<?php endif; ?>
 	</section>
 
