@@ -22,6 +22,7 @@ function setup() {
 	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
 	add_action( 'wp_head', $n( 'js_detection' ), 0 );
+	add_action( 'wp_footer', $n( 'svg_sprite' ) );
 
 	add_filter( 'script_loader_tag', $n( 'script_loader_tag' ), 10, 2 );
 }
@@ -157,4 +158,18 @@ function script_loader_tag( $tag, $handle ) {
 	}
 
 	return $tag;
+}
+
+/**
+ * Add SVG sprite definitions to footer.
+ */
+function svg_sprite() {
+
+	// Define SVG sprite file.
+	$svg_sprite = get_template_directory() . '/dist/svg-sprite.svg';
+
+	// If it exists, include it.
+	if ( file_exists( $svg_sprite ) ) {
+		require_once $svg_sprite;
+	}
 }
