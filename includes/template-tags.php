@@ -102,3 +102,26 @@ function svg_icon( $name = '', $opts = array(), $output = false ) {
 	}
 	return $svg_icon;
 }
+
+/**
+ * Returns the list of allowed tags in order to perform
+ * security checks while still allowing SVG elements.
+ *
+ * @return array
+ */
+function get_post_with_svg_allowed_tags() {
+	$allowed_tags        = wp_kses_allowed_html( 'post' );
+	$allowed_tags['svg'] = array(
+		'class'       => true,
+		'id'          => true,
+		'aria-hidden' => true,
+		'role'        => true,
+		'xmlns'       => true,
+		'xmlns:xlink' => true,
+		'aria-label'  => true,
+	);
+	$allowed_tags['use'] = array(
+		'xlink:href' => true,
+	);
+	return $allowed_tags;
+}
