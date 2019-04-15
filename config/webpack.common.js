@@ -6,6 +6,7 @@ const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 const FixStyleOnlyEntriesPlugin = require( 'webpack-fix-style-only-entries' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 const StyleLintPlugin = require( 'stylelint-webpack-plugin' );
+const SVGSpritemapPlugin = require( 'svg-spritemap-webpack-plugin' );
 const WebpackBar = require( 'webpackbar' );
 
 const isProduction = 'production' === process.env.NODE_ENV;
@@ -133,6 +134,16 @@ module.exports = {
 		new StyleLintPlugin( {
 			context: path.resolve( process.cwd(), settings.paths.src.css ),
 			files: '**/*.css',
+		} ),
+
+		new SVGSpritemapPlugin( [
+			'./assets/svg/*.svg'
+		], {
+			output: {
+				filename: 'svg-defs.svg',
+				svg4everybody: false,
+				svgo: true
+			}
 		} ),
 
 		// Fancy WebpackBar.
