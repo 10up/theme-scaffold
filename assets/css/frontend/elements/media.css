@@ -1,0 +1,19 @@
+svg:not([fill]) {
+	fill: currentColor;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+/* Make sure images are scaled correctly. */
+img {
+	height: auto;
+	max-width: 100%;
+
+	/* Removes the whitespace under img, safer than `display: block;`. */
+	vertical-align: middle;
+}
