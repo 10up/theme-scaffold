@@ -3,22 +3,26 @@
 // Webpack settings exports.
 module.exports = {
 	entries: {
-		// JS files.
-		'admin': './assets/js/admin/admin.js',
-		'frontend': './assets/js/frontend/frontend.js',
-		'shared': './assets/js/shared/shared.js',
-		'styleguide': './assets/js/styleguide/styleguide.js',
-
-		// CSS files.
-		'admin-style': './assets/css/admin/admin-style.css',
-		'editor-style': './assets/css/frontend/editor-style.css',
-		'shared-style': './assets/css/shared/shared-style.css',
-		'style': './assets/css/frontend/style.css',
-		'styleguide-style': './assets/css/styleguide/styleguide.css'
+		js: {
+			// JS files.
+			'admin': './assets/js/admin/admin.js',
+			'frontend': './assets/js/frontend/frontend.js',
+			'shared': './assets/js/shared/shared.js',
+			'styleguide': './assets/js/styleguide/styleguide.js',
+		},
+		css: {
+			// CSS files.
+			'admin-style': './assets/css/admin/admin-style.css',
+			'editor-style': './assets/css/frontend/editor-style.css',
+			'shared-style': './assets/css/shared/shared-style.css',
+			'style': './assets/css/frontend/style.css',
+			'styleguide-style': './assets/css/styleguide/styleguide.css'
+		}
 	},
 	filename: {
-		js: 'js/[name].js',
-		css: 'css/[name].css'
+		js: 'js/[name].mjs',
+		css: 'css/[name].css',
+		es5: 'js/[name].es5.js'
 	},
 	paths: {
 		src: {
