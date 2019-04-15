@@ -7,7 +7,7 @@ const BrowserSyncPlugin = require( 'browser-sync-webpack-plugin' );
 // Config files.
 const settings = require( './webpack.settings.js' );
 
-module.exports = merge( common, {
+const dev = {
 	mode: 'development',
 	devtool: 'inline-cheap-module-source-map',
 	plugins: [
@@ -26,4 +26,6 @@ module.exports = merge( common, {
 			}
 		),
 	],
-} );
+};
+
+module.exports = common.map( config => merge( config, dev ) );
