@@ -142,9 +142,35 @@ module.exports = {
 			'./assets/svg/*.svg'
 		], {
 			output: {
-				filename: 'svg-defs.svg',
+				filename: 'svg-sprite.svg',
 				svg4everybody: false,
-				svgo: true
+				svgo: {
+					plugins: [
+						{
+							cleanupIDs: {
+								remove: false,
+								minify: false,
+							}
+						},
+						{
+							prefixIds: {
+								delim: '-',
+								prefix: false
+							}
+						},
+						{
+							addAttributesToSVGElement: {
+								attribute: 'aria-hidden="true"'
+							}
+						},
+						{ removeRasterImages: true },
+						{
+							removeAttrs: {
+								attrs: '*:(stroke|fill):((?!^none$).)*'
+							}
+						}
+					]
+				}
 			}
 		} ),
 
