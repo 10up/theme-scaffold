@@ -23,7 +23,7 @@ function setup() {
 	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
 	add_action( 'wp_head', $n( 'js_detection' ), 0 );
 
-	add_filter( 'script_loader_tag', $n( 'script_loader_tag' ), 10, 2 );
+	add_filter( 'script_loader_tag', $n( 'script_loader_tag' ), 10, 3 );
 }
 
 /**
@@ -71,6 +71,13 @@ function scripts() {
 
 	wp_enqueue_script(
 		'frontend',
+		TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/js/frontend.mjs',
+		[],
+		TENUP_SCAFFOLD_VERSION,
+		true
+	);
+	wp_enqueue_script(
+		'frontend-es5',
 		TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/js/frontend.js',
 		[],
 		TENUP_SCAFFOLD_VERSION,
@@ -80,6 +87,13 @@ function scripts() {
 	if ( is_page_template( 'templates/page-styleguide.php' ) ) {
 		wp_enqueue_script(
 			'styleguide',
+			TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/js/styleguide.mjs',
+			[],
+			TENUP_SCAFFOLD_VERSION,
+			true
+		);
+		wp_enqueue_script(
+			'styleguide-es5',
 			TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/js/styleguide.js',
 			[],
 			TENUP_SCAFFOLD_VERSION,
@@ -131,10 +145,17 @@ function js_detection() {
  * @link https://core.trac.wordpress.org/ticket/12009
  * @param string $tag    The script tag.
  * @param string $handle The script handle.
+ * @param string $src    The script source.
  * @return string
  */
-function script_loader_tag( $tag, $handle ) {
+function script_loader_tag( $tag, $handle, $src ) {
 	$script_execution = wp_scripts()->get_data( $handle, 'script_execution' );
+
+	if ( preg_match( '/\.mjs\?ver\=/', $src ) ) {
+		$tag = preg_replace( '/text\/javascript/', 'module', $tag, 1 );
+	} else {
+		$tag = preg_replace( ':(?=></script>):', ' nomodule', $tag, 1 );
+	}
 
 	if ( ! $script_execution ) {
 		return $tag;
