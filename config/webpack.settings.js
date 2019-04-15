@@ -28,7 +28,7 @@ module.exports = {
 		},
 		dist: {
 			base: './dist/',
-			clean: ['./images', './css', './js', './svg']
+			clean: ['./images', './css', './js']
 		},
 	},
 	stats: {
