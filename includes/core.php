@@ -24,6 +24,8 @@ function setup() {
 	add_action( 'wp_head', $n( 'js_detection' ), 0 );
 
 	add_filter( 'script_loader_tag', $n( 'script_loader_tag' ), 10, 2 );
+	// Remove a bunch of unnecessary WordPress core functionality.
+	\TenUpScaffold\HeaderCleanup\remove();
 }
 
 /**
