@@ -19,7 +19,7 @@ get_header();
 	<div class="uikit__content">
 
 		<?php
-			$colors = get_colors( '/assets/css/frontend/global/variables.css' );
+			$colors = \TenUpScaffold\Template_Tags\get_colors( '/assets/css/frontend/global/variables.css' );
 
 		if ( ! empty( $colors ) ) :
 			?>
@@ -31,7 +31,7 @@ get_header();
 
 				<?php foreach ( $colors as $color ) : ?>
 
-					<li class="uikit__color" style="background: <?php echo esc_attr( $color ); ?>; border-color: <?php echo esc_attr( adjust_brightness( $color, -25 ) ); ?>">
+					<li class="uikit__color" style="background: <?php echo esc_attr( $color ); ?>; border-color: <?php echo esc_attr( \TenUpScaffold\Template_Tags\adjust_brightness( $color, -25 ) ); ?>">
 						<p class="uikit__color--label uikit__text--small"><?php echo esc_html( $color ); ?></p>
 					</li>
 

@@ -13,6 +13,8 @@
  * @package TenUpScaffold\Template_Tags
  */
 
+namespace TenUpScaffold\Template_Tags;
+
 /**
  * Extract colors from a CSS or Sass file
  *
