@@ -216,6 +216,45 @@ get_header();
 				</dl>
 			</div><!--/.content-->
 		</section><!--/.uikit__section-->
+
+		<section class="uikit__section" id="tables">
+			<h2 class="heading">Tables</h2>
+
+			<div class="content">
+				<table>
+					<caption>Egestas duis tincidunt cum</caption>
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Make</th>
+							<th>Model</th>
+							<th>Year</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>Honda</td>
+							<td>Accord</td>
+							<td>2009</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>Toyota</td>
+							<td>Camry</td>
+							<td>2012</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>Hyundai</td>
+							<td>Elantra</td>
+							<td>2010</td>
+						</tr>
+					</tbody>
+				</table>
+			</div><!--/.content-->
+		</section><!--/.uikit__section-->
+
 	</div><!--/.uikit__content-->
 
 </div><!--/.uikit__container-->
