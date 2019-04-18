@@ -17,6 +17,7 @@ function setup() {
 		return __NAMESPACE__ . "\\$function";
 	};
 
+	add_action( 'admin_init', $n( 'create_unit_test_page' ) );
 	add_action( 'after_setup_theme', $n( 'i18n' ) );
 	add_action( 'after_setup_theme', $n( 'theme_setup' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
@@ -157,4 +158,31 @@ function script_loader_tag( $tag, $handle ) {
 	}
 
 	return $tag;
+}
+
+/**
+ * Creates a page for the blocks to be rendered on.
+ */
+function create_unit_test_page() {
+
+	$title     = apply_filters( 'unit_test_title', 'Unit Test' );
+	$post_type = apply_filters( 'unit_test_post_type', 'page' );
+
+	// Do not create the post if it's already present.
+	if ( post_exists( $title ) ) {
+		return;
+	}
+
+	// Create the Unit Test page.
+	wp_insert_post(
+		array(
+			'post_title'     => $title,
+			'post_content'   => wp_kses_post( unit_test_content() ),
+			'post_status'    => 'draft',
+			'post_author'    => 1,
+			'post_type'      => $post_type,
+			'comment_status' => 'closed',
+			'page_template'  => 'templates/template-unit-test.php',
+		)
+	);
 }
