@@ -5,7 +5,7 @@
  * @package TenUpScaffold
  */
 
- use WPAcceptance\Exception\ElementNotFound as ElementNotFound;
+use WPAcceptance\Exception\ElementNotFound as ElementNotFound;
 
 /**
  * PHPUnit test class
