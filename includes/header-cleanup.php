@@ -48,14 +48,12 @@ function remove() {
  * Filter function used to remove the TinyMCE emoji plugin.
  *
  * @link https://developer.wordpress.org/reference/hooks/tiny_mce_plugins/
- * @param array $plugins TinyMCE plugins
- * @return array Difference betwen the two arrays
+ * @param array $plugins An array of default TinyMCE plugins.
+ * @return array An array of TinyMCE plugins, without wpemoji.
  */
 function disable_emojis_tinymce( $plugins ) {
-	if ( is_array( $plugins ) ) {
+	if ( is_array( $plugins ) && in_array( 'wpemoji', $plugins ) ) {
 		return array_diff( $plugins, array( 'wpemoji' ) );
-	} else {
-		return array();
 	}
 }
 
