@@ -58,7 +58,7 @@ function setup() {
  * @return array          An array of TinyMCE plugins, without wpemoji.
  */
 function disable_emojis_tinymce( $plugins ) {
-	if ( is_array( $plugins ) && in_array( 'wpemoji', $plugins ) ) {
+	if ( is_array( $plugins ) && in_array( 'wpemoji', $plugins, true ) ) {
 		return array_diff( $plugins, array( 'wpemoji' ) );
 	}
 }
