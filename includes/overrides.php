@@ -1,11 +1,11 @@
 <?php
 /**
- * Header cleanup.
+ * This file contains hooks and functions that override the behavior of WP Core.
  *
  * @package TenUpScaffold
  */
 
-namespace TenUpScaffold\HeaderCleanup;
+namespace TenUpScaffold\Overrides;
 
 /**
  * Remove likely unused functionality that WordPress core enables
