@@ -20,11 +20,9 @@ function remove() {
 	// Remove inline Emoji detection script.
 	// https://developer.wordpress.org/reference/functions/print_emoji_detection_script/
 	remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-	// Remove Emoji-related styles from front end.
+	// Remove Emoji-related styles from front end and back end.
 	// https://developer.wordpress.org/reference/functions/print_emoji_styles/
 	remove_action( 'wp_print_styles', 'print_emoji_styles' );
-	// Remove Emoji-related styles from back end.
-	// https://developer.wordpress.org/reference/functions/print_emoji_styles/
 	remove_action( 'admin_print_styles', 'print_emoji_styles' );
 	// Remove Emoji-to-static-img conversion.
 	// https://developer.wordpress.org/reference/functions/wp_staticize_emoji/
