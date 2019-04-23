@@ -1,17 +1,17 @@
 <?php
 /**
- * Custom template tags for this theme.
+ * Utility functions for the theme.
  *
- * This file is for custom template tags only and it should not contain
- * functions that will be used for filtering or adding an action.
+ * This file is for custom helper functions.
+ * These should not be confused with WordPress template
+ * tags. Template tags typically use prefixing, as opposed
+ * to Namespaces.
  *
- * All functions should be prefixed with TenUpScaffold in order to prevent
- * pollution of the global namespace and potential conflicts with functions
- * from plugins.
- * Example: `tenup_function()`
- *
- * @package TenUpScaffold\Template_Tags
+ * @link https://developer.wordpress.org/themes/basics/template-tags/
+ * @package TenUpScaffold
  */
+
+namespace TenUpScaffold\Utility;
 
 /**
  * Extract colors from a CSS or Sass file

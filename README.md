@@ -74,9 +74,10 @@ In most cases `webpack.settings.js` is the main file which would change from pro
 
 ## Composer Commands
 
-`composer lint` (lint PHP files)
-
-`composer lint-fix` (lint PHP files and automatically correct coding standard violations)
+- `composer install` (install packages)
+- `composer update` (update packages)
+- `composer lint` (lint PHP files)
+- `composer lint-fix` (lint PHP files and automatically correct coding standard violations)
 
 ## Automated Style Guide
 The Theme Scaffolding ships with a default style guide you can find in `/templates/page-styleguide.php`. This file contains all the basic HTML elements you would find at the very top of the cascade (headings, typography, tables, forms, etc.) These base elements will be styled and displayed as you naturally build out your CSS. The style guide also automatically pulls in the color variables used in the project. Any hex codes added into `/assets/css/frontend/global/variables.css` will be automatically displayed in the style guide. To set up your style guide, you just need to create a new page in WordPress and assign it the "Style Guide" template.
@@ -91,6 +92,11 @@ Automated accessibility testing in the Theme Scaffolding is done with [Pa11y](ht
 Compliance levels can also be updated through the `testing.accessibility.compliance` object in the `package.json` file. The default is WCAG Level A, but it can be updated to anything listed in the [pa11y documentation](https://github.com/pa11y/pa11y).
 
 The test file lives in `/tests/accessibility/compliance/pa11y.js` if any edits are needed (such as staging credentials, if you're running tests in an environment that requires authentication).
+
+## Automated Acceptance Testing
+Automated acceptance testing in the Theme Scaffolding leverages [WP Acceptance](https://github.com/10up/wpacceptance) and is included in the project via Composer as a dev required package. Run the command `composer update` to install the required packages. Refer to the [documentation](https://wpacceptance.readthedocs.io/en/latest/#wp-acceptance) to ensure your host machine has the necessary [requirements](https://wpacceptance.readthedocs.io/en/latest/#requirements). The Theme Scaffolding is already setup to work with WP Acceptance and a few example tests have been created to serve as examples.
+
+To run the test suite, from the root of the repository, run `./vendor/bin/wpacceptance run`. WP Acceptance will automatically run the test suite in isolated docker containers. To write your own acceptance tests, refer to the [documentation](https://wpacceptance.readthedocs.io/en/latest/#writing-tests) and [cookbook](https://wpacceptance.readthedocs.io/en/latest/cookbook/).
 
 ## Contributing
 
