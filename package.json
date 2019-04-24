@@ -53,7 +53,7 @@
     "@babel/register": "^7.0.0",
     "babel-eslint": "^9.0.0",
     "babel-loader": "^8.0.0",
-    "browser-sync": "^2.26.3",
+    "browser-sync": "^2.26.4",
     "browser-sync-webpack-plugin": "^2.2.2",
     "browserslist": "^4.1.0",
     "caniuse-db": "^1.0.30000878",
