@@ -74,10 +74,18 @@ In most cases `webpack.settings.js` is the main file which would change from pro
 
 ## Composer Commands
 
-- `composer install` (install packages)
-- `composer update` (update packages)
+- `composer install`* (install packages)
+- `composer update`* (update packages)
 - `composer lint` (lint PHP files)
 - `composer lint-fix` (lint PHP files and automatically correct coding standard violations)
+
+_* If your host machine local version of PHP is <7.2, composer may produce the following error message:_
+```
+ Problem 1
+    - Installation request for 10up/wpacceptance dev-master -> satisfiable by 10up/wpacceptance[dev-master].
+    - 10up/wpacceptance dev-master requires php >=7.2 -> your PHP version (7.1.23) does not satisfy that requirement
+```
+_To suppress this error, add the flag `--ignore-platform-reqs` (ie. `composer install --ignore-platform-reqs`)._
 
 ## Automated Style Guide
 The Theme Scaffolding ships with a default style guide you can find in `/templates/page-styleguide.php`. This file contains all the basic HTML elements you would find at the very top of the cascade (headings, typography, tables, forms, etc.) These base elements will be styled and displayed as you naturally build out your CSS. The style guide also automatically pulls in the color variables used in the project. Any hex codes added into `/assets/css/frontend/global/variables.css` will be automatically displayed in the style guide. To set up your style guide, you just need to create a new page in WordPress and assign it the "Style Guide" template.
