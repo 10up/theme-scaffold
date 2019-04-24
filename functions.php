@@ -12,7 +12,7 @@ define( 'TENUP_SCAFFOLD_PATH', get_template_directory() . '/' );
 define( 'TENUP_SCAFFOLD_INC', TENUP_SCAFFOLD_PATH . 'includes/' );
 
 require_once TENUP_SCAFFOLD_INC . 'core.php';
-require_once TENUP_SCAFFOLD_INC . 'template-tags.php';
+require_once TENUP_SCAFFOLD_INC . 'utility.php';
 
 // Run the setup functions.
 TenUpScaffold\Core\setup();
