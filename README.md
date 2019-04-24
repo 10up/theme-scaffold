@@ -79,7 +79,7 @@ In most cases `webpack.settings.js` is the main file which would change from pro
 - `composer lint` (lint PHP files)
 - `composer lint-fix` (lint PHP files and automatically correct coding standard violations)
 
-_* If your host machine local version of PHP is <7.2, composer may produce the following error message:_
+_* If your host machine's local version of PHP is <7.2, composer may produce the following error message:_
 ```
  Problem 1
     - Installation request for 10up/wpacceptance dev-master -> satisfiable by 10up/wpacceptance[dev-master].
@@ -102,7 +102,7 @@ Compliance levels can also be updated through the `testing.accessibility.complia
 The test file lives in `/tests/accessibility/compliance/pa11y.js` if any edits are needed (such as staging credentials, if you're running tests in an environment that requires authentication).
 
 ## Automated Acceptance Testing
-Automated acceptance testing in the Theme Scaffolding leverages [WP Acceptance](https://github.com/10up/wpacceptance) and is included in the project via Composer as a dev required package. Run the command `composer update` to install the required packages. Refer to the [documentation](https://wpacceptance.readthedocs.io/en/latest/#wp-acceptance) to ensure your host machine has the necessary [requirements](https://wpacceptance.readthedocs.io/en/latest/#requirements). The Theme Scaffolding is already setup to work with WP Acceptance and a few example tests have been created to serve as examples.
+Automated acceptance testing in the Theme Scaffolding leverages [WP Acceptance](https://github.com/10up/wpacceptance) and is included in the project via Composer as a dev required package. Run the command `composer update` (see [Composer Commands](https://github.com/10up/theme-scaffold/tree/feature/docs-composer#composer-commands) above) to install the required packages. Refer to the [documentation](https://wpacceptance.readthedocs.io/en/latest/#wp-acceptance) to ensure your host machine has the necessary [requirements](https://wpacceptance.readthedocs.io/en/latest/#requirements). The Theme Scaffolding is already setup to work with WP Acceptance and a few example tests have been created to serve as examples.
 
 To run the test suite, from the root of the repository, run `./vendor/bin/wpacceptance run`. WP Acceptance will automatically run the test suite in isolated docker containers. To write your own acceptance tests, refer to the [documentation](https://wpacceptance.readthedocs.io/en/latest/#writing-tests) and [cookbook](https://wpacceptance.readthedocs.io/en/latest/cookbook/).
 
