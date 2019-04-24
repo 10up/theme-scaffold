@@ -79,7 +79,7 @@ In most cases `webpack.settings.js` is the main file which would change from pro
 - `composer lint` (lint PHP files)
 - `composer lint-fix` (lint PHP files and automatically correct coding standard violations)
 
-_* If your host machine's local version of PHP is <7.2, composer may produce the following error message:_
+_* If your host machine's local version of PHP is <7.2, composer may produce the following, or similar, error message:_
 ```
  Problem 1
     - Installation request for 10up/wpacceptance dev-master -> satisfiable by 10up/wpacceptance[dev-master].
