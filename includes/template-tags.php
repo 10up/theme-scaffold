@@ -12,5 +12,3 @@
  *
  * @package ThemeScaffold\Template_Tags
  */
-
-tenup_function();
