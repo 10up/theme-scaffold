@@ -28,9 +28,9 @@
     "format": "npm run format-js",
     "test:a11y": "node tests/accessibility/compliance/pa11y.js",
     "test:visual-start": "pushd tests/visual/ && backstop init && rm backstop.json && popd",
-    "test:visual-reference": "pushd tests/visual/ && ../../node_modules/backstopjs/cli/index.js reference --config=local-visual-test.json && popd",
-    "test:visual": "pushd tests/visual/ && ../../node_modules/backstopjs/cli/index.js test --config=local-visual-test.json && popd",
-    "test:visual-approve": "pushd tests/visual/ && ../../node_modules/backstopjs/cli/index.js approve --config=local-visual-test.json && popd"
+    "test:visual-reference": "pushd tests/visual/ && ../../node_modules/backstopjs/cli/index.js reference --config=index.js && popd",
+    "test:visual": "pushd tests/visual/ && ../../node_modules/backstopjs/cli/index.js test --config=index.js && popd",
+    "test:visual-approve": "pushd tests/visual/ && ../../node_modules/backstopjs/cli/index.js approve --config=index.js && popd"
   },
   "husky": {
     "hooks": {
