@@ -222,30 +222,36 @@ get_header();
 					<caption>Egestas duis tincidunt cum</caption>
 					<thead>
 						<tr>
-							<th>#</th>
-							<th>Make</th>
-							<th>Model</th>
-							<th>Year</th>
+							<td scope="col">ID</td>
+							<th scope="col">Item</th>
+							<th scope="col">Purchase Date</th>
+							<th scope="col">Price</th>
 						</tr>
 					</thead>
+					<tfoot>
+						<tr>
+							<th scope="row" colspan="3">Sum</th>
+							<td>$15.55</td>
+						</tr>
+					</tfoot>
 					<tbody>
 						<tr>
-							<td>1</td>
-							<td>Honda</td>
-							<td>Accord</td>
-							<td>2009</td>
+							<th scope="row">1</th>
+							<td>Stick of gum</td>
+							<td>02/13/15</td>
+							<td>$0.19</td>
 						</tr>
 						<tr>
-							<td>2</td>
-							<td>Toyota</td>
-							<td>Camry</td>
-							<td>2012</td>
+							<th scope="row">2</th>
+							<td>Toothbrush</td>
+							<td>11/03/14</td>
+							<td>$2.37</td>
 						</tr>
 						<tr>
-							<td>3</td>
-							<td>Hyundai</td>
-							<td>Elantra</td>
-							<td>2010</td>
+							<th scope="row">3</th>
+							<td>Umbrella</td>
+							<td>05/12/17</td>
+							<td>$12.99</td>
 						</tr>
 					</tbody>
 				</table>
