@@ -5,6 +5,11 @@
  * @package TenUpScaffold
  */
 
+namespace TenUpScaffold\Utility;
+
+use function TenUpScaffold\Utility\adjust_brightness;
+use function TenUpScaffold\Utility\get_colors;
+
 get_header();
 ?>
 
