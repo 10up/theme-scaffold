@@ -142,7 +142,7 @@ module.exports = {
 			settings.SVGSpritemapConfig.input
 		], {
 			output: {
-				filename: 'svg-sprite.svg',
+				filename: 'svg/svg-sprite.svg',
 				svg4everybody: false,
 				svgo: {
 					plugins: [
