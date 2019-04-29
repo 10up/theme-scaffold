@@ -69,4 +69,7 @@ module.exports = {
 	manifestConfig: {
 		basePath: ''
 	},
+	SVGSpritemapConfig: {
+		input: './assets/svg/*.svg'
+	}
 };

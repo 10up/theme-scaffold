@@ -139,7 +139,7 @@ module.exports = {
 		} ),
 
 		new SVGSpritemapPlugin( [
-			'./assets/svg/*.svg'
+			settings.SVGSpritemapConfig.input
 		], {
 			output: {
 				filename: 'svg-sprite.svg',
