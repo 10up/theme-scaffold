@@ -166,7 +166,7 @@ function script_loader_tag( $tag, $handle ) {
 function svg_sprite() {
 
 	// Define SVG sprite file.
-	$svg_sprite = get_template_directory() . '/dist/svg-sprite.svg';
+	$svg_sprite = get_template_directory() . '/dist/svg/svg-sprite.svg';
 
 	// If it exists, include it.
 	if ( file_exists( $svg_sprite ) ) {
