@@ -10,10 +10,13 @@
  *
  * Example:
  * tenupscaffold_svg_icon(
- *     'instagram',
- *     array(
- *         'role' => 'img'
- *     )
+ *     'instagram', array(
+ *         'role'   => 'img',
+ *         'class'  => 'tenup-icon instagram-icon',
+ *         'label'  => 'Follow 10up on Instagram',
+ *         'hidden' => 'true',
+ *     ),
+ *     true,
  * );
  *
  * @param  string  $name   The SVG Name.
