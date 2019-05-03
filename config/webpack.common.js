@@ -173,7 +173,7 @@ module.exports = {
 				}
 			},
 			sprite: {
-				prefix: false
+				prefix: 'icon-'
 			}
 		} ),
 
