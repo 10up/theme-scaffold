@@ -11,4 +11,7 @@
  * Example: `tenup_function()`
  *
  * @package ThemeScaffold\Template_Tags
+ *
  */
+
+// phpcs:ignoreFile

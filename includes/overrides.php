@@ -46,7 +46,6 @@ function setup() {
 	// Remove the link to Really Simple Discovery service endpoint.
 	remove_action( 'wp_head', 'rsd_link' );
 
-
 }
 
 /**
