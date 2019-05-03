@@ -13,6 +13,10 @@
 /* Base - base styles such as fonts, typography, and wordpress overrides */
 @import url("base/index.css");
 
+* {
+	border: 1px solid var(--c-black);
+}
+
 /* Layout - styles specific to layout */
 
 /* @import url("layout/index.css"); */

@@ -94,7 +94,7 @@
       "production": ""
     },
     "accessibility": {
-      "compliance": "WCAG2A"
+      "compliance": "WCAG2AA"
     }
   },
   "engineStrict": true,
