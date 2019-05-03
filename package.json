@@ -89,9 +89,9 @@
   },
   "testing": {
     "urls": {
-      "local": "http://tenup-scaffold.test",
-      "staging": "",
-      "production": ""
+      "homepage": "http://tenup-scaffold.test",
+      "article": "http://tenup-scaffold.test/hello-world",
+      "search-results": "http://tenup-scaffold.test/?s=hello"
     },
     "accessibility": {
       "compliance": "WCAG2AA"
