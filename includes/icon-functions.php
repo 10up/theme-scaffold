@@ -65,6 +65,7 @@ function tenupscaffold_svg_icon( $args = array() ) {
 	$aria_labelledby = '';
 	$aria_role       = ( $args['role'] ) ? ' role="' . $args['role'] . '"' : '';
 
+	// If we have a title and description then let's assign appropriate Aria.
 	if ( $args['title'] && $args['desc'] ) {
 		$aria_labelledby = ' aria-labelledby="' . $block_title_id . ' ' . $desc_id . '"';
 		$aria_hidden     = '';
