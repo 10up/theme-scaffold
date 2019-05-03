@@ -6,7 +6,7 @@
  */
 
 /**
- * An svg template helper with robust array of options.
+ * An SVG template helper with robust array of options.
  *
  * Example:
  * tenupscaffold_svg_icon(
