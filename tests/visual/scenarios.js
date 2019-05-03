@@ -2,6 +2,10 @@
 
 'use strict';
 
+/*
+* Automatically builds BackstopJS scenarios from the testing.urls object in package.json.
+* Add custom BackstopJS scenario options in ./custom-scenarios.js.
+*/
 const chalk = require( 'chalk' );
 const packageJson = require( '../../package.json' );
 const testingUrls = packageJson.testing.urls;

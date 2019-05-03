@@ -2,6 +2,9 @@
 
 'use strict';
 
+/*
+* An array of viewports to test.
+*/
 const viewPorts = [
 	{
 		label: 'x-small',

@@ -103,7 +103,7 @@ The test file lives in `/tests/accessibility/compliance/pa11y.js` if any edits a
 
 ### Visual Regression Testing
 
-These npm commands are sugar syntax for base backstop commands to target specific configurations. See the [default config file](https://github.com/10up/theme-scaffold/tests/visual/local-visual-test.json)
+These npm commands are sugar syntax for base backstop commands to target specific configurations. See the [default config file](https://github.com/10up/theme-scaffold/tests/visual/index.js)
 
 `npm test:visual-reference` (set base for future tests)
 
