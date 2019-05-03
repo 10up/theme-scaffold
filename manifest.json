@@ -1,0 +1,27 @@
+{
+  "name": "10up Scaffold",
+  "short_name": "10up Scaffold",
+  "description": "Project description for 10up Scaffold",
+  "display": "standalone",
+  "start_url": "/?utm_source=app",
+  "background_color": "#232323",
+  "orientation": "any",
+  "theme_color": "#d23226",
+  "icons": [
+    {
+      "src": "dist/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "dist/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "dist/icons/icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    }
+  ]
+}

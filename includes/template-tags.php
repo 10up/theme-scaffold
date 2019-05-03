@@ -10,6 +10,8 @@
  * from plugins.
  * Example: `tenup_function()`
  *
- * @package TenUpScaffold
+ * @package ThemeScaffold\Template_Tags
+ *
  */
 
+// phpcs:ignoreFile
