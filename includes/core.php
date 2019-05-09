@@ -2,7 +2,7 @@
 /**
  * Core setup, site hooks and filters.
  *
- * @package ThemeScaffold\Core
+ * @package TenUpScaffold\Core
  */
 
 namespace TenUpScaffold\Core;
@@ -21,6 +21,8 @@ function setup() {
 	add_action( 'after_setup_theme', $n( 'theme_setup' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
+	add_action( 'wp_head', $n( 'js_detection' ), 0 );
+	add_action( 'wp_head', $n( 'add_manifest' ), 10 );
 
 	add_filter( 'script_loader_tag', $n( 'script_loader_tag' ), 10, 2 );
 }
@@ -70,7 +72,7 @@ function scripts() {
 
 	wp_enqueue_script(
 		'frontend',
-		TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/js/frontend.min.js',
+		TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/js/frontend.js',
 		[],
 		TENUP_SCAFFOLD_VERSION,
 		true
@@ -79,7 +81,7 @@ function scripts() {
 	if ( is_page_template( 'templates/page-styleguide.php' ) ) {
 		wp_enqueue_script(
 			'styleguide',
-			TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/js/styleguide.min.js',
+			TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/js/styleguide.js',
 			[],
 			TENUP_SCAFFOLD_VERSION,
 			true
@@ -97,7 +99,7 @@ function styles() {
 
 	wp_enqueue_style(
 		'styles',
-		TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/css/style.min.css',
+		TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/css/style.css',
 		[],
 		TENUP_SCAFFOLD_VERSION
 	);
@@ -105,11 +107,23 @@ function styles() {
 	if ( is_page_template( 'templates/page-styleguide.php' ) ) {
 		wp_enqueue_style(
 			'styleguide',
-			TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/css/styleguide.min.css',
+			TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/css/styleguide-style.css',
 			[],
 			TENUP_SCAFFOLD_VERSION
 		);
 	}
+}
+
+/**
+ * Handles JavaScript detection.
+ *
+ * Adds a `js` class to the root `<html>` element when JavaScript is detected.
+ *
+ * @return void
+ */
+function js_detection() {
+
+	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
 }
 
 /**
@@ -128,7 +142,7 @@ function script_loader_tag( $tag, $handle ) {
 	}
 
 	if ( 'async' !== $script_execution && 'defer' !== $script_execution ) {
-		return $tag; // _doing_it_wrong()?
+		return $tag;
 	}
 
 	// Abort adding async/defer for scripts that have this script as a dependency. _doing_it_wrong()?
@@ -144,4 +158,13 @@ function script_loader_tag( $tag, $handle ) {
 	}
 
 	return $tag;
+}
+
+/**
+ * Appends a link tag used to add a manifest.json to the head
+ *
+ * @return void
+ */
+function add_manifest() {
+	echo "<link rel='manifest' href='" . esc_attr( TENUP_SCAFFOLD_TEMPLATE_URL . '/manifest.json' ) . "' />";
 }

@@ -2,16 +2,17 @@
 /**
  * The template for displaying the header.
  *
- * @package ThemeScaffold
+ * @package TenUpScaffold
  */
 
 ?>
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> class="no-js">
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#d23226" />
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
-		<?php do_action( 'after_body' ); ?>
+		<?php wp_body_open(); ?>
 		<h1><?php bloginfo( 'name' ); ?></h1>

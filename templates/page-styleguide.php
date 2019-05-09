@@ -2,8 +2,13 @@
 /**
  * Template Name: Style Guide
  *
- * @package ThemeScaffold
+ * @package TenUpScaffold
  */
+
+namespace TenUpScaffold\Utility;
+
+use function TenUpScaffold\Utility\adjust_brightness;
+use function TenUpScaffold\Utility\get_colors;
 
 get_header();
 ?>
@@ -179,6 +184,78 @@ get_header();
 
 			</div><!--/.content-->
 
+		</section><!--/.uikit__section-->
+
+		<section class="uikit__section" id="lists">
+			<h2 class="heading">Lists</h2>
+
+			<div class="content">
+				<ul>
+					<li>Morbi natoque habitasse</li>
+					<li>Magnis ullamcorper risus taciti
+						<ul>
+							<li>Justo metus turpis habitant nisl</li>
+							<li>Platea primis semper</li>
+						</ul>
+					</li>
+					<li>Nibh id natoque elementum</li>
+				</ul>
+
+				<ol>
+					<li>Morbi natoque habitasse</li>
+					<li>Magnis ullamcorper risus taciti
+						<ol>
+							<li>Justo metus turpis habitant nisl</li>
+							<li>Platea primis semper</li>
+						</ol>
+					</li>
+					<li>Nibh id natoque elementum</li>
+				</ol>
+			</div><!--/.content-->
+		</section><!--/.uikit__section-->
+
+		<section class="uikit__section" id="tables">
+			<h2 class="heading">Tables</h2>
+
+			<div class="content">
+				<table>
+					<caption>Egestas duis tincidunt cum</caption>
+					<thead>
+						<tr>
+							<td scope="col">ID</td>
+							<th scope="col">Item</th>
+							<th scope="col">Purchase Date</th>
+							<th scope="col">Price</th>
+						</tr>
+					</thead>
+					<tfoot>
+						<tr>
+							<th scope="row" colspan="3">Sum</th>
+							<td>$15.55</td>
+						</tr>
+					</tfoot>
+					<tbody>
+						<tr>
+							<th scope="row">1</th>
+							<td>Stick of gum</td>
+							<td>02/13/15</td>
+							<td>$0.19</td>
+						</tr>
+						<tr>
+							<th scope="row">2</th>
+							<td>Toothbrush</td>
+							<td>11/03/14</td>
+							<td>$2.37</td>
+						</tr>
+						<tr>
+							<th scope="row">3</th>
+							<td>Umbrella</td>
+							<td>05/12/17</td>
+							<td>$12.99</td>
+						</tr>
+					</tbody>
+				</table>
+			</div><!--/.content-->
 		</section><!--/.uikit__section-->
 
 	</div><!--/.uikit__content-->

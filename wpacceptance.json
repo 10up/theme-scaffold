@@ -1,0 +1,17 @@
+{
+  "name": "tenup-scaffold",
+  "exclude": [
+    "node_modules"
+  ],
+  "tests": [
+      "./tests/wpa/*.php"
+  ],
+  "enforce_clean_db": false,
+  "project_path": "%WP_ROOT%/wp-content/themes/tenup-scaffold",
+  "environment_instructions": [
+    [
+      "install wordpress where url is http://tenup-scaffold.test",
+      "enable theme where name is tenup-scaffold"
+    ]
+  ]
+}
