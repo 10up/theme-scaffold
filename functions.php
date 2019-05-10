@@ -15,10 +15,11 @@ require_once TENUP_SCAFFOLD_INC . 'core.php';
 require_once TENUP_SCAFFOLD_INC . 'overrides.php';
 require_once TENUP_SCAFFOLD_INC . 'template-tags.php';
 require_once TENUP_SCAFFOLD_INC . 'utility.php';
+require_once TENUP_SCAFFOLD_INC . 'blocks.php';
 
 // Run the setup functions.
 TenUpScaffold\Core\setup();
-TenUpScaffold\Overrides\setup();
+TenUpScaffold\Blocks\setup();
 
 // Require Composer autoloader if it exists.
 if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {

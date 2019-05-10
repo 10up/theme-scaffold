@@ -1,3 +1,13 @@
 {
-  "extends": "@10up/eslint-config"
+  "extends": "@10up/eslint-config",
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error"
+  },
+  "globals": {
+    "wp": true,
+  }
 }
