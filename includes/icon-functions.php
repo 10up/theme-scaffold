@@ -153,6 +153,7 @@ function tenupscaffold_get_post_with_svg_allowed_tags() {
 		'aria-hidden'     => true,
 		'aria-label'      => true,
 		'aria-labelledby' => true,
+		'aria-role'       => true,
 		'fill'            => true,
 		'class'           => true,
 		'height'          => true,
