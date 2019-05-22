@@ -61,20 +61,20 @@ function tenupscaffold_svg_icon( $args = array() ) {
 	$desc_id        = 'desc-' . sanitize_title( $block_title ) . '-' . $random_number;
 
 	// Set ARIA.
-	$aria_hidden     = ' aria-hidden="true"';
+	$aria_hidden     = 'true';
 	$aria_labelledby = '';
-	$aria_role       = ( $args['role'] ) ? ' role="' . $args['role'] . '"' : '';
+	$aria_role       = ( $args['role'] ) ? $args['role'] : false;
 
 	// If we have a title and description then let's assign appropriate Aria.
 	if ( $args['title'] && $args['desc'] ) {
-		$aria_labelledby = ' aria-labelledby="' . $block_title_id . ' ' . $desc_id . '"';
+		$aria_labelledby = ' aria-labelledby=' . $block_title_id . ' ' . $desc_id;
 		$aria_hidden     = '';
 	}
 
 	// Set SVG parameters.
-	$fill   = ( $args['fill'] ) ? ' fill="' . $args['fill'] . '"' : '';
-	$height = ( $args['height'] ) ? ' height="' . $args['height'] . '"' : '';
-	$width  = ( $args['width'] ) ? ' width="' . $args['width'] . '"' : '';
+	$fill   = ( $args['fill'] ) ? $args['fill'] : false;
+	$height = ( $args['height'] ) ? $args['height'] : false;
+	$width  = ( $args['width'] ) ? $args['width'] : false;
 
 	$allowed_tags = tenupscaffold_get_post_with_svg_allowed_tags();
 
@@ -82,17 +82,26 @@ function tenupscaffold_svg_icon( $args = array() ) {
 	ob_start();
 	?>
 
-	<svg
+	<svg class="icon icon-<?php echo esc_attr( $args['icon'] ); ?>"
 	<?php
-		echo $fill; // WPCS XSS OK.
-		echo $height; // WPCS XSS OK.
-		echo $width; // WPCS XSS OK.
-	?>
-		class="icon icon-<?php echo esc_attr( $args['icon'] ); ?>"
-	<?php
-		echo $aria_hidden; // WPCS XSS OK.
-		echo $aria_labelledby; // WPCS XSS OK.
-		echo $aria_role; // WPCS XSS OK.
+	if ( $fill ) {
+		echo ' fill="' . esc_attr( $fill ) . '" ';
+	}
+	if ( $height ) {
+		echo ' height="' . esc_attr( $height ) . '" ';
+	}
+	if ( $width ) {
+		echo ' width="' . esc_attr( $width ) . '" ';
+	}
+	if ( $aria_hidden ) {
+		echo ' aria-hidden="' . esc_attr( $aria_hidden ) . '" ';
+	}
+	if ( $aria_labelledby ) {
+		echo esc_attr( $aria_labelledby );
+	}
+	if ( $aria_role ) {
+		echo ' aria-role="' . esc_attr( $aria_role ) . '" ';
+	}
 	?>
 	>
 		<title id="<?php echo esc_attr( $block_title_id ); ?>">
