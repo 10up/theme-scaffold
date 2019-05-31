@@ -105,11 +105,13 @@ The test file lives in `/tests/accessibility/compliance/pa11y.js` if any edits a
 
 These npm commands are sugar syntax for base backstop commands to target specific configurations. See the [default config file](https://github.com/10up/theme-scaffold/tests/visual/index.js)
 
-`npm test:visual-reference` (set base for future tests)
+`npm run test:visual-init` (initializes BackstopJS and adds required files)
 
-`npm test:visual` (run vrt against base)
+`npm run test:visual-reference` (set base for future tests)
 
-`npm test:visual-approve` (set latest test as new base, this doesn't check that the latest test passed, and there's no undo, so ensure the tests are all valid before approving)
+`npm run test:visual` (run vrt against base)
+
+`npm run test:visual-approve` (set latest test as new base, this doesn't check that the latest test passed, and there's no undo, so ensure the tests are all valid before approving)
 
 ## Automated Acceptance Testing
 Automated acceptance testing in the Theme Scaffolding leverages [WP Acceptance](https://github.com/10up/wpacceptance) and is included in the project via Composer as a dev required package. Run the command `composer update` (see [Composer Commands](https://github.com/10up/theme-scaffold/tree/feature/docs-composer#composer-commands) above) to install the required packages. Refer to the [documentation](https://wpacceptance.readthedocs.io/en/latest/#wp-acceptance) to ensure your host machine has the necessary [requirements](https://wpacceptance.readthedocs.io/en/latest/#requirements). The Theme Scaffolding is already setup to work with WP Acceptance and a few example tests have been created to serve as examples.
