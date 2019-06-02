@@ -95,23 +95,40 @@ If you need to update the core styles that power the style guide they are locate
 As your site grows you can add components to the style guide by updating `/templates/page-styleguide.php` as you see fit. All the JS and CSS for the site will already be included in the template, so everything should just work.
 
 ## Automated Accessibility Testing
-Automated accessibility testing in the Theme Scaffolding is done with [Pa11y](https://www.npmjs.com/package/pa11y) and is executed with the command `npm run test-a11y`. You can find any configuration options inside your `package.json` file inside the `testing` object. You will see default URL options (local, staging, production), but you can add as many as you'd like. The default script runs over the `local` URL and any others will run with an argument like `npm run test-a11y production`, over a production URL. You can also add more template URLs for testing like `npm run a11y-test article-template`. Be sure to check with your systems person on a project to make sure accessibility tests are also hooked up through the deploy process.
+Automated accessibility testing in the Theme Scaffolding is done with [Pa11y](https://www.npmjs.com/package/pa11y) and is executed with the command `npm run test-a11y`. You can find any configuration options inside your `package.json` file inside the `testing` object. You will see default URL options (homepage, article, search-results), but you can add as many as you'd like. The default script runs over the `local` URL and any others will run with an argument like `npm run test-a11y production`, over a production URL. You can also add more template URLs for testing like `npm run a11y-test article-template`. Be sure to check with your systems person on a project to make sure accessibility tests are also hooked up through the deploy process.
 
 Compliance levels can also be updated through the `testing.accessibility.compliance` object in the `package.json` file. The default is WCAG Level A, but it can be updated to anything listed in the [pa11y documentation](https://github.com/pa11y/pa11y).
 
 The test file lives in `/tests/accessibility/compliance/pa11y.js` if any edits are needed (such as staging credentials, if you're running tests in an environment that requires authentication).
 
-### Visual Regression Testing
+## Visual Regression Testing
+We use [BackstopJS](https://github.com/garris/BackstopJS) to run our visual regression tests. BackstopJS requires just a few settings to work: a `scenarios` array that tells it which URL's to screenshot, a `viewports` array that tells it what breakpoints to use, and a `config` object for global settings. 
 
-These npm commands are sugar syntax for base backstop commands to target specific configurations. See the [default config file](https://github.com/10up/theme-scaffold/tests/visual/index.js)
+Begin by setting which URL's you'd like to test in the `testing.urls` object in `package.json`. You will see some default URL's (homepage, article, search-results), but you can add as many as you'd like. These URL's are read by `tests/visual/scenarios.js` to automatically produce the `scenarios` array that BackstopJS will use to take screenshots. 
 
-`npm run test:visual-init` (initializes BackstopJS and adds required files)
+You can also create custom scenarios in `tests/visual/custom-scenarios.js`. Custom scenarios allow us to add specific options for specific URL's, for situations like hovering over an element to screenshot its hover state, or clicking a modal button and waiting for the modal to become visible.
 
-`npm run test:visual-reference` (set base for future tests)
+To create a custom scenario, simply set the `urlName` property to match the property name in the `testing.urls` object, and then create an `options` object with your desired settings. A couple examples are provided in `tests/visual/custom-scenarios.js` and you can see a list of all available options in the [advanced scenarios](https://github.com/garris/BackstopJS#advanced-scenarios) section on GitHub.
 
-`npm run test:visual` (run vrt against base)
+BackstopJS can take screenshots at various screen widths, so make sure to match the breakpoints in `tests/visual/viewports.js` with those in your theme.
 
-`npm run test:visual-approve` (set latest test as new base, this doesn't check that the latest test passed, and there's no undo, so ensure the tests are all valid before approving)
+Though generally not necessary, you can customize the BackstopJS configuration by changing the settings in `tests/visual/config.js`.
+
+To begin running BackstopJS visual regression tests, initialize its required files. This only needs to be done once on your local machine:
+
+`npm run test:visual-init`
+
+Then create a set of screenshots that will become the base reference images to run future tests against:
+
+`npm run test:visual-reference`
+
+After you've made changes and want to test for visual regressions:
+
+`npm run test:visual`
+
+Finally, if the new screenshots fail but contain desired changes, approve them for use as the new base reference images:
+
+`npm run test:visual-approve`
 
 ## Automated Acceptance Testing
 Automated acceptance testing in the Theme Scaffolding leverages [WP Acceptance](https://github.com/10up/wpacceptance) and is included in the project via Composer as a dev required package. Run the command `composer update` (see [Composer Commands](https://github.com/10up/theme-scaffold/tree/feature/docs-composer#composer-commands) above) to install the required packages. Refer to the [documentation](https://wpacceptance.readthedocs.io/en/latest/#wp-acceptance) to ensure your host machine has the necessary [requirements](https://wpacceptance.readthedocs.io/en/latest/#requirements). The Theme Scaffolding is already setup to work with WP Acceptance and a few example tests have been created to serve as examples.

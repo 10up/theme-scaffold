@@ -10,17 +10,17 @@
 const customScenarios = [
 	/*
 	{
-		urlName: 'local',
+		urlName: 'homepage',
 		options: {
 			label: 'Custom Local Label',
-			readySelector: '.some-selector',
+			hoverSelector: '.some-selector',
 			delay: 2000
 		}
 	},
 	{
-		urlName: 'staging',
+		urlName: 'article',
 		options: {
-			hoverSelector: '.some-selector',
+			clickSelector: '.some-selector',
 			postInteractionWait: '.new-selector'
 		}
 	}

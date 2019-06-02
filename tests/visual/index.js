@@ -4,6 +4,6 @@
 
 const viewports = require( './viewports' );
 const scenarios = require( './scenarios' );
-const config = require( './config' );
+const config    = require( './config' );
 
 module.exports = config( viewports, scenarios );
