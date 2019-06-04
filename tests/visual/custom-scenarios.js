@@ -4,6 +4,7 @@
 
 /**
  * Add custom BackstopJS scenario options. 'urlName' must match the testing.urls name in package.json.
+ * Options available at https://github.com/garris/BackstopJS#advanced-scenarios
  *
  * @type {Array}
  */
@@ -12,15 +13,15 @@ const customScenarios = [
 	{
 		urlName: 'homepage',
 		options: {
-			label: 'Custom Local Label',
-			hoverSelector: '.some-selector',
-			delay: 2000
+			readySelector: '.some-element',
+			hoverSelector: '.some-button',
+			postInteractionWait: 1000
 		}
 	},
 	{
 		urlName: 'article',
 		options: {
-			clickSelector: '.some-selector',
+			clickSelector: '.some-button',
 			postInteractionWait: '.new-selector'
 		}
 	}
