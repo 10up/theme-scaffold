@@ -26,7 +26,11 @@
     "format-js": "eslint --fix assets/js",
     "lint": "npm run lint-css && npm run lint-js && npm run lint-php",
     "format": "npm run format-js",
-    "test-a11y": "node tests/accessibility/compliance/pa11y.js"
+    "test:a11y": "node tests/accessibility/compliance/pa11y.js",
+    "test:visual-init": "pushd tests/visual/ && backstop init && rm backstop.json && popd",
+    "test:visual-reference": "pushd tests/visual/ && ../../node_modules/backstopjs/cli/index.js reference --config=index.js && popd",
+    "test:visual": "pushd tests/visual/ && ../../node_modules/backstopjs/cli/index.js test --config=index.js && popd",
+    "test:visual-approve": "pushd tests/visual/ && ../../node_modules/backstopjs/cli/index.js approve --config=index.js && popd"
   },
   "husky": {
     "hooks": {
@@ -48,14 +52,15 @@
   "devDependencies": {
     "@10up/eslint-config": "^1.0.9",
     "@10up/stylelint-config": "^1.0.3",
-    "@babel/core": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.0.0",
     "@wordpress/babel-preset-default": "^4.1.0",
     "babel-eslint": "^9.0.0",
     "babel-loader": "^8.0.0",
-    "browser-sync": "^2.26.4",
+    "backstopjs": "^3.2",
+    "browser-sync": "^2.26.3",
     "browser-sync-webpack-plugin": "^2.2.2",
     "browserslist": "^4.1.0",
     "caniuse-db": "^1.0.30000878",
@@ -87,12 +92,12 @@
   },
   "testing": {
     "urls": {
-      "local": "http://tenup-scaffold.test",
-      "staging": "",
-      "production": ""
+      "homepage": "http://tenup-scaffold.test",
+      "article": "http://tenup-scaffold.test/hello-world",
+      "search-results": "http://tenup-scaffold.test/?s=hello"
     },
     "accessibility": {
-      "compliance": "WCAG2A"
+      "compliance": "WCAG2AA"
     }
   },
   "engineStrict": true,
