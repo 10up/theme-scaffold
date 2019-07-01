@@ -22,6 +22,7 @@ function setup() {
 	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
 	add_action( 'wp_head', $n( 'js_detection' ), 0 );
+	add_action( 'wp_head', $n( 'add_manifest' ), 10 );
 
 	add_filter( 'script_loader_tag', $n( 'script_loader_tag' ), 10, 2 );
 }
@@ -71,7 +72,7 @@ function scripts() {
 
 	wp_enqueue_script(
 		'frontend',
-		TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/js/frontend.min.js',
+		TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/js/frontend.js',
 		[],
 		TENUP_SCAFFOLD_VERSION,
 		true
@@ -80,7 +81,7 @@ function scripts() {
 	if ( is_page_template( 'templates/page-styleguide.php' ) ) {
 		wp_enqueue_script(
 			'styleguide',
-			TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/js/styleguide.min.js',
+			TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/js/styleguide.js',
 			[],
 			TENUP_SCAFFOLD_VERSION,
 			true
@@ -98,7 +99,7 @@ function styles() {
 
 	wp_enqueue_style(
 		'styles',
-		TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/css/style.min.css',
+		TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/css/style.css',
 		[],
 		TENUP_SCAFFOLD_VERSION
 	);
@@ -106,7 +107,7 @@ function styles() {
 	if ( is_page_template( 'templates/page-styleguide.php' ) ) {
 		wp_enqueue_style(
 			'styleguide',
-			TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/css/styleguide.min.css',
+			TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/css/styleguide-style.css',
 			[],
 			TENUP_SCAFFOLD_VERSION
 		);
@@ -141,7 +142,7 @@ function script_loader_tag( $tag, $handle ) {
 	}
 
 	if ( 'async' !== $script_execution && 'defer' !== $script_execution ) {
-		return $tag; // _doing_it_wrong()?
+		return $tag;
 	}
 
 	// Abort adding async/defer for scripts that have this script as a dependency. _doing_it_wrong()?
@@ -160,10 +161,10 @@ function script_loader_tag( $tag, $handle ) {
 }
 
 /**
- * Shim for the the new wp_body_open() function that was added in 5.2
+ * Appends a link tag used to add a manifest.json to the head
+ *
+ * @return void
  */
-if ( ! function_exists( 'wp_body_open' ) ) {
-	function wp_body_open() {
-		do_action( 'wp_body_open' );
-	}
+function add_manifest() {
+	echo "<link rel='manifest' href='" . esc_attr( TENUP_SCAFFOLD_TEMPLATE_URL . '/manifest.json' ) . "' />";
 }

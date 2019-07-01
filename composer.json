@@ -15,8 +15,10 @@
       "TenUpScaffold\\": "includes/classes/"
     }
   },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "require-dev": {
-    "10up/wp_mock": "dev-dev",
+    "10up/wpacceptance": "dev-master",
     "10up/phpcs-composer": "dev-master"
   },
   "scripts": {
