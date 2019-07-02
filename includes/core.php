@@ -166,5 +166,5 @@ function script_loader_tag( $tag, $handle ) {
  * @return void
  */
 function add_manifest() {
-	echo "<link rel='manifest' href='" . esc_attr( TENUP_SCAFFOLD_TEMPLATE_URL . '/manifest.json' ) . "' />";
+	echo "<link rel='manifest' href='" . esc_url( TENUP_SCAFFOLD_TEMPLATE_URL . '/manifest.json' ) . "' />";
 }
