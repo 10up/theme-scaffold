@@ -69,7 +69,7 @@ In most cases `webpack.settings.js` is the main file which would change from pro
 - `npm run lint` (run all lints)
 - `npm run format-js` (format JS using eslint)
 - `npm run format` (alias for `npm run format-js`)
-- `npm run test-a11y` (run accessibility tests)
+- `npm run test:a11y` (run accessibility tests)
 
 ## Composer Commands
 
