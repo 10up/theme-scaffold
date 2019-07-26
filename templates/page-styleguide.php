@@ -24,7 +24,7 @@ get_header();
 	<div class="uikit__content">
 
 		<?php
-			$colors = get_colors( '/assets/css/frontend/global/variables.css' );
+			$colors = get_colors( '/assets/css/frontend/global/colors.css' );
 
 		if ( ! empty( $colors ) ) :
 			?>
