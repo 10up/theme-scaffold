@@ -2,7 +2,7 @@
 
 > At 10up, we strive to provide digital products that yield a top-notch user experience. In order to improve both our efficiency and consistency, we need to standardize what we use and how we use it. This theme scaffold allows us to share initial set up procedures to make sure all projects can get up and running as quickly as possible while closely adhering to 10up's high quality standards.
 
-[![Support Level](https://img.shields.io/badge/support-active-green.svg)](#support-level)
+[![Support Level](https://img.shields.io/badge/support-active-green.svg)](#support-level) [![MIT License](https://img.shields.io/github/license/10up/theme-scaffold.svg)](https://github.com/10up/theme-scaffold/blob/master/LICENSE.md)
 
 ## Dependencies
 
