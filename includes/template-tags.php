@@ -16,23 +16,17 @@
 namespace TenUpScaffold\TemplateTags;
 
 /**
- * Wrapper function for easy icon access
- *
- * @param string $name the name of the icon
- */
-function icon( $name ) {
-	return wp_kses( get_icon( $name ), get_svg_atts() );
-}
-
-/**
  * Go get the SVG icon directly
  *
- * @param string $name the name of the icon
+ * @param string $file_name the file name of the icon
+ * @param string $label the name of the icon
  */
-function get_icon( $name ) {
-	ob_start();
-	include TENUP_SCAFFOLD_PATH . 'dist/svg/' . $name . '.svg';
-	return ob_get_clean();
+function get_icon( $file_name, $label ) {
+	// ob_start();
+	// include TENUP_SCAFFOLD_PATH . 'dist/svg/' . $name . '.svg';
+	$svg = file_get_contents( TENUP_SCAFFOLD_PATH . 'dist/svg/' . $file_name . '.svg' );
+	return $svg;
+	// return ob_get_clean();
 }
 
 /**

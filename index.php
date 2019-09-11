@@ -21,7 +21,7 @@ get_header(); ?>
 	*/
 
 	?>
-	<?php echo wp_kses( get_icon( 'home' ), get_svg_atts() ); ?>
+	<?php echo wp_kses( get_icon( 'home', 'home icon' ), get_svg_atts() ); ?>
 
 	<?php if ( have_posts() ) : ?>
 		<?php while ( have_posts() ) : the_post(); ?>
