@@ -5,7 +5,23 @@
  * @package TenUpScaffold
  */
 
+ namespace TenUpScaffold\TemplateTags;
+
+ use function TenUpScaffold\TemplateTags\icon;
+ use function TenUpScaffold\TemplateTags\get_icon;
+ use function TenUpScaffold\TemplateTags\get_svg_atts;
+
 get_header(); ?>
+
+	<?php
+
+	/*
+		Commenting this out
+		echo icon( 'home' );
+	*/
+
+	?>
+	<?php echo wp_kses( get_icon( 'home' ), get_svg_atts() ); ?>
 
 	<?php if ( have_posts() ) : ?>
 		<?php while ( have_posts() ) : the_post(); ?>

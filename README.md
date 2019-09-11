@@ -101,9 +101,9 @@ Compliance levels can also be updated through the `testing.accessibility.complia
 The test file lives in `/tests/accessibility/compliance/pa11y.js` if any edits are needed (such as staging credentials, if you're running tests in an environment that requires authentication).
 
 ## Visual Regression Testing
-We use [BackstopJS](https://github.com/garris/BackstopJS) to run our visual regression tests. BackstopJS requires just a few settings to work: a `scenarios` array that tells it which URL's to screenshot, a `viewports` array that tells it what breakpoints to use, and a `config` object for global settings. 
+We use [BackstopJS](https://github.com/garris/BackstopJS) to run our visual regression tests. BackstopJS requires just a few settings to work: a `scenarios` array that tells it which URL's to screenshot, a `viewports` array that tells it what breakpoints to use, and a `config` object for global settings.
 
-Begin by setting which URL's you'd like to test in the `testing.urls` object in `package.json`. You will see some default URL's (homepage, article, search-results), but you can add as many as you'd like. These URL's are read by `tests/visual/scenarios.js` to automatically produce the `scenarios` array that BackstopJS will use to take screenshots. 
+Begin by setting which URL's you'd like to test in the `testing.urls` object in `package.json`. You will see some default URL's (homepage, article, search-results), but you can add as many as you'd like. These URL's are read by `tests/visual/scenarios.js` to automatically produce the `scenarios` array that BackstopJS will use to take screenshots.
 
 You can also create custom scenarios in `tests/visual/custom-scenarios.js`. Custom scenarios allow us to add specific options for specific URL's, for situations like hovering over an element to screenshot its hover state, or clicking a modal button and waiting for the modal to become visible.
 
@@ -133,6 +133,21 @@ Finally, if the new screenshots fail but contain desired changes, approve them f
 Automated acceptance testing in the Theme Scaffolding leverages [WP Acceptance](https://github.com/10up/wpacceptance) and is included in the project via Composer as a dev required package. Run the command `composer update` (see [Composer Commands](https://github.com/10up/theme-scaffold/tree/feature/docs-composer#composer-commands) above) to install the required packages. Refer to the [documentation](https://wpacceptance.readthedocs.io/en/latest/#wp-acceptance) to ensure your host machine has the necessary [requirements](https://wpacceptance.readthedocs.io/en/latest/#requirements). The Theme Scaffolding is already setup to work with WP Acceptance and a few example tests have been created to serve as examples.
 
 To run the test suite, from the root of the repository, run `./vendor/bin/wpacceptance run`. WP Acceptance will automatically run the test suite in isolated docker containers. To write your own acceptance tests, refer to the [documentation](https://wpacceptance.readthedocs.io/en/latest/#writing-tests) and [cookbook](https://wpacceptance.readthedocs.io/en/latest/cookbook/).
+
+## Iconography
+We have two ways to include icons in the theme, the first on is good for a simple
+function call:
+```
+use function TenUpScaffold\TemplateTags\icon;
+echo icon('home');
+```
+
+The second version has later escaping and is better for a VIP project:
+```
+use function TenUpScaffold\TemplateTags\get_icon;
+use function TenUpScaffold\TemplateTags\get_svg_atts;
+echo wp_kses( get_icon( 'home' ), get_svg_atts() );
+```
 
 ## Contributing
 
