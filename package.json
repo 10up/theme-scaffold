@@ -97,7 +97,8 @@
     "urls": {
       "homepage": "http://tenup-scaffold.test",
       "article": "http://tenup-scaffold.test/hello-world",
-      "search-results": "http://tenup-scaffold.test/?s=hello"
+      "search-results": "http://tenup-scaffold.test/?s=hello",
+      "local": "http://tenup-scaffold.test"
     },
     "accessibility": {
       "compliance": "WCAG2AA"
@@ -105,7 +106,7 @@
   },
   "engineStrict": true,
   "engines": {
-    "node": ">=8.11"
+    "node": ">=8.13"
   },
   "dependencies": {
     "normalize.css": "^8.0.1"
