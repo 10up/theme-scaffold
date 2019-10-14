@@ -9,17 +9,17 @@
   "theme_color": "#d23226",
   "icons": [
     {
-      "src": "dist/icons/icon-512.png",
+      "src": "dist/images/icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
-      "src": "dist/icons/icon-192.png",
+      "src": "dist/images/icon-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "dist/icons/icon-128.png",
+      "src": "dist/images/icon-128.png",
       "sizes": "128x128",
       "type": "image/png"
     }
