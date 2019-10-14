@@ -104,7 +104,6 @@
       "compliance": "WCAG2AA"
     }
   },
-  "engineStrict": true,
   "engines": {
     "node": ">=8.13"
   },
