@@ -40,6 +40,7 @@ module.exports = {
 	// External objects.
 	externals: {
 		jquery: 'jQuery',
+		lodash: 'lodash',
 	},
 
 	// Performance settings.
