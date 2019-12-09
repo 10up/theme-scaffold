@@ -26,11 +26,7 @@
     "format-js": "eslint --fix assets/js",
     "lint": "npm run lint-css && npm run lint-js && npm run lint-php",
     "format": "npm run format-js",
-    "test:a11y": "node tests/accessibility/compliance/pa11y.js",
-    "test:visual-init": "pushd tests/visual/ && backstop init && rm backstop.json && popd",
-    "test:visual-reference": "pushd tests/visual/ && ../../node_modules/backstopjs/cli/index.js reference --config=index.js && popd",
-    "test:visual": "pushd tests/visual/ && ../../node_modules/backstopjs/cli/index.js test --config=index.js && popd",
-    "test:visual-approve": "pushd tests/visual/ && ../../node_modules/backstopjs/cli/index.js approve --config=index.js && popd"
+    "test:a11y": "node tests/accessibility/compliance/pa11y.js"
   },
   "husky": {
     "hooks": {
@@ -60,7 +56,6 @@
     "@wordpress/element": "^2.5.0",
     "babel-eslint": "^9.0.0",
     "babel-loader": "^8.0.0",
-    "backstopjs": "^3.2",
     "browser-sync": "^2.26.3",
     "browser-sync-webpack-plugin": "^2.2.2",
     "browserslist": "^4.1.0",
