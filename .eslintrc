@@ -8,6 +8,7 @@
     "react/jsx-uses-vars": "error"
   },
   "globals": {
-    "wp": true
+    "wp": true,
+    "lodash": true
   }
 }

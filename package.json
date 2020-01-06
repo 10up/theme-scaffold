@@ -26,11 +26,7 @@
     "format-js": "eslint --fix assets/js",
     "lint": "npm run lint-css && npm run lint-js && npm run lint-php",
     "format": "npm run format-js",
-    "test:a11y": "node tests/accessibility/compliance/pa11y.js",
-    "test:visual-init": "pushd tests/visual/ && backstop init && rm backstop.json && popd",
-    "test:visual-reference": "pushd tests/visual/ && ../../node_modules/backstopjs/cli/index.js reference --config=index.js && popd",
-    "test:visual": "pushd tests/visual/ && ../../node_modules/backstopjs/cli/index.js test --config=index.js && popd",
-    "test:visual-approve": "pushd tests/visual/ && ../../node_modules/backstopjs/cli/index.js approve --config=index.js && popd"
+    "test:a11y": "node tests/accessibility/compliance/pa11y.js"
   },
   "husky": {
     "hooks": {
@@ -79,6 +75,7 @@
     "pa11y": "^5.3.0",
     "postcss-editor-styles": "^0.3.0",
     "postcss-import": "^12.0.1",
+    "imagemin-webpack-plugin": "^2.4.2",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.7.0",
     "stylelint": "^9.10.1",
