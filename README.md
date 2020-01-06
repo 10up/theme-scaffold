@@ -6,7 +6,7 @@
 
 ## Dependencies
 
-1. [Node & NPM](https://www.npmjs.com/get-npm) - Build packages and 3rd party dependencies are managed through NPM, so you will need that installed globally.
+1. [Node@^8.11.0 & NPM](https://www.npmjs.com/get-npm) - Build packages and 3rd party dependencies are managed through NPM, so you will need that installed globally.
 2. [Webpack](https://webpack.js.org/) - Webpack is used to process the JavaScript, CSS, and other assets.
 3. [Composer](https://getcomposer.org/) - Composer is used to manage PHP.
 
