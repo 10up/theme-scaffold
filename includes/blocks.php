@@ -57,7 +57,7 @@ function blocks_editor_scripts() {
 
 	wp_enqueue_style(
 		'editor-style',
-		TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/css/editor-style.min.css',
+		TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/css/editor-style.css',
 		[],
 		TENUP_SCAFFOLD_VERSION
 	);

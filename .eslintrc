@@ -9,5 +9,6 @@
   },
   "globals": {
     "wp": true,
+    "lodash": true
   }
 }
