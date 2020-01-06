@@ -51,6 +51,9 @@ module.exports = {
 		from: '**/*.{jpg,jpeg,png,gif,svg,eot,ttf,woff,woff2}',
 		to: '[path][name].[ext]'
 	},
+	ImageminPlugin: {
+		test: /\.(jpe?g|png|gif|svg)$/i,
+	},
 	BrowserSyncConfig: {
 		host: 'localhost',
 		port: 3000,

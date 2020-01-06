@@ -101,9 +101,9 @@ Compliance levels can also be updated through the `testing.accessibility.complia
 The test file lives in `/tests/accessibility/compliance/pa11y.js` if any edits are needed (such as staging credentials, if you're running tests in an environment that requires authentication).
 
 ## Visual Regression Testing
-We use [BackstopJS](https://github.com/garris/BackstopJS) to run our visual regression tests. BackstopJS requires just a few settings to work: a `scenarios` array that tells it which URL's to screenshot, a `viewports` array that tells it what breakpoints to use, and a `config` object for global settings. 
+We use [BackstopJS](https://github.com/garris/BackstopJS) to run our visual regression tests. BackstopJS requires just a few settings to work: a `scenarios` array that tells it which URL's to screenshot, a `viewports` array that tells it what breakpoints to use, and a `config` object for global settings.
 
-Begin by setting which URL's you'd like to test in the `testing.urls` object in `package.json`. You will see some default URL's (homepage, article, search-results), but you can add as many as you'd like. These URL's are read by `tests/visual/scenarios.js` to automatically produce the `scenarios` array that BackstopJS will use to take screenshots. 
+Begin by setting which URL's you'd like to test in the `testing.urls` object in `package.json`. You will see some default URL's (homepage, article, search-results), but you can add as many as you'd like. These URL's are read by `tests/visual/scenarios.js` to automatically produce the `scenarios` array that BackstopJS will use to take screenshots.
 
 You can also create custom scenarios in `tests/visual/custom-scenarios.js`. Custom scenarios allow us to add specific options for specific URL's, for situations like hovering over an element to screenshot its hover state, or clicking a modal button and waiting for the modal to become visible.
 
@@ -163,6 +163,7 @@ We don't know everything! We welcome pull requests and spirited, but respectful,
 - [Eslint](https://www.npmjs.com/package/eslint)
 - [Eslint loader](https://www.npmjs.com/package/eslint-loader)
 - [Husky@next](https://www.npmjs.com/package/husky)
+- [Imagemin plugin for Webpack](https://github.com/Klathmon/imagemin-webpack-plugin)
 - [Lint Staged](https://www.npmjs.com/package/lint-staged)
 - [Mini CSS extract plugin](https://www.npmjs.com/package/mini-css-extract-plugin)
 - [Pa11y](https://www.npmjs.com/package/pa11y)

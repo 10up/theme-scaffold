@@ -7,6 +7,7 @@ const FixStyleOnlyEntriesPlugin = require( 'webpack-fix-style-only-entries' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 const StyleLintPlugin = require( 'stylelint-webpack-plugin' );
 const WebpackBar = require( 'webpackbar' );
+const ImageminPlugin = require( 'imagemin-webpack-plugin' ).default;
 
 const isProduction = 'production' === process.env.NODE_ENV;
 
@@ -134,6 +135,13 @@ module.exports = {
 				context: path.resolve( process.cwd(), settings.paths.src.base ),
 			},
 		] ),
+
+		// Compress images
+		// Must happen after CopyWebpackPlugin
+		new ImageminPlugin( {
+			disable: ! isProduction,
+			test: settings.ImageminPlugin.test
+		} ),
 
 		// Lint CSS.
 		new StyleLintPlugin( {
