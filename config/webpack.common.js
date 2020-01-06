@@ -63,7 +63,7 @@ module.exports = {
 			// Scripts.
 			{
 				test: /\.js$/,
-				exclude: /node_modules/,
+				exclude: /node_modules(?!\/@10up)/,
 				use: [
 					{
 						loader: 'babel-loader',
