@@ -2,7 +2,7 @@
 /**
  * Gutenberg Blocks setup
  *
- * @package ThemeScaffold\Core
+ * @package TenUpScaffold\Core
  */
 
 namespace TenUpScaffold\Blocks;
