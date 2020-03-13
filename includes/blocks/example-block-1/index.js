@@ -13,12 +13,12 @@ const { TextControl } = wp.components;
 export default registerBlockType(
 	'tenup/example-block',
 	{
-		title: __( 'My first block', 'tenup' ),
-		description: __( 'My first block description', 'tenup' ),
+		title: __( 'My first block', 'tenup-scaffold' ),
+		description: __( 'My first block description', 'tenup-scaffold' ),
 		icon: 'smiley',
-		category: 'tenup-blocks',
+		category: 'tenup-scaffold-blocks',
 		keywords: [
-			__( 'example', 'tenup' ),
+			__( 'example', 'tenup-scaffold' ),
 		],
 		attributes: {
 			customTitle: {
@@ -43,7 +43,7 @@ export default registerBlockType(
 					<div className={ className }>
 						<TextControl
 							id="example-block-text-field"
-							label={ __( 'Custom Title', 'tenup' ) }
+							label={ __( 'Custom Title', 'tenup-scaffold' ) }
 							value={ customTitle }
 							onChange={ customTitle => setAttributes( { customTitle } ) }
 						/>

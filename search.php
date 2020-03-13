@@ -12,7 +12,7 @@ get_header(); ?>
 			<h1>
 				<?php
 				/* translators: the search query */
-				printf( esc_html__( 'Search Results for: %s', 'tenup' ), '<span>' . esc_html( get_search_query() ) . '</span>' );
+				printf( esc_html__( 'Search Results for: %s', 'tenup-scaffold' ), '<span>' . esc_html( get_search_query() ) . '</span>' );
 				?>
 			</h1>
 
