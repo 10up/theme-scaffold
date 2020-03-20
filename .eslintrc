@@ -11,6 +11,7 @@
 	"module": true,
 	"process": true,
 	"wp": true,
-	"lodash": true
+	"lodash": true,
+	"require": true
   }
 }
