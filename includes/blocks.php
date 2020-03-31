@@ -2,7 +2,7 @@
 /**
  * Gutenberg Blocks setup
  *
- * @package ThemeScaffold\Core
+ * @package TenUpScaffold\Core
  */
 
 namespace TenUpScaffold\Blocks;
@@ -81,8 +81,8 @@ function blocks_categories( $categories, $post ) {
 		$categories,
 		array(
 			array(
-				'slug'  => 'tenup-blocks',
-				'title' => __( 'Custom Blocks', 'tenup' ),
+				'slug'  => 'tenup-scaffold-blocks',
+				'title' => __( 'Custom Blocks', 'tenup-scaffold' ),
 			),
 		)
 	);

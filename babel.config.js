@@ -1,7 +1,7 @@
 /**
  * Babel Config, .babelrc equivalent.
  *
- * @package TenUpThemeScaffold
+ * @package TenUpScaffold
  *
  * @type {{presets: [[]|String|Object]}}
  */
