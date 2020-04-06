@@ -8,9 +8,10 @@
     "react/jsx-uses-vars": "error"
   },
   "globals": {
-	"module": true,
-	"process": true,
-	"wp": true,
-	"lodash": true
+    "module": true,
+    "process": true,
+    "wp": true,
+    "lodash": true,
+    "require": true
   }
 }

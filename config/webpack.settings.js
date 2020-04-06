@@ -1,5 +1,3 @@
-/* global module */
-
 // Webpack settings exports.
 module.exports = {
 	entries: {
