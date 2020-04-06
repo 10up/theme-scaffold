@@ -3,7 +3,7 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const common = require('./webpack.config.common.js');
 
 // Config files.
-const settings = require('./webpack.config.settings.js');
+const settings = require('./webpack.settings.js');
 
 module.exports = merge(common, {
 	mode: 'development',
