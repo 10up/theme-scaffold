@@ -1,26 +1,16 @@
 /**
  * Babel Config, .babelrc equivalent.
  *
- * @package TenUpScaffold
- *
- * @type {{presets: [[]|String|Object]}}
+ * @package
+ * @type {{presets: [[]|string|Object]}}
  */
 module.exports = {
-	'presets': [
+	presets: [
 		[
-			/**
-			 * @link https://babeljs.io/docs/en/babel-preset-env#corejs
-			 */
-			'@babel/preset-env',
+			'@10up/babel-preset-default',
 			{
-				useBuiltIns: 'usage',
-				corejs: {
-					version: 3,
-					proposals: true
-				},
-			}
+				wordpress: true,
+			},
 		],
-		'@babel/preset-react',
-		'@wordpress/default'
 	],
 };
