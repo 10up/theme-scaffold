@@ -32,6 +32,13 @@ module.exports = {
 	output: {
 		path: path.resolve(process.cwd(), settings.paths.dist.base),
 		filename: settings.filename.js,
+		/**
+		 * If multiple webpack runtimes (from different compilations) are used on the same webpage,
+		 * there is a risk of conflicts of on-demand chunks in the global namespace.
+		 *
+		 * @see (@link https://webpack.js.org/configuration/output/#outputjsonpfunction)
+		 */
+		jsonpFunction: '__TenUpScaffold_webpackJsonp',
 	},
 
 	// Console stats output.
