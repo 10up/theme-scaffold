@@ -23,8 +23,10 @@ function setup() {
 	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
 	add_action( 'wp_head', $n( 'js_detection' ), 0 );
 	add_action( 'wp_head', $n( 'add_manifest' ), 10 );
+	add_action( 'wp_head', $n( 'js_disabled_stylesheets' ) );
 
 	add_filter( 'script_loader_tag', $n( 'script_loader_tag' ), 10, 2 );
+	add_filter( 'style_loader_tag', $n( 'style_loader_tag' ), 10, 2 );
 }
 
 /**
@@ -158,6 +160,72 @@ function script_loader_tag( $tag, $handle ) {
 	}
 
 	return $tag;
+}
+
+/**
+ * Asynchronous stylesheet definitions
+ *
+ * Determines which stylesheets should behave
+ * asynchronously on the page by storing their
+ * unique handles in an array.
+ *
+ * @return array
+ */
+function get_known_handles() {
+	return array( 'styles', 'styleguide', 'wp-block-library' );
+}
+
+/**
+ * Add async/defer attributes to enqueued scripts that have the specified script_execution flag.
+ *
+ * @link https://developer.wordpress.org/reference/hooks/style_loader_tag/
+ * @param string $html   The style html output.
+ * @param string $handle The style handle.
+ * @return string
+ */
+function style_loader_tag( $html, $handle ) {
+
+	// Get previously defined stylesheets.
+	$known_handles = get_known_handles();
+
+	// Loop over stylesheets and replace media attribute
+	foreach ( $known_handles as $known_style ) {
+		if ( $known_style === $handle ) {
+			$html = str_replace( "media='all'", "media='print' onload=\"this.media='all'\"", $html );
+		}
+	}
+
+	return $html;
+}
+
+/**
+ * Asynchronous CSS Fallback
+ *
+ * If JavaScript is disabled, this function ensures
+ * that the CSS for the page still loads as expected.
+ *
+ * @link https://developer.wordpress.org/reference/functions/wp_styles/
+ * @return void
+ */
+function js_disabled_stylesheets() {
+
+	// Grab our known stylesheet handles
+	$known_handles = get_known_handles();
+
+	$html = '<noscript id="async-css-fallback">';
+
+	// Loop over all enqueued stylesheets on the page.
+	foreach ( wp_styles()->queue as $style ) {
+
+		// If we the current queue contains our known stylesheet handles append them.
+		if ( in_array( $style, $known_handles, true ) ) {
+			$html .= "<link rel='stylesheet' href='" . esc_url( wp_styles()->registered[ $style ]->src ) . "' media='all' />" . PHP_EOL; // phpcs:ignore
+		}
+	}
+
+	$html .= '</noscript>';
+
+	echo $html; // phpcs:ignore
 }
 
 /**
