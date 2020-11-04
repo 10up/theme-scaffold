@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * @module UIKitSection
  *
@@ -9,38 +7,39 @@
  *
  */
 export default class UIKitSection {
-
 	/**
 	 * Initialize everything
 	 *
-	 * @returns {null}
+	 * @param {Element[]} elements Section Heading elements.
 	 */
-	constructor() {
-
+	constructor(elements) {
 		// Grab all the UI kit section headings
-		this.sectionHeadings = document.querySelectorAll( '.uikit__section h2.heading' );
+		this.sectionHeadings = elements;
+	}
 
+	/**
+	 * Inits UI Kit Section
+	 */
+	init() {
 		// Stop if there's no section heading
-		if ( ! this.sectionHeadings  ) {
+		if (!this.sectionHeadings) {
 			console.error( 'Styleguide: No sections detected.'  ); // eslint-disable-line
 			return;
 		}
 
-		this.sectionHeadings.forEach( ( sectionHeading ) => {
-			this.setupCollapsible( sectionHeading );
-		} );
+		this.sectionHeadings.forEach((sectionHeading) => {
+			this.setupCollapsible(sectionHeading);
+		});
 	}
 
 	/**
 	 * Create a button, add chevron SVG and inject in heading
 	 * Hide section content, set ARIA attributes
 	 *
-	 * @param   {element} sectionHeading The UI Kit section heading
+	 * @param   {Element} sectionHeading The UI Kit section heading
 	 *
-	 * @returns {null}
 	 */
-	setupCollapsible( sectionHeading ) {
-
+	setupCollapsible(sectionHeading) {
 		// Get section ID
 		const sectionID = sectionHeading.parentNode.id;
 
@@ -48,56 +47,55 @@ export default class UIKitSection {
 		let expanded = true;
 
 		// Check localStorage to see if we want to expand some sections by default
-		if ( localStorage ) {
-
+		if (localStorage) {
 			// Override expanded state
-			expanded = 'true' !== localStorage.getItem( `section-${ sectionID }` ) || false;
+			expanded = localStorage.getItem(`section-${sectionID}`) !== 'true' || false;
 		}
 
 		// Build the button, add the SVG chevron icons
+		// eslint-disable-next-line no-param-reassign
 		sectionHeading.innerHTML = `
-			<button class="toggle" aria-expanded="${ !expanded }" id="toggle-${ sectionID }">
-				<span>${ sectionHeading.textContent }</span>
+			<button class="toggle" aria-expanded="${!expanded}" id="toggle-${sectionID}">
+				<span>${sectionHeading.textContent}</span>
 				<svg aria-hidden="true" focusable="false" class="uikit__chevron-up" width="12" height="7" xmlns="http://www.w3.org/2000/svg" viewBox="3.3 4.5 11.4 7" role="img"><polygon points="9,4.5 3.3,10.1 4.8,11.5 9,7.3 13.2,11.5 14.7,10.1 "></polygon></svg>
 				<svg aria-hidden="true" focusable="false" class="uikit__chevron-down" width="12" height="7" xmlns="http://www.w3.org/2000/svg" viewBox="3.3 6.5 11.4 7" role="img"><polygon points="9,13.5 14.7,7.9 13.2,6.5 9,10.7 4.8,6.5 3.3,7.9 "></polygon></svg>
 			</button>
 		`;
 
 		// Get the section content and hide it
-		const wrapper = sectionHeading.parentNode.querySelector( '.content' );
+		const wrapper = sectionHeading.parentNode.querySelector('.content');
 		wrapper.hidden = expanded;
-		wrapper.setAttribute( 'aria-hidden', expanded );
-		wrapper.setAttribute( 'aria-labelledby', `toggle-${ sectionID }` );
+		wrapper.setAttribute('aria-hidden', expanded);
+		wrapper.setAttribute('aria-labelledby', `toggle-${sectionID}`);
 
 		// Assign click event to the button
-		const button = sectionHeading.querySelector( 'button' );
-		button.onclick = ( e ) => this.toggleCollapsible( e, wrapper, button );
+		const button = sectionHeading.querySelector('button');
+		button.onclick = (e) => this.toggleCollapsible(e, wrapper, button);
 	}
 
 	/**
 	 * Toggles a section
 	 *
 	 * @param   {Object} e        The click event
-	 * @param   {element} wrapper The UI Kit section content
-	 * @param   {element} button  The UI Kit section toggle button
+	 * @param   {Element} wrapper The UI Kit section content
+	 * @param   {Element} button  The UI Kit section toggle button
 	 *
-	 * @returns {null}
 	 */
-	toggleCollapsible( e, wrapper, button ) {
-
+	toggleCollapsible(e, wrapper, button) {
 		// Expanded state as bool
-		const expanded = 'true' === button.getAttribute( 'aria-expanded' ) || false;
+		const expanded = button.getAttribute('aria-expanded') === 'true' || false;
 
 		// Toggle expanded state and visibility
-		button.setAttribute( 'aria-expanded', !expanded );
+		button.setAttribute('aria-expanded', !expanded);
+		// eslint-disable-next-line no-param-reassign
 		wrapper.hidden = expanded;
-		wrapper.setAttribute( 'aria-hidden', expanded );
+		wrapper.setAttribute('aria-hidden', expanded);
 
 		// Store expanded state in localStorage
 		const sectionID = wrapper.parentNode.id;
 
-		if ( localStorage ) {
-			localStorage.setItem( `section-${ sectionID }`, !expanded );
+		if (localStorage) {
+			localStorage.setItem(`section-${sectionID}`, !expanded);
 		}
 	}
 }

@@ -58,7 +58,7 @@ function theme_setup() {
 	// This theme uses wp_nav_menu() in three locations.
 	register_nav_menus(
 		array(
-			'primary' => esc_html__( 'Primary Menu', 'tenup' ),
+			'primary' => esc_html__( 'Primary Menu', 'tenup-scaffold' ),
 		)
 	);
 }
@@ -166,5 +166,5 @@ function script_loader_tag( $tag, $handle ) {
  * @return void
  */
 function add_manifest() {
-	echo "<link rel='manifest' href='" . esc_attr( TENUP_SCAFFOLD_TEMPLATE_URL . '/manifest.json' ) . "' />";
+	echo "<link rel='manifest' href='" . esc_url( TENUP_SCAFFOLD_TEMPLATE_URL . '/manifest.json' ) . "' />";
 }
