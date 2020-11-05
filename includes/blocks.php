@@ -7,6 +7,8 @@
 
 namespace TenUpScaffold\Blocks;
 
+use TenUpScaffold\Blocks\Example;
+
 /**
  * Set up blocks
  *
@@ -21,6 +23,32 @@ function setup() {
 	add_action( 'enqueue_block_editor_assets', $n( 'blocks_editor_scripts' ) );
 
 	add_filter( 'block_categories', $n( 'blocks_categories' ), 10, 2 );
+
+	// Require custom blocks.
+	require_once TENUP_SCAFFOLD_BLOCK_DIR . '/example-block/register.php';
+
+	// Filter the plugins URL to allow us to have blocks in themes with linked assets. i.e editorScripts
+	add_filter( 'plugins_url', $n( 'filter_plugins_url' ) );
+
+	// Call block register functions.
+	Example\register();
+
+	// Remove the filter after we register the blocks
+	remove_filter( 'plugins_url', $n( 'filter_plugins_url' ) );
+
+}
+/**
+ * Filter the plugins_url to allow us to use assets from theme.
+ *
+ * @param string $url  The plugins url
+ * @param string $path The path to the asset.
+ *
+ * @return string The overridden url to the block asset.
+ */
+function filter_plugins_url( $url, $path ) {
+	$file = preg_replace( '/\.\.\//', '', $path );
+	$url  = trailingslashit( get_stylesheet_directory_uri() ) . $file;
+	return $url;
 }
 
 /**
