@@ -2,7 +2,7 @@
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
-import { TextControl } from '@wordpress/components';
+import { RichText } from '@wordpress/block-editor';
 
 /**
  * Internal dependencies
@@ -21,22 +21,18 @@ const ExampleBockEdit = (props) => {
 		attributes: { customTitle },
 		className,
 		setAttributes,
-		isSelected,
 	} = props;
 
-	if (isSelected) {
-		return (
-			<div className={className}>
-				<TextControl
-					id="example-block-text-field"
-					label={__('Custom Title')}
-					value={customTitle}
-					onChange={(title) => setAttributes({ customTitle: title })}
-				/>
-			</div>
-		);
-	}
-	return <h2 className="example-block-title">{customTitle}</h2>;
+	return (
+		<div className={className}>
+			<RichText
+				tagName="h2"
+				placeholder={__('Custom Title')}
+				value={customTitle}
+				onChange={(title) => setAttributes({ customTitle: title })}
+			/>
+		</div>
+	);
 };
 // Set the propTypes
 ExampleBockEdit.propTypes = {
