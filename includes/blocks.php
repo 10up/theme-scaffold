@@ -19,8 +19,7 @@ function setup() {
 		return __NAMESPACE__ . "\\$function";
 	};
 
-	add_action( 'enqueue_block_assets', $n( 'blocks_scripts' ) );
-	add_action( 'enqueue_block_editor_assets', $n( 'blocks_editor_scripts' ) );
+	add_action( 'enqueue_block_editor_assets', $n( 'blocks_editor_styles' ) );
 
 	add_filter( 'block_categories', $n( 'blocks_categories' ), 10, 2 );
 
@@ -28,13 +27,13 @@ function setup() {
 	require_once TENUP_SCAFFOLD_BLOCK_DIR . '/example-block/register.php';
 
 	// Filter the plugins URL to allow us to have blocks in themes with linked assets. i.e editorScripts
-	add_filter( 'plugins_url', $n( 'filter_plugins_url' ) );
+	add_filter( 'plugins_url', $n( 'filter_plugins_url' ), 10, 2 );
 
 	// Call block register functions.
 	Example\register();
 
 	// Remove the filter after we register the blocks
-	remove_filter( 'plugins_url', $n( 'filter_plugins_url' ) );
+	remove_filter( 'plugins_url', $n( 'filter_plugins_url' ), 10, 2 );
 
 }
 /**
@@ -73,16 +72,7 @@ function blocks_scripts() {
  *
  * @return void
  */
-function blocks_editor_scripts() {
-
-	wp_enqueue_script(
-		'blocks-editor',
-		TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/js/blocks-editor.js',
-		[ 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-components' ],
-		TENUP_SCAFFOLD_VERSION,
-		false
-	);
-
+function blocks_editor_styles() {
 	wp_enqueue_style(
 		'editor-style',
 		TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/css/editor-style.css',
