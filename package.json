@@ -50,6 +50,7 @@
     "@10up/eslint-config": "^2.0.0",
     "@10up/stylelint-config": "^1.0.9",
     "@babel/core": "^7.9.0",
+    "@wordpress/dependency-extraction-webpack-plugin": "^2.8.0",
     "@wordpress/eslint-plugin": "^5.0.1",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
@@ -111,6 +112,7 @@
     "node": ">=12.0.0"
   },
   "dependencies": {
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "prop-types": "^15.7.2"
   }
 }

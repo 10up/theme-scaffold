@@ -4,6 +4,7 @@ release
 vendor
 phpunit.xml
 .idea
+.vscode
 
 # Project Files
 dist
