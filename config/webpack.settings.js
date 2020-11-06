@@ -15,7 +15,7 @@ module.exports = {
 		'styleguide-style': './assets/css/styleguide/styleguide.css',
 
 		// Blocks
-		'example-block': './includes/blocks/example-block/register.js',
+		'example-block': './includes/blocks/example-block/',
 	},
 	filename: {
 		js: 'js/[name].js',
@@ -24,6 +24,7 @@ module.exports = {
 	paths: {
 		src: {
 			base: './assets/',
+			blocks: './includes/blocks/',
 			css: './assets/css/',
 			js: './assets/js/',
 		},
