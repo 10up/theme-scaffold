@@ -26,16 +26,23 @@ function setup() {
 	// Require custom blocks.
 	require_once TENUP_SCAFFOLD_BLOCK_DIR . '/example-block/register.php';
 
-	// Filter the plugins URL to allow us to have blocks in themes with linked assets. i.e editorScripts
-	add_filter( 'plugins_url', $n( 'filter_plugins_url' ), 10, 2 );
-
-	// Call block register functions.
-	Example\register();
-
-	// Remove the filter after we register the blocks
-	remove_filter( 'plugins_url', $n( 'filter_plugins_url' ), 10, 2 );
+	add_filter( 'init', $n( 'register' ) );
 
 }
+
+/**
+ * Register Blocks.
+ */
+function register() {
+	// Filter the plugins URL to allow us to have blocks in themes with linked assets. i.e editorScripts
+	add_filter( 'plugins_url', __NAMESPACE__ . '\filter_plugins_url', 10, 2 );
+	// Register Blocks
+	Example\register();
+	// <---- Add blocks here...
+	// Remove the filter after we register the blocks
+	remove_filter( 'plugins_url', __NAMESPACE__ . '\filter_plugins_url', 10 );
+}
+
 /**
  * Filter the plugins_url to allow us to use assets from theme.
  *
@@ -46,8 +53,7 @@ function setup() {
  */
 function filter_plugins_url( $url, $path ) {
 	$file = preg_replace( '/\.\.\//', '', $path );
-	$url  = trailingslashit( get_stylesheet_directory_uri() ) . $file;
-	return $url;
+	return trailingslashit( get_stylesheet_directory_uri() ) . $file;
 }
 
 /**

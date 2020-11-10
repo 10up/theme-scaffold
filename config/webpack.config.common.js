@@ -88,7 +88,10 @@ module.exports = {
 			// Styles.
 			{
 				test: /\.css$/,
-				include: path.resolve(process.cwd(), settings.paths.src.css),
+				include: [
+					path.resolve(process.cwd(), settings.paths.src.base),
+					path.resolve(process.cwd(), settings.paths.src.blocks),
+				],
 				use: [
 					{
 						loader: MiniCssExtractPlugin.loader,

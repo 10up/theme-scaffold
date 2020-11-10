@@ -34,6 +34,16 @@ function register() {
  */
 function render_block_callback( $attributes, $content, $block ) {
 	ob_start();
-	require TENUP_SCAFFOLD_BLOCK_DIR . 'example-block/markup.php';
+	get_template_part(
+		'includes/blocks/example-block/markup',
+		null,
+		[
+			'class_name' => 'wp-block-tenup-example',
+			'attributes' => $attributes,
+			'content'    => $content,
+			'block'      => $block,
+		]
+	);
+
 	return ob_get_clean();
 }

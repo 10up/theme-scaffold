@@ -16,26 +16,23 @@ import { editPropsShape } from './props-shape';
  * @param {Object} props The block props
  * @return {Function} Render the edit screen
  */
-const ExampleBockEdit = (props) => {
-	const {
-		attributes: { customTitle },
-		className,
-		setAttributes,
-	} = props;
-
+const ExampleBockEdit = ({
+	attributes: { customTitle: currentTitle },
+	className,
+	setAttributes,
+}) => {
 	return (
-		<div className={className}>
+		<div className={`${className}`}>
 			<RichText
+				className="wp-block-example-block__title"
 				tagName="h2"
 				placeholder={__('Custom Title')}
-				value={customTitle}
-				onChange={(title) => setAttributes({ customTitle: title })}
+				value={currentTitle}
+				onChange={(customTitle) => setAttributes({ customTitle })}
 			/>
 		</div>
 	);
 };
 // Set the propTypes
-ExampleBockEdit.propTypes = {
-	...editPropsShape,
-};
+ExampleBockEdit.propTypes = editPropsShape;
 export default ExampleBockEdit;
