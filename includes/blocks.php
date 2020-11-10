@@ -9,6 +9,7 @@ namespace TenUpScaffold\Blocks;
 
 use TenUpScaffold\Blocks\Example;
 
+
 /**
  * Set up blocks
  *
@@ -23,24 +24,22 @@ function setup() {
 
 	add_filter( 'block_categories', $n( 'blocks_categories' ), 10, 2 );
 
-	// Require custom blocks.
-	require_once TENUP_SCAFFOLD_BLOCK_DIR . '/example-block/register.php';
+	add_action(
+		'init',
+		function() {
+			// Filter the plugins URL to allow us to have blocks in themes with linked assets. i.e editorScripts
+			add_filter( 'plugins_url', __NAMESPACE__ . '\filter_plugins_url', 10, 2 );
 
-	add_filter( 'init', $n( 'register' ) );
+			// Require custom blocks.
+			require_once TENUP_SCAFFOLD_BLOCK_DIR . '/example-block/register.php';
 
-}
+			// Call block register functions for each block.
+			Example\register();
 
-/**
- * Register Blocks.
- */
-function register() {
-	// Filter the plugins URL to allow us to have blocks in themes with linked assets. i.e editorScripts
-	add_filter( 'plugins_url', __NAMESPACE__ . '\filter_plugins_url', 10, 2 );
-	// Register Blocks
-	Example\register();
-	// <---- Add blocks here...
-	// Remove the filter after we register the blocks
-	remove_filter( 'plugins_url', __NAMESPACE__ . '\filter_plugins_url', 10 );
+			// Remove the filter after we register the blocks
+			remove_filter( 'plugins_url', __NAMESPACE__ . '\filter_plugins_url', 10, 2 );
+		}
+	);
 }
 
 /**
