@@ -9,5 +9,6 @@
 			"type" : "string"
 		}
 	},
-	"editorScript": "file:../../../dist/js/example-block.js"
+	"editorScript": "file:../../../dist/js/example-block.js",
+	"editorStyle": "file:../../../dist/css/example-block.css"
 }

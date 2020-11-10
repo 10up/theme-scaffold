@@ -3,8 +3,6 @@
  *
  * @return {null} Dynamic blocks do not save the HTML.
  */
-const ExampleBlockSave = () => {
-	return null;
-};
+const ExampleBlockSave = () => null;
 
 export default ExampleBlockSave;
