@@ -24,6 +24,9 @@ function setup() {
 
 	add_filter( 'block_categories', $n( 'blocks_categories' ), 10, 2 );
 
+	/*
+	Uncomment to register the Example block
+
 	add_action(
 		'init',
 		function() {
@@ -40,6 +43,7 @@ function setup() {
 			remove_filter( 'plugins_url', __NAMESPACE__ . '\filter_plugins_url', 10, 2 );
 		}
 	);
+	*/
 }
 
 /**

@@ -15,7 +15,9 @@ import { registerBlockType } from '@wordpress/blocks';
 import edit from './edit';
 import save from './save';
 import { name } from './block.json';
-import './index.css';
+
+/* Uncomment for CSS overrides in the admin */
+// import './index.css';
 
 /**
  * Register block

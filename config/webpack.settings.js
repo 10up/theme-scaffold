@@ -15,7 +15,8 @@ module.exports = {
 		'styleguide-style': './assets/css/styleguide/styleguide.css',
 
 		// Blocks
-		'example-block': './includes/blocks/example-block/',
+		// Uncomment to build the example block.
+		// 'example-block': './includes/blocks/example-block/',
 	},
 	filename: {
 		js: 'js/[name].js',
