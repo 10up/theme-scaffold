@@ -8,7 +8,12 @@
 		"customTitle": {
 			"type" : "string"
 		}
-	},
-	"editorScript": "file:../../../dist/js/example-block.js",
-	"editorStyle": "file:../../../dist/css/example-block.css"
+  },
+  "example": {
+    "attributes":{
+      "customTitle": "Example Block"
+    }
+  },
+	"editorScript": "file:../../../dist/blocks/example-block/editor.js",
+	"editorStyle": "file:../../../dist/blocks/example-block/editor.css"
 }

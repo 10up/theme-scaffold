@@ -32,7 +32,12 @@ module.exports = {
 	entry: configureEntries(),
 	output: {
 		path: path.resolve(process.cwd(), settings.paths.dist.base),
-		filename: settings.filename.js,
+		filename: (pathData) => {
+			return pathData.chunk.name.includes('block')
+				? settings.filename.block
+				: settings.filename.js;
+		},
+
 		/**
 		 * If multiple webpack runtimes (from different compilations) are used on the same webpage,
 		 * there is a risk of conflicts of on-demand chunks in the global namespace.
@@ -130,6 +135,8 @@ module.exports = {
 		// Extract CSS into individual files.
 		new MiniCssExtractPlugin({
 			filename: settings.filename.css,
+			moduleFilename: ({ name }) =>
+				name.includes('block') ? settings.filename.blockCSS : settings.filename.css,
 			chunkFilename: '[id].css',
 		}),
 

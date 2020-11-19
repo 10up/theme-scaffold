@@ -20,6 +20,8 @@ module.exports = {
 	filename: {
 		js: 'js/[name].js',
 		css: 'css/[name].css',
+		block: 'blocks/[name]/editor.js',
+		blockCSS: 'blocks/[name]/editor.css',
 	},
 	paths: {
 		src: {
@@ -30,7 +32,7 @@ module.exports = {
 		},
 		dist: {
 			base: './dist/',
-			clean: ['./images', './css', './js'],
+			clean: ['./images', './css', './js', './blocks'],
 		},
 	},
 	stats: {
