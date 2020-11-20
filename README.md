@@ -86,6 +86,16 @@ _* If your host machine's local version of PHP is <7.2, composer may produce the
 ```
 _To suppress this error, add the flag `--ignore-platform-reqs` (ie. `composer install --ignore-platform-reqs`)._
 
+## Custom Blocks
+The Theme Scaffolding supports custom blocks and leverages the Block API as of WordPress 5.5. Set up a custom block using the following steps:
+
+1. Define an entry point for the block in `/config/webpack.settings.js`. The entry point should in the format `{name}-block` i.e `hero-block`
+2. Add a directory for the block in `/includes/blocks/{name}-block`. i.e `/includes/blocks/hero-block`
+3. The block directory requires a `block.json` file.
+4. Refer to the `./includes/blocks/example-block` directory to see how the block files should be set up.
+
+To set up a custom block As such, each custom block must have an entry point defined in `/config/webpack.settings.js` and it's assets stored in `/includes/blocks/{block}`
+
 ## Automated Style Guide
 The Theme Scaffolding ships with a default style guide you can find in `/templates/page-styleguide.php`. This file contains all the basic HTML elements you would find at the very top of the cascade (headings, typography, tables, forms, etc.) These base elements will be styled and displayed as you naturally build out your CSS. The style guide also automatically pulls in the color variables used in the project. Any hex codes added into `/assets/css/frontend/global/variables.css` will be automatically displayed in the style guide. To set up your style guide, you just need to create a new page in WordPress and assign it the "Style Guide" template.
 
