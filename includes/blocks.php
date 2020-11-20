@@ -25,13 +25,25 @@ function setup() {
 	add_filter( 'block_categories', $n( 'blocks_categories' ), 10, 2 );
 
 	/*
-	Uncomment to register the Example block
+	// Uncomment to register custom blocks via the Block Library plugin.
+
+	add_filter( 'tenup_available_blocks', function ( $blocks ) {
+		$blocks['example-block'] = [
+			'dir' => TENUP_SCAFFOLD_BLOCK_DIR,
+		];
+		return $blocks;
+	} );
+	*/
+
+	/*
+	// Uncomment to register custom blocks via the theme.
 
 	add_action(
 		'init',
 		function() {
 			// Filter the plugins URL to allow us to have blocks in themes with linked assets. i.e editorScripts
-			add_filter( 'plugins_url', __NAMESPACE__ . '\filter_plugins_url', 10, 2 );
+			//add_filter( 'plugins_url', __NAMESPACE__ . '\filter_plugins_url', 10, 2 );
+
 
 			// Require custom blocks.
 			require_once TENUP_SCAFFOLD_BLOCK_DIR . '/example-block/register.php';
@@ -40,10 +52,11 @@ function setup() {
 			Example\register();
 
 			// Remove the filter after we register the blocks
-			remove_filter( 'plugins_url', __NAMESPACE__ . '\filter_plugins_url', 10, 2 );
+			//remove_filter( 'plugins_url', __NAMESPACE__ . '\filter_plugins_url', 10, 2 );
 		}
 	);
 	*/
+
 }
 
 /**
