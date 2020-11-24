@@ -143,6 +143,13 @@ module.exports = {
 		new ImageminPlugin({
 			disable: !isProduction,
 			test: settings.ImageminPlugin.test,
+			svgo: {
+				plugins: [
+					{
+						removeViewBox: false,
+					},
+				],
+			},
 		}),
 
 		// Lint CSS.
