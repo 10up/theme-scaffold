@@ -23,8 +23,14 @@ function setup() {
 	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
 	add_action( 'wp_head', $n( 'js_detection' ), 0 );
 	add_action( 'wp_head', $n( 'add_manifest' ), 10 );
+	add_action( 'wp_head', $n( 'js_disabled_stylesheets' ) );
 
 	add_filter( 'script_loader_tag', $n( 'script_loader_tag' ), 10, 2 );
+
+	if ( ! is_admin() ) {
+		add_filter( 'style_loader_tag', $n( 'style_loader_tag' ), 10, 2 );
+	}
+
 }
 
 /**
@@ -158,6 +164,46 @@ function script_loader_tag( $tag, $handle ) {
 	}
 
 	return $tag;
+}
+
+/**
+ * Asynchronous stylesheet definitions
+ *
+ * Determines which stylesheets should behave
+ * asynchronously on the page by storing their
+ * unique handle in an array.
+ *
+ * @return array
+ */
+function get_known_handles() {
+	return array( 'admin-bar', 'dashicons', 'styles', 'styleguide', 'wp-block-library' );
+}
+
+/**
+ * Add async/defer attributes to enqueued scripts that have the specified script_execution flag.
+ *
+ * @link https://developer.wordpress.org/reference/hooks/style_loader_tag/
+ * @param string $html   The style html output.
+ * @param string $handle The style handle.
+ * @return string
+ */
+function style_loader_tag( $html, $handle ) {
+
+	// Get previously defined stylesheets.
+	$known_handles = get_known_handles();
+
+	// Loop over stylesheets and replace media attribute
+	foreach ( $known_handles as $known_style ) {
+		if ( $known_style === $handle ) {
+			$print_html = str_replace( "media='all'", "media='print' onload=\"this.media='all'\"", $html );
+		}
+	}
+
+	if ( ! empty( $print_html ) ) {
+		$html = $print_html . '<noscript>' . $html . '</noscript>';
+	}
+
+	return $html;
 }
 
 /**
