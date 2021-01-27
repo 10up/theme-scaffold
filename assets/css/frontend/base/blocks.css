@@ -1,0 +1,45 @@
+/* Set aspect ratios on embeds in Gutenberg blocks */
+.wp-has-aspect-ratio .wp-block-embed__wrapper {
+	height: 0;
+	overflow: hidden;
+	padding-top: 56.25%;
+	position: relative;
+
+	& iframe {
+		height: 100%;
+		left: 0;
+		max-width: 100%;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+}
+
+.wp-embed-aspect-21-9 .wp-block-embed__wrapper {
+	padding-top: 42.85%;
+}
+
+.wp-embed-aspect-18-9 .wp-block-embed__wrapper,
+.wp-embed-aspect-9-16 .wp-block-embed__wrapper {
+	padding-top: 50%;
+}
+
+.wp-embed-aspect-16-9 .wp-block-embed__wrapper {
+	padding-top: 56.25%;
+}
+
+.wp-embed-aspect-4-3 .wp-block-embed__wrapper {
+	padding-top: 75%;
+}
+
+.wp-embed-aspect-1-1 .wp-block-embed__wrapper {
+	padding-top: 100%;
+}
+
+.wp-embed-aspect-9-6 .wp-block-embed__wrapper {
+	padding-top: 66.66%;
+}
+
+.wp-embed-aspect-1-2 .wp-block-embed__wrapper {
+	padding-top: 200%;
+}

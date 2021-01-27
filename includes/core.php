@@ -53,6 +53,10 @@ function theme_setup() {
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'disable-custom-font-sizes' );
+	add_theme_support( 'disable-custom-colors' );
+	add_theme_support( 'editor-color-palette', array() );
+
 	add_theme_support(
 		'html5',
 		array(
