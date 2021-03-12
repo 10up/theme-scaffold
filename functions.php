@@ -22,8 +22,8 @@ TenUpScaffold\Core\setup();
 TenUpScaffold\Blocks\setup();
 
 // Require Composer autoloader if it exists.
-if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
-	require_once 'vendor/autoload.php';
+if ( file_exists( TENUP_SCAFFOLD_PATH . 'vendor/autoload.php' ) ) {
+	require_once TENUP_SCAFFOLD_PATH . 'vendor/autoload.php';
 }
 
 if ( ! function_exists( 'wp_body_open' ) ) {
