@@ -6,6 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const WebpackBar = require('webpackbar');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const DependencyExtractionWebpackPlugin = require('@wordpress/dependency-extraction-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -31,7 +32,12 @@ module.exports = {
 	entry: configureEntries(),
 	output: {
 		path: path.resolve(process.cwd(), settings.paths.dist.base),
-		filename: settings.filename.js,
+		filename: (pathData) => {
+			return pathData.chunk.name.includes('block')
+				? settings.filename.block
+				: settings.filename.js;
+		},
+
 		/**
 		 * If multiple webpack runtimes (from different compilations) are used on the same webpage,
 		 * there is a risk of conflicts of on-demand chunks in the global namespace.
@@ -87,7 +93,10 @@ module.exports = {
 			// Styles.
 			{
 				test: /\.css$/,
-				include: path.resolve(process.cwd(), settings.paths.src.css),
+				include: [
+					path.resolve(process.cwd(), settings.paths.src.base),
+					path.resolve(process.cwd(), settings.paths.src.blocks),
+				],
 				use: [
 					{
 						loader: MiniCssExtractPlugin.loader,
@@ -126,6 +135,8 @@ module.exports = {
 		// Extract CSS into individual files.
 		new MiniCssExtractPlugin({
 			filename: settings.filename.css,
+			moduleFilename: ({ name }) =>
+				name.includes('block') ? settings.filename.blockCSS : settings.filename.css,
 			chunkFilename: '[id].css',
 		}),
 
@@ -153,5 +164,8 @@ module.exports = {
 
 		// Fancy WebpackBar.
 		new WebpackBar(),
+
+		// Extract dependencies
+		new DependencyExtractionWebpackPlugin({ injectPolyfill: true }),
 	],
 };

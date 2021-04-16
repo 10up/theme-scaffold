@@ -7,6 +7,9 @@
 
 namespace TenUpScaffold\Blocks;
 
+use TenUpScaffold\Blocks\Example;
+
+
 /**
  * Set up blocks
  *
@@ -17,10 +20,56 @@ function setup() {
 		return __NAMESPACE__ . "\\$function";
 	};
 
-	add_action( 'enqueue_block_assets', $n( 'blocks_scripts' ) );
-	add_action( 'enqueue_block_editor_assets', $n( 'blocks_editor_scripts' ) );
+	add_action( 'enqueue_block_editor_assets', $n( 'blocks_editor_styles' ) );
 
 	add_filter( 'block_categories', $n( 'blocks_categories' ), 10, 2 );
+
+	/*
+	// Uncomment to register custom blocks via the Block Library plugin.
+
+	add_filter( 'tenup_available_blocks', function ( $blocks ) {
+		$blocks['example-block'] = [
+			'dir' => TENUP_SCAFFOLD_BLOCK_DIR,
+		];
+		return $blocks;
+	} );
+	*/
+
+	/*
+	// Uncomment to register custom blocks via the theme.
+
+	add_action(
+		'init',
+		function() {
+			// Filter the plugins URL to allow us to have blocks in themes with linked assets. i.e editorScripts
+			//add_filter( 'plugins_url', __NAMESPACE__ . '\filter_plugins_url', 10, 2 );
+
+
+			// Require custom blocks.
+			require_once TENUP_SCAFFOLD_BLOCK_DIR . '/example-block/register.php';
+
+			// Call block register functions for each block.
+			Example\register();
+
+			// Remove the filter after we register the blocks
+			//remove_filter( 'plugins_url', __NAMESPACE__ . '\filter_plugins_url', 10, 2 );
+		}
+	);
+	*/
+
+}
+
+/**
+ * Filter the plugins_url to allow us to use assets from theme.
+ *
+ * @param string $url  The plugins url
+ * @param string $path The path to the asset.
+ *
+ * @return string The overridden url to the block asset.
+ */
+function filter_plugins_url( $url, $path ) {
+	$file = preg_replace( '/\.\.\//', '', $path );
+	return trailingslashit( get_stylesheet_directory_uri() ) . $file;
 }
 
 /**
@@ -45,16 +94,7 @@ function blocks_scripts() {
  *
  * @return void
  */
-function blocks_editor_scripts() {
-
-	wp_enqueue_script(
-		'blocks-editor',
-		TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/js/blocks-editor.js',
-		[ 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-components' ],
-		TENUP_SCAFFOLD_VERSION,
-		false
-	);
-
+function blocks_editor_styles() {
 	wp_enqueue_style(
 		'editor-style',
 		TENUP_SCAFFOLD_TEMPLATE_URL . '/dist/css/editor-style.css',
